@@ -1,1772 +1,2101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>PackRush</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#07090c">
+<title>PACKR — Open. Collect. Compete.</title>
 
 <style>
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+:root{
+  --bg:#07090c;
+  --panel:#0e1218;
+  --panel2:#131923;
+  --panel3:#181f2a;
+  --line:#242d3a;
+  --text:#f7f8fa;
+  --muted:#87909f;
+  --gold:#f6c65b;
+  --gold2:#d99c2b;
+  --green:#4ee58a;
+  --blue:#5ca9ff;
+  --purple:#a875ff;
+  --red:#ff5968;
+  --nav:72px;
+}
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  background:
+    radial-gradient(circle at 15% -10%,rgba(246,198,91,.08),transparent 28%),
+    radial-gradient(circle at 90% 10%,rgba(92,169,255,.05),transparent 30%),
+    var(--bg);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Arial,sans-serif;
+}
+
+button,input,select{font:inherit}
+
+button{cursor:pointer}
+
+img{
+  display:block;
+  width:100%;
+}
+
+.hidden{display:none!important}
+
+/* HEADER */
+
+header{
+  height:var(--nav);
+  position:sticky;
+  top:0;
+  z-index:100;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 4%;
+  background:rgba(7,9,12,.91);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+
+.logo{
+  font-size:25px;
+  font-weight:1000;
+  letter-spacing:-1.5px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.logoMark{
+  color:var(--gold);
+  font-size:21px;
+}
+
+.desktopNav{
+  display:flex;
+  height:100%;
+  align-items:center;
+  gap:28px;
+}
+
+.nav{
+  border:0;
+  background:none;
+  color:#aab1bc;
+  height:100%;
+  font-weight:800;
+  position:relative;
+}
+
+.nav:hover,.nav.active{color:white}
+
+.nav.active:after{
+  content:"";
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  height:2px;
+  background:var(--gold);
+}
+
+.account{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.balance{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:9px 13px;
+  background:#11161d;
+  border:1px solid #252e3a;
+  border-radius:11px;
+  font-weight:900;
+}
+
+.coin{
+  width:20px;
+  height:20px;
+  display:inline-grid;
+  place-items:center;
+  border-radius:50%;
+  background:linear-gradient(135deg,#ffe59a,#d99418);
+  color:#5a3800;
+  font-size:11px;
+  box-shadow:0 0 14px rgba(246,198,91,.2);
+}
+
+.avatar{
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  background:
+    linear-gradient(135deg,#27364d,#0e1218);
+  border:1px solid #394657;
+  display:grid;
+  place-items:center;
+  font-weight:1000;
+  font-size:12px;
+}
+
+/* MAIN */
+
+main{
+  width:min(1480px,94%);
+  margin:auto;
+  padding-bottom:100px;
+}
+
+.page{padding-top:24px}
+
+/* HERO */
+
+.hero{
+  min-height:390px;
+  border:1px solid #242b34;
+  border-radius:22px;
+  overflow:hidden;
+  position:relative;
+  display:flex;
+  align-items:center;
+  padding:50px;
+  margin-bottom:25px;
+  background:
+    linear-gradient(90deg,rgba(4,5,7,.96) 0%,rgba(4,5,7,.83) 42%,rgba(4,5,7,.18) 72%),
+    url("https://images.unsplash.com/photo-1491933382434-500287f9b54b?auto=format&fit=crop&w=1800&q=85") center/cover;
+}
+
+.hero:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(0deg,rgba(0,0,0,.6),transparent 50%);
+}
+
+.heroContent{
+  max-width:570px;
+  position:relative;
+  z-index:2;
+}
+
+.eyebrow{
+  color:var(--gold);
+  font-size:12px;
+  letter-spacing:2px;
+  font-weight:1000;
+  margin-bottom:12px;
+}
+
+.hero h1{
+  margin:0;
+  font-size:clamp(43px,6vw,78px);
+  line-height:.91;
+  letter-spacing:-4px;
+}
+
+.hero h1 span{color:var(--gold)}
+
+.hero p{
+  color:#bbc0c8;
+  max-width:500px;
+  line-height:1.6;
+  font-size:16px;
+  margin:20px 0;
+}
+
+.btn{
+  border:0;
+  padding:12px 18px;
+  border-radius:10px;
+  font-weight:900;
+  transition:.17s;
+}
+
+.btn:hover{transform:translateY(-1px)}
+
+.gold{
+  background:linear-gradient(135deg,#ffe18c,#dca237);
+  color:#1b1303;
+  box-shadow:0 7px 25px rgba(246,198,91,.12);
+}
+
+.dark{
+  color:white;
+  background:#171d26;
+  border:1px solid #303a49;
+}
+
+.red{
+  color:white;
+  background:#451a21;
+  border:1px solid #73303a;
+}
+
+/* STATS */
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+  margin-bottom:32px;
+}
+
+.stat{
+  background:#0e1218;
+  border:1px solid #202833;
+  border-radius:14px;
+  padding:17px;
+}
+
+.statValue{
+  font-size:22px;
+  font-weight:1000;
+}
+
+.statLabel{
+  margin-top:4px;
+  font-size:12px;
+  color:var(--muted);
+}
+
+/* TITLES */
+
+.titleRow{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  margin:28px 0 14px;
+}
+
+.titleRow h2{
+  margin:0;
+  font-size:23px;
+  letter-spacing:-.7px;
+}
+
+.titleRow p{
+  margin:4px 0 0;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.smallGold{
+  color:var(--gold);
+  font-size:13px;
+  font-weight:800;
+}
+
+/* PACKS */
+
+.packGrid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+}
+
+.pack{
+  background:linear-gradient(180deg,#11161d,#0d1117);
+  border:1px solid #242d39;
+  border-radius:16px;
+  overflow:hidden;
+  transition:.2s;
+}
+
+.pack:hover{
+  transform:translateY(-4px);
+  border-color:#475466;
+}
+
+.packImage{
+  height:220px;
+  position:relative;
+  overflow:hidden;
+  background:#151a21;
+}
+
+.packImage img{
+  height:100%;
+  object-fit:cover;
+  transition:.35s;
+}
+
+.pack:hover img{transform:scale(1.035)}
+
+.packShade{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(0deg,rgba(5,7,9,.75),transparent 55%),
+    radial-gradient(circle at center,transparent 20%,rgba(0,0,0,.15));
+}
+
+.packBadge{
+  position:absolute;
+  top:12px;
+  left:12px;
+  padding:6px 8px;
+  background:rgba(8,10,13,.82);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:7px;
+  font-size:10px;
+  font-weight:1000;
+  backdrop-filter:blur(8px);
+}
+
+.packBody{padding:14px}
+
+.packName{
+  font-weight:1000;
+  font-size:17px;
+}
+
+.packDesc{
+  color:var(--muted);
+  font-size:12px;
+  margin:5px 0 13px;
+}
+
+.packBottom{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.packPrice{
+  color:var(--gold);
+  font-weight:1000;
+}
+
+.openBtn{
+  border:1px solid #344052;
+  color:white;
+  background:#1b222d;
+  padding:8px 11px;
+  border-radius:8px;
+  font-size:12px;
+  font-weight:900;
+}
+
+/* LIVE DROPS */
+
+.liveGrid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:10px;
+}
+
+.liveCard{
+  background:#0e1319;
+  border:1px solid #232c37;
+  border-radius:12px;
+  overflow:hidden;
+}
+
+.liveImg{
+  height:130px;
+  object-fit:cover;
+}
+
+.liveInfo{padding:10px}
+
+.liveUser{
+  color:var(--blue);
+  font-size:11px;
+  font-weight:900;
+}
+
+.liveName{
+  font-size:12px;
+  font-weight:900;
+  margin-top:4px;
+}
+
+.liveTime{
+  color:#626c7b;
+  font-size:10px;
+  margin-top:5px;
+}
+
+/* INVENTORY */
+
+.inventoryGrid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:13px;
+}
+
+.inventoryCard{
+  border:1px solid #252f3c;
+  border-radius:14px;
+  background:#10151c;
+  overflow:hidden;
+}
+
+.inventoryPhoto{
+  height:170px;
+  object-fit:cover;
+}
+
+.inventoryBody{padding:12px}
+
+.rarity{
+  font-size:9px;
+  font-weight:1000;
+  letter-spacing:1px;
+  margin-bottom:5px;
+}
+
+.common{color:#aeb5c0}
+.rare{color:var(--blue)}
+.epic{color:var(--purple)}
+.legendary{color:var(--gold)}
+
+.inventoryName{
+  font-weight:900;
+  min-height:40px;
+}
+
+.inventoryValue{
+  color:var(--gold);
+  font-weight:900;
+  margin:7px 0 10px;
+}
+
+.full{width:100%}
+
+/* BATTLE */
+
+.battleSetup{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr auto;
+  gap:10px;
+  background:#0e1319;
+  border:1px solid #252e3a;
+  padding:14px;
+  border-radius:14px;
+}
+
+select,input{
+  width:100%;
+  padding:12px;
+  color:white;
+  background:#151b23;
+  border:1px solid #303a48;
+  border-radius:9px;
+  outline:none;
+}
+
+.battleArena{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin-top:18px;
+}
+
+.fighter{
+  background:#0f141b;
+  border:1px solid #252e3a;
+  border-radius:15px;
+  overflow:hidden;
+}
+
+.fighterHeader{
+  padding:15px;
+  display:flex;
+  justify-content:space-between;
+  border-bottom:1px solid #252e3a;
+  font-weight:1000;
+}
+
+.fighterScore{color:var(--gold)}
+
+.pull{
+  display:grid;
+  grid-template-columns:85px 1fr;
+  align-items:center;
+  border-bottom:1px solid #1e2630;
+}
+
+.pull:last-child{border-bottom:0}
+
+.pull img{
+  height:75px;
+  object-fit:cover;
+}
+
+.pullInfo{padding:10px}
+
+.pullName{font-weight:900}
+
+.pullValue{
+  color:var(--gold);
+  font-size:12px;
+  margin-top:4px;
+}
+
+.result{
+  margin-top:14px;
+  text-align:center;
+  border:1px solid #2e3947;
+  background:#121820;
+  padding:18px;
+  border-radius:12px;
+  font-size:17px;
+  font-weight:1000;
+}
+
+/* LEADERBOARD */
+
+.leaderboard{
+  border:1px solid #252e3a;
+  border-radius:14px;
+  overflow:hidden;
+}
+
+.leader{
+  display:grid;
+  grid-template-columns:70px 1fr 160px 130px;
+  padding:15px;
+  border-bottom:1px solid #202832;
+  background:#0f141a;
+}
+
+.leader:last-child{border:0}
+
+.leader.head{
+  color:var(--muted);
+  background:#0b0f14;
+  font-size:11px;
+  font-weight:900;
+}
+
+/* MODAL */
+
+.overlay{
+  position:fixed;
+  inset:0;
+  z-index:1000;
+  display:grid;
+  place-items:center;
+  background:rgba(0,0,0,.82);
+  backdrop-filter:blur(10px);
+  padding:14px;
+}
+
+.modal{
+  width:min(1100px,98vw);
+  max-height:94vh;
+  overflow:auto;
+  background:#0d1117;
+  border:1px solid #303a47;
+  border-radius:20px;
+  box-shadow:0 30px 100px #000;
+}
+
+.modalTop{
+  padding:16px 18px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid #242c37;
+}
+
+.modalTitle{font-weight:1000}
+
+.close{
+  border:1px solid #313b49;
+  background:#181f28;
+  color:white;
+  width:35px;
+  height:35px;
+  border-radius:8px;
+}
+
+.reelWindow{
+  height:240px;
+  overflow:hidden;
+  position:relative;
+  background:
+    linear-gradient(90deg,#080b0f,transparent 15%,transparent 85%,#080b0f),
+    #090c11;
+}
+
+.marker{
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:50%;
+  width:3px;
+  z-index:5;
+  background:var(--gold);
+  box-shadow:0 0 22px var(--gold);
+}
+
+.marker:before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:50%;
+  transform:translateX(-50%);
+  border-left:10px solid transparent;
+  border-right:10px solid transparent;
+  border-top:14px solid var(--gold);
+}
+
+.reel{
+  height:100%;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding-left:50%;
+  will-change:transform;
+}
+
+.reelItem{
+  min-width:180px;
+  height:195px;
+  border:1px solid #313a47;
+  border-radius:12px;
+  overflow:hidden;
+  background:#121820;
+}
+
+.reelItem img{
+  height:135px;
+  object-fit:cover;
+}
+
+.reelText{padding:8px}
+
+.reelName{
+  font-size:11px;
+  font-weight:900;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.reelPrice{
+  color:var(--gold);
+  font-size:11px;
+  font-weight:900;
+  margin-top:4px;
+}
+
+.reelItem.r-common{border-bottom:4px solid #7e8794}
+.reelItem.r-rare{border-bottom:4px solid var(--blue)}
+.reelItem.r-epic{border-bottom:4px solid var(--purple)}
+.reelItem.r-legendary{
+  border-bottom:4px solid var(--gold);
+  box-shadow:0 0 20px rgba(246,198,91,.15);
+}
+
+.modalAction{
+  padding:22px;
+  text-align:center;
+}
+
+.wonPhoto{
+  width:min(330px,80%);
+  height:220px;
+  object-fit:cover;
+  border-radius:14px;
+  margin:0 auto 14px;
+  border:1px solid #394454;
+}
+
+.wonName{
+  font-size:25px;
+  font-weight:1000;
+}
+
+.wonValue{
+  color:var(--gold);
+  font-size:20px;
+  font-weight:1000;
+  margin:7px;
+}
+
+.actionRow{
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:14px;
+}
+
+/* EMPTY */
+
+.empty{
+  border:1px dashed #303a48;
+  color:var(--muted);
+  padding:50px;
+  border-radius:14px;
+  text-align:center;
+}
+
+/* TOAST */
+
+.toast{
+  position:fixed;
+  right:20px;
+  bottom:90px;
+  z-index:2000;
+  padding:12px 15px;
+  border-radius:10px;
+  border:1px solid #344051;
+  background:#171e27;
+  transform:translateY(20px);
+  opacity:0;
+  transition:.2s;
+  pointer-events:none;
+}
+
+.toast.show{
+  transform:none;
+  opacity:1;
+}
+
+/* MOBILE NAV */
+
+.mobileNav{display:none}
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+  .desktopNav{display:none}
+  .packGrid{grid-template-columns:repeat(2,1fr)}
+  .inventoryGrid{grid-template-columns:repeat(3,1fr)}
+  .liveGrid{grid-template-columns:repeat(3,1fr)}
+  .stats{grid-template-columns:repeat(2,1fr)}
+}
+
+@media(max-width:650px){
+
+  :root{--nav:62px}
+
+  header{padding:0 14px}
+
+  .logo{font-size:22px}
+
+  .account .avatar{display:none}
+
+  main{
+    width:100%;
+    padding:0 12px 100px;
   }
 
-  :root {
-    --bg: #090b10;
-    --bg2: #10131b;
-    --panel: #141824;
-    --panel2: #1a2030;
-    --line: #262d3d;
-    --text: #f3f6ff;
-    --muted: #8f98aa;
-    --green: #68ff9f;
-    --green2: #37d879;
-    --blue: #62a8ff;
-    --purple: #b477ff;
-    --gold: #ffc44d;
-    --red: #ff5d6c;
-  }
+  .page{padding-top:14px}
 
-  body {
-    min-height: 100vh;
+  .hero{
+    min-height:430px;
+    padding:25px;
+    align-items:flex-end;
     background:
-      radial-gradient(circle at 20% 0%, rgba(78,90,255,.12), transparent 35%),
-      radial-gradient(circle at 90% 20%, rgba(104,255,159,.08), transparent 30%),
-      var(--bg);
-    color: var(--text);
-    font-family: Inter, Arial, Helvetica, sans-serif;
-    overflow-x: hidden;
+      linear-gradient(0deg,rgba(4,5,7,.98) 0%,rgba(4,5,7,.6) 55%,rgba(4,5,7,.15)),
+      url("https://images.unsplash.com/photo-1491933382434-500287f9b54b?auto=format&fit=crop&w=900&q=85") center/cover;
   }
 
-  button {
-    font: inherit;
+  .hero h1{
+    font-size:50px;
+    letter-spacing:-3px;
   }
 
-  .app {
-    min-height: 100vh;
+  .packGrid{
+    grid-template-columns:repeat(2,1fr);
+    gap:9px;
   }
 
-  .topbar {
-    height: 72px;
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 24px;
-    background: rgba(9,11,16,.92);
-    backdrop-filter: blur(16px);
-    border-bottom: 1px solid var(--line);
-  }
-
-  .brand {
-    display: flex;
-    align-items: center;
-    gap: 11px;
-    font-weight: 900;
-    font-size: 22px;
-    letter-spacing: -.5px;
-  }
-
-  .brandLogo {
-    width: 38px;
-    height: 38px;
-    border-radius: 12px;
-    background: linear-gradient(135deg, var(--green), #3ea3ff);
-    display: grid;
-    place-items: center;
-    color: #08130c;
-    box-shadow: 0 0 30px rgba(104,255,159,.18);
-  }
-
-  .topRight {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .balance {
-    background: #151a24;
-    border: 1px solid #2a3142;
-    border-radius: 14px;
-    padding: 9px 14px;
-    font-weight: 900;
-    display: flex;
-    gap: 8px;
-    align-items: center;
-  }
-
-  .coin {
-    color: var(--gold);
-  }
-
-  .avatar {
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    display: grid;
-    place-items: center;
-    background: linear-gradient(135deg, #5b6cff, #8b56ff);
-    font-weight: 900;
-  }
-
-  .layout {
-    display: grid;
-    grid-template-columns: 220px 1fr;
-    min-height: calc(100vh - 72px);
-  }
-
-  .sidebar {
-    border-right: 1px solid var(--line);
-    padding: 22px 14px;
-    background: rgba(12,14,21,.82);
-  }
-
-  .navButton {
-    width: 100%;
-    border: 0;
-    background: transparent;
-    color: var(--muted);
-    padding: 13px 14px;
-    border-radius: 12px;
-    text-align: left;
-    margin-bottom: 7px;
-    cursor: pointer;
-    transition: .18s ease;
-    font-weight: 800;
-  }
-
-  .navButton:hover {
-    background: #171c28;
-    color: white;
-  }
-
-  .navButton.active {
-    color: white;
-    background: linear-gradient(90deg, rgba(104,255,159,.14), rgba(98,168,255,.08));
-    border: 1px solid rgba(104,255,159,.18);
-  }
-
-  .main {
-    padding: 28px;
-    max-width: 1500px;
-    width: 100%;
-    margin: 0 auto;
-  }
-
-  .hero {
-    border: 1px solid #293043;
-    border-radius: 24px;
-    padding: 32px;
-    background:
-      radial-gradient(circle at 80% 20%, rgba(104,255,159,.18), transparent 27%),
-      radial-gradient(circle at 40% 100%, rgba(98,168,255,.15), transparent 32%),
-      linear-gradient(135deg, #161b27, #0f131c);
-    margin-bottom: 30px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero h1 {
-    font-size: clamp(34px, 6vw, 64px);
-    letter-spacing: -2px;
-    line-height: .95;
-    max-width: 700px;
-  }
-
-  .hero p {
-    color: var(--muted);
-    margin-top: 16px;
-    max-width: 600px;
-    font-size: 16px;
-    line-height: 1.6;
-  }
-
-  .heroActions {
-    display: flex;
-    gap: 12px;
-    margin-top: 24px;
-    flex-wrap: wrap;
-  }
-
-  .btn {
-    border: 0;
-    cursor: pointer;
-    border-radius: 12px;
-    padding: 12px 18px;
-    font-weight: 900;
-    transition: .18s ease;
-  }
-
-  .btn:hover {
-    transform: translateY(-1px);
-  }
-
-  .btnPrimary {
-    background: var(--green);
-    color: #06130b;
-  }
-
-  .btnDark {
-    background: #1d2330;
-    color: white;
-    border: 1px solid #31394b;
-  }
-
-  .sectionTitle {
-    display: flex;
-    align-items: end;
-    justify-content: space-between;
-    margin-bottom: 16px;
-  }
-
-  .sectionTitle h2 {
-    font-size: 24px;
-    letter-spacing: -.7px;
-  }
-
-  .sectionTitle span {
-    color: var(--muted);
-    font-size: 13px;
-  }
-
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 16px;
-  }
-
-  .packCard,
-  .itemCard,
-  .battleCard,
-  .leaderCard {
-    background: linear-gradient(180deg, #171c27, #121620);
-    border: 1px solid #293042;
-    border-radius: 18px;
-  }
-
-  .packCard {
-    padding: 18px;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    transition: .2s ease;
-  }
-
-  .packCard:hover {
-    transform: translateY(-4px);
-    border-color: #3a465f;
-  }
-
-  .packArt {
-    height: 170px;
-    border-radius: 14px;
-    display: grid;
-    place-items: center;
-    font-size: 64px;
-    margin-bottom: 15px;
-    background:
-      radial-gradient(circle at center, rgba(255,255,255,.12), transparent 43%),
-      linear-gradient(135deg, #1e2534, #10141e);
-  }
-
-  .packName {
-    font-size: 18px;
-    font-weight: 900;
-    margin-bottom: 8px;
-  }
-
-  .packMeta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: var(--muted);
-    font-size: 13px;
-  }
-
-  .price {
-    color: var(--gold);
-    font-weight: 900;
-  }
-
-  .hidden {
-    display: none !important;
-  }
-
-  .modal {
-    position: fixed;
-    inset: 0;
-    z-index: 100;
-    background: rgba(0,0,0,.77);
-    backdrop-filter: blur(8px);
-    display: grid;
-    place-items: center;
-    padding: 20px;
-  }
-
-  .modalBox {
-    width: min(1050px, 96vw);
-    background: #10141d;
-    border: 1px solid #2c3447;
-    border-radius: 24px;
-    overflow: hidden;
-    box-shadow: 0 30px 100px rgba(0,0,0,.5);
-  }
-
-  .modalHeader {
-    padding: 20px 22px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid #252c3a;
-  }
-
-  .modalHeader button {
-    background: #1d2330;
-    color: white;
-    border: 1px solid #323a4d;
-    border-radius: 10px;
-    width: 36px;
-    height: 36px;
-    cursor: pointer;
-  }
-
-  .rollerWrap {
-    position: relative;
-    overflow: hidden;
-    background: #0a0d13;
-    padding: 30px 0;
-  }
-
-  .pointer {
-    width: 4px;
-    height: 100%;
-    position: absolute;
-    left: 50%;
-    top: 0;
-    transform: translateX(-2px);
-    background: var(--green);
-    z-index: 3;
-    box-shadow: 0 0 22px var(--green);
-  }
-
-  .roller {
-    height: 180px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    will-change: transform;
-    padding-left: 50%;
-  }
-
-  .rollItem {
-    min-width: 150px;
-    height: 150px;
-    border-radius: 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #30394d;
-    background: #151a24;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .rollEmoji {
-    font-size: 48px;
-    margin-bottom: 12px;
-  }
-
-  .rollName {
-    font-weight: 900;
-    font-size: 13px;
-    text-align: center;
-    padding: 0 10px;
-  }
-
-  .rollValue {
-    margin-top: 6px;
-    color: var(--gold);
-    font-size: 12px;
-    font-weight: 900;
-  }
-
-  .rarity-common {
-    box-shadow: inset 0 -5px 0 #7f8795;
-  }
-
-  .rarity-rare {
-    box-shadow: inset 0 -5px 0 var(--blue);
-  }
-
-  .rarity-epic {
-    box-shadow: inset 0 -5px 0 var(--purple);
-  }
-
-  .rarity-legendary {
-    box-shadow: inset 0 -5px 0 var(--gold);
-  }
-
-  .winArea {
-    padding: 26px;
-    text-align: center;
-  }
-
-  .bigPrize {
-    font-size: 72px;
-  }
-
-  .winArea h2 {
-    margin-top: 10px;
-  }
-
-  .valueText {
-    color: var(--gold);
-    font-size: 20px;
-    font-weight: 900;
-    margin-top: 8px;
-  }
-
-  .winBtns {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
-    flex-wrap: wrap;
-  }
-
-  .inventoryGrid {
-    display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: 14px;
-  }
-
-  .itemCard {
-    padding: 16px;
-    text-align: center;
-  }
-
-  .itemEmoji {
-    font-size: 50px;
-    margin-bottom: 10px;
-  }
-
-  .itemName {
-    font-weight: 900;
-    min-height: 40px;
-  }
-
-  .itemValue {
-    color: var(--gold);
-    margin: 8px 0 12px;
-    font-weight: 900;
-  }
-
-  .smallBtn {
-    width: 100%;
-    border: 1px solid #343d50;
-    background: #1d2330;
-    color: white;
-    border-radius: 10px;
-    padding: 9px;
-    cursor: pointer;
-    font-weight: 800;
-  }
-
-  .smallBtn:hover {
-    background: #262e3e;
-  }
-
-  .battleControls {
-    background: #151a24;
-    border: 1px solid #2a3244;
-    border-radius: 18px;
-    padding: 18px;
-    margin-bottom: 18px;
-  }
-
-  .battleControls select,
-  .battleControls input {
-    background: #0f131c;
-    color: white;
-    border: 1px solid #30394b;
-    border-radius: 10px;
-    padding: 11px;
-    margin-right: 8px;
-    margin-bottom: 8px;
-  }
-
-  .battleArena {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-
-  .playerPanel {
-    background: #141924;
-    border: 1px solid #2a3244;
-    border-radius: 18px;
-    padding: 18px;
-  }
-
-  .playerHead {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: 900;
-    margin-bottom: 18px;
-  }
-
-  .score {
-    font-size: 28px;
-    color: var(--gold);
-  }
-
-  .battlePull {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    border-top: 1px solid #252d3c;
-    padding: 12px 0;
-  }
-
-  .battleEmoji {
-    font-size: 32px;
-  }
-
-  .battleResult {
-    margin-top: 18px;
-    background: #111620;
-    border: 1px solid #2b3447;
-    border-radius: 16px;
-    padding: 18px;
-    font-weight: 900;
-    text-align: center;
-  }
-
-  .jackpotBox {
-    max-width: 700px;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  .wheelOuter {
-    width: min(420px, 82vw);
-    aspect-ratio: 1;
-    border-radius: 50%;
-    margin: 24px auto;
-    position: relative;
-    display: grid;
-    place-items: center;
-  }
+  .packImage{height:150px}
 
-  .wheel {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    border: 10px solid #252d3e;
-    background: conic-gradient(
-      var(--green) 0deg 90deg,
-      var(--blue) 90deg 190deg,
-      var(--purple) 190deg 280deg,
-      var(--gold) 280deg 360deg
-    );
-    transition: transform 4s cubic-bezier(.08,.68,.09,1);
-    position: relative;
-  }
+  .packBody{padding:10px}
 
-  .wheelCenter {
-    width: 130px;
-    height: 130px;
-    background: #111620;
-    border: 8px solid #293246;
-    border-radius: 50%;
-    position: absolute;
-    display: grid;
-    place-items: center;
-    font-size: 18px;
-    font-weight: 900;
-  }
+  .packName{font-size:14px}
 
-  .wheelPointer {
-    position: absolute;
-    top: -10px;
-    z-index: 5;
-    width: 0;
-    height: 0;
-    border-left: 18px solid transparent;
-    border-right: 18px solid transparent;
-    border-top: 32px solid white;
-  }
+  .packDesc{display:none}
 
-  .jackpotPlayers {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+  .packBottom{
+    align-items:flex-start;
+    flex-direction:column;
+    gap:8px;
   }
 
-  .jp {
-    padding: 12px;
-    background: #161c27;
-    border: 1px solid #2b3448;
-    border-radius: 12px;
-    font-size: 13px;
-  }
+  .openBtn{width:100%}
 
-  .leaderboard {
-    overflow: hidden;
-    border: 1px solid #293144;
-    border-radius: 18px;
+  .liveGrid{
+    display:flex;
+    overflow:auto;
+    padding-bottom:5px;
   }
 
-  .leaderRow {
-    display: grid;
-    grid-template-columns: 80px 1fr 160px 160px;
-    padding: 15px 18px;
-    background: #141924;
-    border-bottom: 1px solid #242c3c;
-    align-items: center;
-  }
+  .liveCard{min-width:160px}
 
-  .leaderRow:last-child {
-    border-bottom: 0;
+  .inventoryGrid{
+    grid-template-columns:repeat(2,1fr);
+    gap:9px;
   }
 
-  .leaderRow.head {
-    background: #10141d;
-    color: var(--muted);
-    font-size: 12px;
-    font-weight: 900;
-  }
+  .inventoryPhoto{height:135px}
 
-  .rank {
-    font-weight: 900;
+  .battleSetup{
+    grid-template-columns:1fr;
   }
 
-  .toast {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    z-index: 200;
-    background: #171d29;
-    color: white;
-    border: 1px solid #334056;
-    border-radius: 12px;
-    padding: 13px 16px;
-    opacity: 0;
-    transform: translateY(15px);
-    pointer-events: none;
-    transition: .2s ease;
-  }
+  .battleArena{grid-template-columns:1fr}
 
-  .toast.show {
-    opacity: 1;
-    transform: translateY(0);
+  .leader{
+    grid-template-columns:45px 1fr 90px;
+    font-size:12px;
   }
 
-  .historyList {
-    display: grid;
-    gap: 10px;
-  }
+  .leaderWins{display:none}
 
-  .historyItem {
-    background: #151a24;
-    border: 1px solid #2a3244;
-    border-radius: 12px;
-    padding: 14px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  .mobileNav{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    position:fixed;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index:500;
+    padding:7px 5px calc(7px + env(safe-area-inset-bottom));
+    background:rgba(9,12,16,.95);
+    backdrop-filter:blur(16px);
+    border-top:1px solid #242d38;
   }
 
-  .empty {
-    color: var(--muted);
-    padding: 30px;
-    text-align: center;
-    border: 1px dashed #333c50;
-    border-radius: 16px;
+  .mnav{
+    border:0;
+    background:none;
+    color:#747e8d;
+    font-size:10px;
+    font-weight:800;
+    padding:5px 2px;
   }
 
-  .footerNote {
-    margin-top: 40px;
-    color: #697286;
-    font-size: 12px;
-    text-align: center;
-    padding-bottom: 30px;
+  .mnavIcon{
+    display:block;
+    font-size:19px;
+    margin-bottom:2px;
   }
-
-  @media (max-width: 1000px) {
-    .layout {
-      grid-template-columns: 1fr;
-    }
 
-    .sidebar {
-      display: flex;
-      overflow-x: auto;
-      border-right: 0;
-      border-bottom: 1px solid var(--line);
-      padding: 10px;
-      position: sticky;
-      top: 72px;
-      z-index: 40;
-      background: #0c0f16;
-    }
+  .mnav.active{color:var(--gold)}
 
-    .navButton {
-      white-space: nowrap;
-      width: auto;
-      margin-bottom: 0;
-      margin-right: 8px;
-    }
+  .reelWindow{height:210px}
 
-    .grid {
-      grid-template-columns: repeat(2, minmax(0,1fr));
-    }
-
-    .inventoryGrid {
-      grid-template-columns: repeat(3, minmax(0,1fr));
-    }
-
-    .battleArena {
-      grid-template-columns: 1fr;
-    }
+  .reelItem{
+    min-width:145px;
+    height:165px;
   }
-
-  @media (max-width: 600px) {
-    .main {
-      padding: 16px;
-    }
-
-    .topbar {
-      padding: 0 14px;
-    }
-
-    .brand span:last-child {
-      display: none;
-    }
 
-    .grid {
-      grid-template-columns: 1fr;
-    }
-
-    .inventoryGrid {
-      grid-template-columns: repeat(2, minmax(0,1fr));
-    }
-
-    .leaderRow {
-      grid-template-columns: 50px 1fr 90px;
-    }
-
-    .leaderWins {
-      display: none;
-    }
-
-    .hero {
-      padding: 24px;
-    }
-  }
+  .reelItem img{height:110px}
+}
 </style>
 </head>
 
 <body>
 
-<div class="app">
-  <header class="topbar">
-    <div class="brand">
-      <div class="brandLogo">P</div>
-      <span>PACKRUSH</span>
-    </div>
-
-    <div class="topRight">
-      <div class="balance">
-        <span class="coin">●</span>
-        <span id="balanceText">10,000</span>
-      </div>
-      <div class="avatar">YOU</div>
-    </div>
-  </header>
-
-  <div class="layout">
-    <aside class="sidebar">
-      <button class="navButton active" data-page="home">🏠 Home</button>
-      <button class="navButton" data-page="packs">📦 Packs</button>
-      <button class="navButton" data-page="battles">⚔️ Battles</button>
-      <button class="navButton" data-page="jackpot">🎯 Jackpot</button>
-      <button class="navButton" data-page="inventory">🎒 Inventory</button>
-      <button class="navButton" data-page="leaderboard">🏆 Leaderboard</button>
-      <button class="navButton" data-page="history">🕘 History</button>
-    </aside>
-
-    <main class="main">
-
-      <section id="page-home">
-        <div class="hero">
-          <h1>OPEN. BATTLE. COLLECT.</h1>
-          <p>
-            Open virtual packs, build your collection and battle bots using Coins.
-            Coins have no real-world value and cannot be deposited or withdrawn.
-          </p>
-
-          <div class="heroActions">
-            <button class="btn btnPrimary" onclick="goTo('packs')">Open Packs</button>
-            <button class="btn btnDark" onclick="goTo('battles')">Start Battle</button>
-          </div>
-        </div>
-
-        <div class="sectionTitle">
-          <h2>🔥 Featured Packs</h2>
-          <span>Virtual prizes only</span>
-        </div>
-
-        <div id="featuredGrid" class="grid"></div>
-      </section>
-
-      <section id="page-packs" class="hidden">
-        <div class="sectionTitle">
-          <h2>📦 Packs</h2>
-          <span>Choose your pack</span>
-        </div>
-        <div id="packGrid" class="grid"></div>
-      </section>
-
-      <section id="page-battles" class="hidden">
-        <div class="sectionTitle">
-          <h2>⚔️ Pack Battles</h2>
-          <span>Winner takes all virtual prizes</span>
-        </div>
-
-        <div class="battleControls">
-          <select id="battlePack"></select>
-          <select id="battleRounds">
-            <option value="1">1 Round</option>
-            <option value="3">3 Rounds</option>
-            <option value="5">5 Rounds</option>
-          </select>
-          <button class="btn btnPrimary" onclick="startBattle()">Start vs Bot</button>
-        </div>
-
-        <div id="battleOutput"></div>
-      </section>
-
-      <section id="page-jackpot" class="hidden">
-        <div class="sectionTitle">
-          <h2>🎯 Jackpot</h2>
-          <span>Virtual Coins only</span>
-        </div>
-
-        <div class="jackpotBox">
-          <p style="color:var(--muted);line-height:1.6">
-            Enter a virtual Coin amount. Bots join automatically.
-            Your chance is based on your portion of the total virtual pot.
-          </p>
-
-          <div style="margin-top:18px">
-            <input
-              id="jackpotBet"
-              type="number"
-              value="500"
-              min="10"
-              step="10"
-              style="padding:12px;border-radius:10px;background:#111620;border:1px solid #30394d;color:white;width:150px"
-            />
-            <button class="btn btnPrimary" onclick="playJackpot()">Enter Jackpot</button>
-          </div>
-
-          <div class="wheelOuter">
-            <div class="wheelPointer"></div>
-            <div id="wheel" class="wheel"></div>
-            <div class="wheelCenter">JACKPOT</div>
-          </div>
-
-          <div id="jackpotPlayers" class="jackpotPlayers"></div>
-
-          <div id="jackpotResult" class="battleResult">
-            Enter a round to play.
-          </div>
-        </div>
-      </section>
-
-      <section id="page-inventory" class="hidden">
-        <div class="sectionTitle">
-          <h2>🎒 Inventory</h2>
-          <span id="inventoryCount">0 items</span>
-        </div>
-
-        <div id="inventoryGrid" class="inventoryGrid"></div>
-      </section>
-
-      <section id="page-leaderboard" class="hidden">
-        <div class="sectionTitle">
-          <h2>🏆 Leaderboard</h2>
-          <span>Demo rankings</span>
-        </div>
-
-        <div class="leaderboard" id="leaderboardBox"></div>
-      </section>
-
-      <section id="page-history" class="hidden">
-        <div class="sectionTitle">
-          <h2>🕘 History</h2>
-          <span>Your recent activity</span>
-        </div>
-
-        <div id="historyList" class="historyList"></div>
-      </section>
-
-      <div class="footerNote">
-        PACKRUSH is a virtual demo game. Coins and prizes have no monetary value.
-      </div>
-    </main>
+<header>
+  <div class="logo">
+    <span class="logoMark">♛</span>
+    PACKR
   </div>
-</div>
 
-<div id="packModal" class="modal hidden">
-  <div class="modalBox">
-    <div class="modalHeader">
-      <div>
-        <div style="font-weight:900" id="modalPackName">Pack</div>
-        <div style="font-size:12px;color:var(--muted)" id="modalPackCost"></div>
-      </div>
-      <button onclick="closeModal()">✕</button>
+  <nav class="desktopNav">
+    <button class="nav active" data-page="home">Packs</button>
+    <button class="nav" data-page="battle">Battles</button>
+    <button class="nav" data-page="inventory">Inventory</button>
+    <button class="nav" data-page="leaderboard">Leaderboard</button>
+  </nav>
+
+  <div class="account">
+    <div class="balance">
+      <span class="coin">P</span>
+      <span id="balance">25,000</span>
     </div>
+    <div class="avatar">YOU</div>
+  </div>
+</header>
 
-    <div class="rollerWrap">
-      <div class="pointer"></div>
-      <div id="roller" class="roller"></div>
-    </div>
+<main>
 
-    <div id="winArea" class="winArea">
-      <button id="openPackButton" class="btn btnPrimary" onclick="rollPack()">
-        OPEN PACK
+<section class="page" id="home">
+
+  <div class="hero">
+    <div class="heroContent">
+      <div class="eyebrow">THE VIRTUAL DROP EXPERIENCE</div>
+
+      <h1>
+        OPEN.<br>
+        COLLECT.<br>
+        <span>COMPETE.</span>
+      </h1>
+
+      <p>
+        Open premium virtual packs, collect rare items
+        and compete in battles. Pack Coins and prizes
+        have no real-world monetary value.
+      </p>
+
+      <button class="btn gold" onclick="scrollPacks()">
+        EXPLORE PACKS →
       </button>
     </div>
   </div>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="statValue" id="statOpened">0</div>
+      <div class="statLabel">PACKS OPENED</div>
+    </div>
+
+    <div class="stat">
+      <div class="statValue" id="statInventory">0</div>
+      <div class="statLabel">ITEMS OWNED</div>
+    </div>
+
+    <div class="stat">
+      <div class="statValue" id="statBest">0</div>
+      <div class="statLabel">BEST DROP VALUE</div>
+    </div>
+
+    <div class="stat">
+      <div class="statValue" id="statLevel">1</div>
+      <div class="statLabel">PLAYER LEVEL</div>
+    </div>
+  </div>
+
+  <div class="titleRow" id="packsAnchor">
+    <div>
+      <h2>🔥 Featured Packs</h2>
+      <p>Choose a pack and test your luck.</p>
+    </div>
+    <span class="smallGold">VIRTUAL ITEMS</span>
+  </div>
+
+  <div class="packGrid" id="packGrid"></div>
+
+  <div class="titleRow">
+    <div>
+      <h2>● Live Drops</h2>
+      <p>Recent simulated community openings.</p>
+    </div>
+  </div>
+
+  <div class="liveGrid" id="liveDrops"></div>
+
+</section>
+
+
+<section class="page hidden" id="battle">
+
+  <div class="titleRow">
+    <div>
+      <h2>⚔️ Pack Battles</h2>
+      <p>Open identical packs against a bot. Highest total wins all items.</p>
+    </div>
+  </div>
+
+  <div class="battleSetup">
+    <select id="battlePack"></select>
+
+    <select id="battleRounds">
+      <option value="1">1 Round</option>
+      <option value="3">3 Rounds</option>
+      <option value="5">5 Rounds</option>
+    </select>
+
+    <select id="battleMode">
+      <option>Classic</option>
+      <option>Upside Down</option>
+    </select>
+
+    <button class="btn gold" onclick="startBattle()">START BATTLE</button>
+  </div>
+
+  <div id="battleOutput"></div>
+
+</section>
+
+
+<section class="page hidden" id="inventory">
+
+  <div class="titleRow">
+    <div>
+      <h2>🎒 My Collection</h2>
+      <p>Keep your drops or exchange them for Pack Coins.</p>
+    </div>
+    <span class="smallGold" id="inventoryCount">0 ITEMS</span>
+  </div>
+
+  <div id="inventoryGrid" class="inventoryGrid"></div>
+
+</section>
+
+
+<section class="page hidden" id="leaderboard">
+
+  <div class="titleRow">
+    <div>
+      <h2>🏆 Leaderboard</h2>
+      <p>Demo Packr player rankings.</p>
+    </div>
+  </div>
+
+  <div class="leaderboard" id="leaderboardList"></div>
+
+</section>
+
+</main>
+
+
+<div class="mobileNav">
+  <button class="mnav active" data-page="home">
+    <span class="mnavIcon">▦</span>Packs
+  </button>
+
+  <button class="mnav" data-page="battle">
+    <span class="mnavIcon">⚔</span>Battle
+  </button>
+
+  <button class="mnav" data-page="inventory">
+    <span class="mnavIcon">◇</span>Items
+  </button>
+
+  <button class="mnav" data-page="leaderboard">
+    <span class="mnavIcon">♜</span>Ranks
+  </button>
+
+  <button class="mnav" onclick="dailyCoins()">
+    <span class="mnavIcon">＋</span>Coins
+  </button>
 </div>
 
-<div id="toast" class="toast"></div>
+
+<div class="overlay hidden" id="overlay">
+  <div class="modal">
+
+    <div class="modalTop">
+      <div>
+        <div class="modalTitle" id="modalPackName">Pack</div>
+        <div style="color:var(--muted);font-size:11px;margin-top:3px" id="modalPackPrice"></div>
+      </div>
+
+      <button class="close" onclick="closeModal()">✕</button>
+    </div>
+
+    <div class="reelWindow">
+      <div class="marker"></div>
+      <div class="reel" id="reel"></div>
+    </div>
+
+    <div class="modalAction" id="modalAction"></div>
+
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
 
 <script>
-/* =========================================================
-   PACKRUSH
-   Single-file virtual pack game.
-   No deposits, withdrawals, cash prizes, crypto or real value.
-   ========================================================= */
 
-const packs = [
-  {
-    id: "starter",
-    name: "Starter Drop",
-    emoji: "🎁",
-    cost: 150,
-    subtitle: "Easy entry",
-    items: [
-      {name:"Sticker Bomb", emoji:"💥", value:35, rarity:"common", weight:32},
-      {name:"Mystery Cap", emoji:"🧢", value:70, rarity:"common", weight:26},
-      {name:"Mini Speaker", emoji:"🔊", value:145, rarity:"rare", weight:20},
-      {name:"Gaming Mouse", emoji:"🖱️", value:240, rarity:"rare", weight:13},
-      {name:"Retro Console", emoji:"🎮", value:550, rarity:"epic", weight:7},
-      {name:"Gold Controller", emoji:"🏆", value:1500, rarity:"legendary", weight:2}
-    ]
-  },
+/* =======================================================
+   PACKR — SINGLE FILE DEMO
+   Fake currency only.
+   ======================================================= */
 
-  {
-    id: "tech",
-    name: "Tech Vault",
-    emoji: "💻",
-    cost: 550,
-    subtitle: "Gadgets & gear",
-    items: [
-      {name:"Wireless Charger", emoji:"🔋", value:110, rarity:"common", weight:28},
-      {name:"Gaming Headset", emoji:"🎧", value:350, rarity:"rare", weight:25},
-      {name:"Mechanical Keyboard", emoji:"⌨️", value:590, rarity:"rare", weight:21},
-      {name:"Smart Watch", emoji:"⌚", value:900, rarity:"epic", weight:15},
-      {name:"Tablet Pro", emoji:"📱", value:2100, rarity:"epic", weight:8},
-      {name:"Ultra Laptop", emoji:"💻", value:5200, rarity:"legendary", weight:3}
-    ]
-  },
+const IMAGE = {
+  phone:
+  "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=700&q=85",
 
-  {
-    id: "street",
-    name: "Street Heat",
-    emoji: "👟",
-    cost: 750,
-    subtitle: "Sneakers & style",
-    items: [
-      {name:"Street Socks", emoji:"🧦", value:120, rarity:"common", weight:27},
-      {name:"Classic Sneakers", emoji:"👟", value:430, rarity:"rare", weight:26},
-      {name:"Premium Hoodie", emoji:"🧥", value:720, rarity:"rare", weight:20},
-      {name:"Rare High Tops", emoji:"🥾", value:1400, rarity:"epic", weight:15},
-      {name:"Collector Sneakers", emoji:"👟", value:3200, rarity:"epic", weight:9},
-      {name:"Golden Kicks", emoji:"✨", value:8500, rarity:"legendary", weight:3}
-    ]
-  },
+  laptop:
+  "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=700&q=85",
 
-  {
-    id: "luxury",
-    name: "Luxury Rush",
-    emoji: "💎",
-    cost: 1800,
-    subtitle: "High-risk virtual pack",
-    items: [
-      {name:"Designer Shades", emoji:"🕶️", value:400, rarity:"common", weight:28},
-      {name:"Silver Watch", emoji:"⌚", value:1200, rarity:"rare", weight:24},
-      {name:"Luxury Bag", emoji:"👜", value:2300, rarity:"rare", weight:21},
-      {name:"Diamond Watch", emoji:"💎", value:5100, rarity:"epic", weight:15},
-      {name:"Supercar Key", emoji:"🔑", value:11000, rarity:"epic", weight:9},
-      {name:"Crown Vault", emoji:"👑", value:25000, rarity:"legendary", weight:3}
-    ]
-  },
+  watch:
+  "https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=700&q=85",
 
-  {
-    id: "gamer",
-    name: "Gamer Mode",
-    emoji: "🎮",
-    cost: 900,
-    subtitle: "For gamers",
-    items: [
-      {name:"RGB Mousepad", emoji:"🌈", value:180, rarity:"common", weight:29},
-      {name:"Controller Pro", emoji:"🎮", value:520, rarity:"rare", weight:24},
-      {name:"Gaming Chair", emoji:"🪑", value:990, rarity:"rare", weight:21},
-      {name:"Console X", emoji:"🎮", value:1900, rarity:"epic", weight:15},
-      {name:"Gaming PC", emoji:"🖥️", value:4600, rarity:"epic", weight:8},
-      {name:"Ultimate Setup", emoji:"🚀", value:12000, rarity:"legendary", weight:3}
-    ]
-  },
+  shoes:
+  "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=85",
 
-  {
-    id: "mystery",
-    name: "Mystery 500",
-    emoji: "❓",
-    cost: 500,
-    subtitle: "Anything can happen",
-    items: [
-      {name:"Mystery Trinket", emoji:"🪙", value:45, rarity:"common", weight:33},
-      {name:"Mystery Box", emoji:"📦", value:210, rarity:"common", weight:24},
-      {name:"Rare Drop", emoji:"⚡", value:550, rarity:"rare", weight:20},
-      {name:"Epic Drop", emoji:"🌌", value:1500, rarity:"epic", weight:14},
-      {name:"Mega Drop", emoji:"🔥", value:3500, rarity:"epic", weight:7},
-      {name:"Ultra Mystery", emoji:"🌟", value:10000, rarity:"legendary", weight:2}
-    ]
-  },
+  headphones:
+  "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=700&q=85",
 
-  {
-    id: "cars",
-    name: "Garage Dreams",
-    emoji: "🏎️",
-    cost: 1200,
-    subtitle: "Virtual automotive pack",
-    items: [
-      {name:"Car Poster", emoji:"🖼️", value:170, rarity:"common", weight:29},
-      {name:"Racing Helmet", emoji:"🏁", value:700, rarity:"rare", weight:26},
-      {name:"Track Wheels", emoji:"🛞", value:1300, rarity:"rare", weight:21},
-      {name:"Race Kart", emoji:"🏎️", value:3200, rarity:"epic", weight:14},
-      {name:"Dream Coupe", emoji:"🚘", value:8500, rarity:"epic", weight:8},
-      {name:"Hypercar", emoji:"🏎️", value:22000, rarity:"legendary", weight:2}
-    ]
-  },
+  camera:
+  "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=700&q=85",
 
-  {
-    id: "ultimate",
-    name: "Ultimate Vault",
-    emoji: "👑",
-    cost: 4000,
-    subtitle: "The biggest virtual pack",
-    items: [
-      {name:"Premium Bundle", emoji:"🎁", value:900, rarity:"common", weight:30},
-      {name:"Rare Collection", emoji:"💼", value:2400, rarity:"rare", weight:26},
-      {name:"Elite Setup", emoji:"🖥️", value:5200, rarity:"rare", weight:21},
-      {name:"Vault Watch", emoji:"⌚", value:11000, rarity:"epic", weight:14},
-      {name:"Dream Garage", emoji:"🏎️", value:30000, rarity:"epic", weight:7},
-      {name:"Royal Jackpot", emoji:"👑", value:100000, rarity:"legendary", weight:2}
-    ]
-  }
-];
+  gaming:
+  "https://images.unsplash.com/photo-1598550476439-6847785fcea6?auto=format&fit=crop&w=700&q=85",
 
-const defaultState = {
-  balance: 10000,
-  inventory: [],
-  history: [],
-  totalWins: 0,
-  opened: 0
+  keyboard:
+  "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=700&q=85",
+
+  bike:
+  "https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=700&q=85",
+
+  bag:
+  "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=700&q=85",
+
+  sunglasses:
+  "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=700&q=85",
+
+  car:
+  "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=85",
+
+  speaker:
+  "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=700&q=85",
+
+  desk:
+  "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?auto=format&fit=crop&w=700&q=85"
 };
 
-let state = loadState();
-let activePack = null;
-let currentPrize = null;
-let rolling = false;
 
-function loadState() {
-  try {
-    const stored = localStorage.getItem("packrushState");
-    return stored ? {...defaultState, ...JSON.parse(stored)} : {...defaultState};
-  } catch {
-    return {...defaultState};
-  }
+const PACKS = [
+
+{
+ id:"tech",
+ name:"Tech Vault",
+ desc:"Premium technology drops",
+ price:600,
+ image:IMAGE.phone,
+ badge:"POPULAR",
+ items:[
+  item("Wireless Charger",90,"common",32,IMAGE.phone),
+  item("Premium Headphones",320,"common",25,IMAGE.headphones),
+  item("Mechanical Keyboard",650,"rare",20,IMAGE.keyboard),
+  item("Flagship Phone",1600,"rare",14,IMAGE.phone),
+  item("Creator Laptop",4200,"epic",7,IMAGE.laptop),
+  item("Ultimate Tech Setup",12500,"legendary",2,IMAGE.desk)
+ ]
+},
+
+{
+ id:"sneaker",
+ name:"Sneaker Vault",
+ desc:"Rare streetwear-inspired drops",
+ price:750,
+ image:IMAGE.shoes,
+ badge:"HOT",
+ items:[
+  item("Everyday Trainers",140,"common",31,IMAGE.shoes),
+  item("Premium Sneakers",430,"common",25,IMAGE.shoes),
+  item("Limited High Tops",850,"rare",21,IMAGE.shoes),
+  item("Collector Sneakers",1800,"rare",14,IMAGE.shoes),
+  item("Rare Signature Pair",4800,"epic",7,IMAGE.shoes),
+  item("Golden Grail Pair",15000,"legendary",2,IMAGE.shoes)
+ ]
+},
+
+{
+ id:"luxury",
+ name:"Luxury Collection",
+ desc:"Watches, accessories and more",
+ price:1400,
+ image:IMAGE.watch,
+ badge:"PREMIUM",
+ items:[
+  item("Premium Sunglasses",260,"common",30,IMAGE.sunglasses),
+  item("Leather Travel Bag",700,"common",25,IMAGE.bag),
+  item("Automatic Watch",1500,"rare",21,IMAGE.watch),
+  item("Luxury Timepiece",3500,"rare",14,IMAGE.watch),
+  item("Collector Watch",9000,"epic",8,IMAGE.watch),
+  item("Vault Timepiece",30000,"legendary",2,IMAGE.watch)
+ ]
+},
+
+{
+ id:"gaming",
+ name:"Gaming Drop",
+ desc:"Gear for the ultimate setup",
+ price:950,
+ image:IMAGE.gaming,
+ badge:"GAMING",
+ items:[
+  item("Gaming Mouse",160,"common",30,IMAGE.gaming),
+  item("Mechanical Keyboard",490,"common",25,IMAGE.keyboard),
+  item("Gaming Headset",850,"rare",21,IMAGE.headphones),
+  item("Console Bundle",1900,"rare",15,IMAGE.gaming),
+  item("Gaming PC",5200,"epic",7,IMAGE.desk),
+  item("Dream Gaming Room",17000,"legendary",2,IMAGE.desk)
+ ]
+},
+
+{
+ id:"creator",
+ name:"Creator Pack",
+ desc:"Camera and creator technology",
+ price:1100,
+ image:IMAGE.camera,
+ badge:"NEW",
+ items:[
+  item("Creator Microphone",220,"common",30,IMAGE.camera),
+  item("Studio Headphones",550,"common",25,IMAGE.headphones),
+  item("Mirrorless Camera",1400,"rare",21,IMAGE.camera),
+  item("Creator Laptop",3000,"rare",15,IMAGE.laptop),
+  item("Studio Bundle",6500,"epic",7,IMAGE.camera),
+  item("Ultimate Creator Studio",20000,"legendary",2,IMAGE.desk)
+ ]
+},
+
+{
+ id:"ride",
+ name:"Ride Pack",
+ desc:"Two wheels to dream garage",
+ price:1800,
+ image:IMAGE.bike,
+ badge:"HIGH ROLLER",
+ items:[
+  item("Riding Gear",350,"common",30,IMAGE.bike),
+  item("Premium Helmet",900,"common",25,IMAGE.bike),
+  item("Electric Bike",2200,"rare",21,IMAGE.bike),
+  item("Performance Bike",4800,"rare",15,IMAGE.bike),
+  item("Dream Motorcycle",12000,"epic",7,IMAGE.bike),
+  item("Dream Garage",40000,"legendary",2,IMAGE.car)
+ ]
+},
+
+{
+ id:"mystery",
+ name:"Mystery Black",
+ desc:"You never know what's inside",
+ price:500,
+ image:IMAGE.bag,
+ badge:"MYSTERY",
+ items:[
+  item("Mystery Accessory",70,"common",32,IMAGE.sunglasses),
+  item("Portable Speaker",260,"common",25,IMAGE.speaker),
+  item("Premium Sneakers",600,"rare",20,IMAGE.shoes),
+  item("Smart Device",1400,"rare",14,IMAGE.phone),
+  item("Mystery Epic",4500,"epic",7,IMAGE.watch),
+  item("Mystery Grail",14000,"legendary",2,IMAGE.car)
+ ]
+},
+
+{
+ id:"elite",
+ name:"Elite Vault",
+ desc:"The biggest Packr drops",
+ price:4000,
+ image:IMAGE.car,
+ badge:"ELITE",
+ items:[
+  item("Premium Bundle",850,"common",30,IMAGE.bag),
+  item("Luxury Watch",2400,"common",25,IMAGE.watch),
+  item("Creator Setup",5200,"rare",21,IMAGE.camera),
+  item("Performance Ride",10500,"rare",15,IMAGE.bike),
+  item("Dream Garage",28000,"epic",7,IMAGE.car),
+  item("Ultimate Vault",100000,"legendary",2,IMAGE.car)
+ ]
 }
 
-function saveState() {
-  localStorage.setItem("packrushState", JSON.stringify(state));
-  updateUI();
+];
+
+
+function item(name,value,rarity,weight,image){
+ return {name,value,rarity,weight,image};
 }
 
-function formatCoins(n) {
-  return Math.round(n).toLocaleString();
+
+/* STATE */
+
+const DEFAULT_STATE={
+ balance:25000,
+ inventory:[],
+ opened:0,
+ best:0,
+ level:1,
+ daily:null
+};
+
+let state=load();
+let activePack=null;
+let activePrize=null;
+let spinning=false;
+
+function load(){
+ try{
+  return {
+   ...DEFAULT_STATE,
+   ...JSON.parse(localStorage.getItem("packrV2")||"{}")
+  };
+ }catch{
+  return {...DEFAULT_STATE};
+ }
 }
 
-function updateUI() {
-  document.getElementById("balanceText").textContent = formatCoins(state.balance);
-  renderInventory();
-  renderHistory();
-  renderLeaderboard();
+function save(){
+ localStorage.setItem("packrV2",JSON.stringify(state));
+ updateAll();
 }
 
-function goTo(page) {
-  document.querySelectorAll("main > section").forEach(sec => {
-    sec.classList.add("hidden");
-  });
 
-  document.getElementById("page-" + page).classList.remove("hidden");
+/* NAVIGATION */
 
-  document.querySelectorAll(".navButton").forEach(btn => {
-    btn.classList.toggle("active", btn.dataset.page === page);
-  });
-
-  window.scrollTo({top:0, behavior:"smooth"});
-}
-
-document.querySelectorAll(".navButton").forEach(btn => {
-  btn.addEventListener("click", () => goTo(btn.dataset.page));
+document.querySelectorAll("[data-page]").forEach(button=>{
+ button.onclick=()=>showPage(button.dataset.page);
 });
 
-function renderPacks() {
-  const html = packs.map(pack => `
-    <div class="packCard" onclick="openPackModal('${pack.id}')">
-      <div class="packArt">${pack.emoji}</div>
-      <div class="packName">${pack.name}</div>
-      <div class="packMeta">
-        <span>${pack.subtitle}</span>
-        <span class="price">● ${formatCoins(pack.cost)}</span>
-      </div>
+function showPage(id){
+
+ document.querySelectorAll(".page").forEach(x=>x.classList.add("hidden"));
+ document.getElementById(id).classList.remove("hidden");
+
+ document.querySelectorAll("[data-page]").forEach(x=>{
+  x.classList.toggle("active",x.dataset.page===id);
+ });
+
+ window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function scrollPacks(){
+ document.getElementById("packsAnchor").scrollIntoView({
+  behavior:"smooth"
+ });
+}
+
+
+/* PACK RENDER */
+
+function renderPacks(){
+
+ const grid=document.getElementById("packGrid");
+
+ grid.innerHTML=PACKS.map(p=>`
+  <article class="pack">
+
+   <div class="packImage">
+    <img src="${p.image}" alt="${p.name}">
+    <div class="packShade"></div>
+    <div class="packBadge">${p.badge}</div>
+   </div>
+
+   <div class="packBody">
+    <div class="packName">${p.name}</div>
+    <div class="packDesc">${p.desc}</div>
+
+    <div class="packBottom">
+     <div class="packPrice">
+      ◉ ${coins(p.price)}
+     </div>
+
+     <button class="openBtn"
+      onclick="openPack('${p.id}')">
+      OPEN
+     </button>
     </div>
-  `).join("");
+   </div>
 
-  document.getElementById("packGrid").innerHTML = html;
+  </article>
+ `).join("");
 
-  document.getElementById("featuredGrid").innerHTML = packs
-    .slice(0,4)
-    .map(pack => `
-      <div class="packCard" onclick="openPackModal('${pack.id}')">
-        <div class="packArt">${pack.emoji}</div>
-        <div class="packName">${pack.name}</div>
-        <div class="packMeta">
-          <span>${pack.subtitle}</span>
-          <span class="price">● ${formatCoins(pack.cost)}</span>
-        </div>
-      </div>
-    `).join("");
-
-  document.getElementById("battlePack").innerHTML = packs.map(pack =>
-    `<option value="${pack.id}">${pack.name} — ${formatCoins(pack.cost)} Coins</option>`
-  ).join("");
+ document.getElementById("battlePack").innerHTML=
+ PACKS.map(p=>`
+  <option value="${p.id}">
+   ${p.name} — ${coins(p.price)} Coins
+  </option>
+ `).join("");
 }
 
-function weightedItem(pack) {
-  const total = pack.items.reduce((sum, item) => sum + item.weight, 0);
-  let roll = Math.random() * total;
 
-  for (const item of pack.items) {
-    roll -= item.weight;
-    if (roll <= 0) {
-      return {...item};
-    }
-  }
+/* PACK OPENING */
 
-  return {...pack.items[0]};
+function openPack(id){
+
+ activePack=PACKS.find(p=>p.id===id);
+ activePrize=null;
+
+ document.getElementById("modalPackName").textContent=activePack.name;
+ document.getElementById("modalPackPrice").textContent=
+ `${coins(activePack.price)} PACK COINS`;
+
+ document.getElementById("reel").innerHTML="";
+ document.getElementById("reel").style.transition="none";
+ document.getElementById("reel").style.transform="translateX(0)";
+
+ document.getElementById("modalAction").innerHTML=`
+  <div style="color:var(--muted);margin-bottom:13px">
+   Open this pack for
+   <b style="color:var(--gold)">
+   ${coins(activePack.price)} Coins
+   </b>
+  </div>
+
+  <button class="btn gold" onclick="spinPack()">
+   OPEN PACK
+  </button>
+ `;
+
+ document.getElementById("overlay").classList.remove("hidden");
 }
 
-function openPackModal(id) {
-  activePack = packs.find(p => p.id === id);
-  currentPrize = null;
 
-  document.getElementById("modalPackName").textContent = activePack.name;
-  document.getElementById("modalPackCost").textContent =
-    `${formatCoins(activePack.cost)} Coins per opening`;
+function closeModal(){
+ if(spinning)return;
+ document.getElementById("overlay").classList.add("hidden");
+}
 
-  document.getElementById("roller").innerHTML = "";
-  document.getElementById("roller").style.transition = "none";
-  document.getElementById("roller").style.transform = "translateX(0px)";
 
-  document.getElementById("winArea").innerHTML = `
-    <button class="btn btnPrimary" onclick="rollPack()">
-      OPEN FOR ● ${formatCoins(activePack.cost)}
+function choosePrize(pack){
+
+ let total=pack.items.reduce((a,b)=>a+b.weight,0);
+ let r=Math.random()*total;
+
+ for(const x of pack.items){
+  r-=x.weight;
+  if(r<=0)return {...x};
+ }
+
+ return {...pack.items[0]};
+}
+
+
+function randomItem(pack){
+ return pack.items[
+  Math.floor(Math.random()*pack.items.length)
+ ];
+}
+
+
+function spinPack(){
+
+ if(spinning)return;
+
+ if(state.balance<activePack.price){
+  toast("Not enough Pack Coins.");
+  return;
+ }
+
+ state.balance-=activePack.price;
+ state.opened++;
+
+ activePrize=choosePrize(activePack);
+
+ if(activePrize.value>state.best)
+  state.best=activePrize.value;
+
+ state.level=1+Math.floor(state.opened/8);
+
+ save();
+
+ spinning=true;
+
+ const reel=document.getElementById("reel");
+
+ reel.innerHTML="";
+ reel.style.transition="none";
+ reel.style.transform="translateX(0px)";
+
+ const display=[];
+
+ for(let i=0;i<45;i++)
+  display.push(randomItem(activePack));
+
+ const winnerIndex=37;
+ display[winnerIndex]=activePrize;
+
+ display.forEach(x=>{
+
+  const div=document.createElement("div");
+
+  div.className=`reelItem r-${x.rarity}`;
+
+  div.innerHTML=`
+   <img src="${x.image}" alt="${x.name}">
+   <div class="reelText">
+    <div class="reelName">${x.name}</div>
+    <div class="reelPrice">◉ ${coins(x.value)}</div>
+   </div>
+  `;
+
+  reel.appendChild(div);
+ });
+
+ document.getElementById("modalAction").innerHTML=`
+  <div style="color:var(--muted);font-weight:800">
+   OPENING...
+  </div>
+ `;
+
+ requestAnimationFrame(()=>{
+
+  const mobile=innerWidth<650;
+  const card=mobile?155:190;
+  const offset=mobile?75:310;
+
+  const target=-(winnerIndex*card)+offset;
+
+  reel.style.transition=
+   "transform 5s cubic-bezier(.08,.72,.05,1)";
+
+  reel.style.transform=`translateX(${target}px)`;
+
+ });
+
+ setTimeout(()=>{
+  spinning=false;
+  showWinner();
+ },5100);
+}
+
+
+function showWinner(){
+
+ const p=activePrize;
+
+ document.getElementById("modalAction").innerHTML=`
+
+  <img class="wonPhoto"
+   src="${p.image}"
+   alt="${p.name}">
+
+  <div class="rarity ${p.rarity}">
+   ${p.rarity.toUpperCase()} DROP
+  </div>
+
+  <div class="wonName">${p.name}</div>
+
+  <div class="wonValue">
+   ◉ ${coins(p.value)}
+  </div>
+
+  <div class="actionRow">
+
+   <button class="btn gold"
+    onclick="keepPrize()">
+    KEEP ITEM
+   </button>
+
+   <button class="btn dark"
+    onclick="sellPrize()">
+    EXCHANGE FOR ${coins(p.value)} COINS
+   </button>
+
+   <button class="btn dark"
+    onclick="spinPack()">
+    OPEN AGAIN
+   </button>
+
+  </div>
+ `;
+}
+
+
+function keepPrize(){
+
+ if(!activePrize)return;
+
+ state.inventory.unshift({
+  ...activePrize,
+  uid:Date.now()+Math.random()
+ });
+
+ activePrize=null;
+
+ save();
+
+ toast("Added to your collection.");
+
+ document.getElementById("modalAction").innerHTML=`
+  <div style="font-size:38px;color:var(--green)">✓</div>
+  <h2>Added to Collection</h2>
+
+  <div class="actionRow">
+   <button class="btn gold"
+    onclick="spinPack()">
+    OPEN AGAIN
+   </button>
+
+   <button class="btn dark"
+    onclick="closeModal()">
+    DONE
+   </button>
+  </div>
+ `;
+}
+
+
+function sellPrize(){
+
+ if(!activePrize)return;
+
+ state.balance+=activePrize.value;
+
+ activePrize=null;
+
+ save();
+
+ toast("Converted to Pack Coins.");
+
+ document.getElementById("modalAction").innerHTML=`
+  <div style="font-size:38px;color:var(--gold)">◉</div>
+  <h2>Converted to Coins</h2>
+
+  <div class="actionRow">
+   <button class="btn gold"
+    onclick="spinPack()">
+    OPEN AGAIN
+   </button>
+
+   <button class="btn dark"
+    onclick="closeModal()">
+    DONE
+   </button>
+  </div>
+ `;
+}
+
+
+/* INVENTORY */
+
+function renderInventory(){
+
+ const grid=document.getElementById("inventoryGrid");
+
+ document.getElementById("inventoryCount").textContent=
+ `${state.inventory.length} ITEMS`;
+
+ if(!state.inventory.length){
+
+  grid.innerHTML=`
+   <div class="empty" style="grid-column:1/-1">
+    <h3>Your collection is empty.</h3>
+    <p>Open a pack and keep a prize to see it here.</p>
+    <button class="btn gold"
+     onclick="showPage('home')">
+     OPEN PACKS
     </button>
+   </div>
   `;
 
-  document.getElementById("packModal").classList.remove("hidden");
+  return;
+ }
+
+ grid.innerHTML=state.inventory.map(x=>`
+
+  <article class="inventoryCard">
+
+   <img
+    class="inventoryPhoto"
+    src="${x.image}"
+    alt="${x.name}">
+
+   <div class="inventoryBody">
+
+    <div class="rarity ${x.rarity}">
+     ${x.rarity.toUpperCase()}
+    </div>
+
+    <div class="inventoryName">
+     ${x.name}
+    </div>
+
+    <div class="inventoryValue">
+     ◉ ${coins(x.value)}
+    </div>
+
+    <button
+     class="btn dark full"
+     onclick="sellInventory('${x.uid}')">
+     EXCHANGE FOR COINS
+    </button>
+
+   </div>
+
+  </article>
+
+ `).join("");
 }
 
-function closeModal() {
-  if (rolling) return;
-  document.getElementById("packModal").classList.add("hidden");
+
+function sellInventory(uid){
+
+ const index=state.inventory.findIndex(
+  x=>String(x.uid)===String(uid)
+ );
+
+ if(index<0)return;
+
+ const x=state.inventory[index];
+
+ state.balance+=x.value;
+ state.inventory.splice(index,1);
+
+ save();
+
+ toast(`${x.name} exchanged for ${coins(x.value)} Coins.`);
 }
 
-function randomVisualItem(pack) {
-  return pack.items[Math.floor(Math.random() * pack.items.length)];
-}
 
-function rollPack() {
-  if (!activePack || rolling) return;
+/* BATTLES */
 
-  if (state.balance < activePack.cost) {
-    toast("Not enough Coins.");
-    return;
-  }
+function startBattle(){
 
-  state.balance -= activePack.cost;
-  state.opened++;
-  currentPrize = weightedItem(activePack);
+ const pack=PACKS.find(
+  x=>x.id===document.getElementById("battlePack").value
+ );
 
-  saveState();
+ const rounds=
+ Number(document.getElementById("battleRounds").value);
 
-  rolling = true;
+ const mode=
+ document.getElementById("battleMode").value;
 
-  const roller = document.getElementById("roller");
-  roller.innerHTML = "";
-  roller.style.transition = "none";
-  roller.style.transform = "translateX(0px)";
+ const cost=pack.price*rounds;
 
-  const rollItems = [];
+ if(state.balance<cost){
+  toast("Not enough Pack Coins.");
+  return;
+ }
 
-  for (let i = 0; i < 42; i++) {
-    rollItems.push(randomVisualItem(activePack));
-  }
+ state.balance-=cost;
 
-  const winningIndex = 34;
-  rollItems[winningIndex] = currentPrize;
+ let you=[];
+ let bot=[];
+ let youTotal=0;
+ let botTotal=0;
 
-  rollItems.forEach(item => {
-    const el = document.createElement("div");
-    el.className = `rollItem rarity-${item.rarity}`;
-    el.innerHTML = `
-      <div class="rollEmoji">${item.emoji}</div>
-      <div class="rollName">${item.name}</div>
-      <div class="rollValue">● ${formatCoins(item.value)}</div>
-    `;
-    roller.appendChild(el);
+ for(let i=0;i<rounds;i++){
+
+  const a=choosePrize(pack);
+  const b=choosePrize(pack);
+
+  you.push(a);
+  bot.push(b);
+
+  youTotal+=a.value;
+  botTotal+=b.value;
+ }
+
+ let youWin;
+
+ if(mode==="Upside Down")
+  youWin=youTotal<botTotal;
+ else
+  youWin=youTotal>botTotal;
+
+
+ let html=`
+
+ <div class="battleArena">
+
+  ${fighterHTML("YOU",you,youTotal)}
+
+  ${fighterHTML("PACKR BOT",bot,botTotal)}
+
+ </div>
+ `;
+
+
+ if(youTotal===botTotal){
+
+  state.balance+=cost;
+
+  html+=`
+   <div class="result">
+    🤝 DRAW — ENTRY RETURNED
+   </div>
+  `;
+
+ }else if(youWin){
+
+  [...you,...bot].forEach(x=>{
+
+   state.inventory.unshift({
+    ...x,
+    uid:Date.now()+Math.random()
+   });
+
   });
 
-  document.getElementById("winArea").innerHTML = `
-    <div style="color:var(--muted)">Opening...</div>
+  html+=`
+   <div class="result"
+    style="border-color:#5e4b1d">
+    🏆 YOU WON THE BATTLE
+    <div style="font-size:12px;color:var(--muted);margin-top:5px">
+     All ${you.length+bot.length} items were added to your collection.
+    </div>
+   </div>
   `;
 
-  requestAnimationFrame(() => {
-    const itemWidth = 162;
-    const centerOffset = window.innerWidth > 700 ? 520 : 190;
-    const stopAt = -(winningIndex * itemWidth) + centerOffset;
+ }else{
 
-    roller.style.transition =
-      "transform 4.7s cubic-bezier(.08,.72,.05,1)";
-    roller.style.transform = `translateX(${stopAt}px)`;
-
-    playTickSequence();
-
-    setTimeout(() => {
-      rolling = false;
-      showPrize(currentPrize);
-    }, 4850);
-  });
-}
-
-function showPrize(prize) {
-  addHistory(`Opened ${activePack.name}`, `${prize.name} • ${formatCoins(prize.value)} Coins`);
-
-  document.getElementById("winArea").innerHTML = `
-    <div class="bigPrize">${prize.emoji}</div>
-    <h2>${prize.name}</h2>
-    <div class="valueText">● ${formatCoins(prize.value)}</div>
-    <div style="margin-top:8px;color:var(--muted);text-transform:uppercase;font-size:12px;font-weight:900">
-      ${prize.rarity}
+  html+=`
+   <div class="result">
+    PACKR BOT WON
+    <div style="font-size:12px;color:var(--muted);margin-top:5px">
+     Try another battle.
     </div>
-
-    <div class="winBtns">
-      <button class="btn btnPrimary" onclick="keepPrize()">Keep Item</button>
-      <button class="btn btnDark" onclick="sellCurrentPrize()">
-        Sell for ● ${formatCoins(prize.value)}
-      </button>
-      <button class="btn btnDark" onclick="rollPack()">Open Again</button>
-    </div>
+   </div>
   `;
+ }
 
-  if (prize.rarity === "legendary") {
-    celebratorySound();
-  } else {
-    prizeSound();
-  }
+ document.getElementById("battleOutput").innerHTML=html;
+
+ save();
 }
 
-function keepPrize() {
-  if (!currentPrize) return;
 
-  state.inventory.push({
-    ...currentPrize,
-    id: Date.now() + Math.random()
-  });
+function fighterHTML(name,items,total){
 
-  state.totalWins += currentPrize.value;
-  addHistory("Kept item", currentPrize.name);
+ return `
+ <div class="fighter">
 
-  currentPrize = null;
-  saveState();
+  <div class="fighterHeader">
+   <span>${name}</span>
+   <span class="fighterScore">
+    ◉ ${coins(total)}
+   </span>
+  </div>
 
-  toast("Added to inventory.");
+  ${items.map(x=>`
 
-  document.getElementById("winArea").innerHTML = `
-    <div style="font-size:48px">✅</div>
-    <h2>Added to Inventory</h2>
-    <div class="winBtns">
-      <button class="btn btnPrimary" onclick="rollPack()">Open Again</button>
-      <button class="btn btnDark" onclick="closeModal()">Close</button>
+   <div class="pull">
+
+    <img src="${x.image}" alt="${x.name}">
+
+    <div class="pullInfo">
+     <div class="rarity ${x.rarity}">
+      ${x.rarity.toUpperCase()}
+     </div>
+
+     <div class="pullName">
+      ${x.name}
+     </div>
+
+     <div class="pullValue">
+      ◉ ${coins(x.value)}
+     </div>
     </div>
-  `;
+
+   </div>
+
+  `).join("")}
+
+ </div>
+ `;
 }
 
-function sellCurrentPrize() {
-  if (!currentPrize) return;
 
-  state.balance += currentPrize.value;
-  state.totalWins += currentPrize.value;
+/* LIVE DROPS */
 
-  addHistory("Sold virtual item",
-    `${currentPrize.name} • +${formatCoins(currentPrize.value)} Coins`
-  );
+const liveUsers=[
+ "NightWolf",
+ "MontanaX",
+ "Nova",
+ "DropKing",
+ "Racer",
+ "Vortex",
+ "Ace"
+];
 
-  currentPrize = null;
-  saveState();
+function renderLive(){
 
-  toast("Item exchanged for virtual Coins.");
+ const all=[];
 
-  document.getElementById("winArea").innerHTML = `
-    <div style="font-size:48px">🪙</div>
-    <h2>Converted to Coins</h2>
-    <div class="winBtns">
-      <button class="btn btnPrimary" onclick="rollPack()">Open Again</button>
-      <button class="btn btnDark" onclick="closeModal()">Close</button>
-    </div>
-  `;
-}
+ PACKS.forEach(p=>
+  p.items.forEach(x=>all.push(x))
+ );
 
-function renderInventory() {
-  const box = document.getElementById("inventoryGrid");
-  document.getElementById("inventoryCount").textContent =
-    `${state.inventory.length} item${state.inventory.length === 1 ? "" : "s"}`;
+ const chosen=[];
 
-  if (!state.inventory.length) {
-    box.innerHTML = `<div class="empty" style="grid-column:1/-1">Your inventory is empty.</div>`;
-    return;
-  }
+ for(let i=0;i<5;i++){
 
-  box.innerHTML = state.inventory.map(item => `
-    <div class="itemCard rarity-${item.rarity}">
-      <div class="itemEmoji">${item.emoji}</div>
-      <div class="itemName">${item.name}</div>
-      <div class="itemValue">● ${formatCoins(item.value)}</div>
-      <button class="smallBtn" onclick="sellInventoryItem('${item.id}')">
-        Sell for Coins
-      </button>
-    </div>
-  `).join("");
-}
-
-function sellInventoryItem(id) {
-  const index = state.inventory.findIndex(x => String(x.id) === String(id));
-  if (index === -1) return;
-
-  const item = state.inventory[index];
-
-  state.balance += item.value;
-  state.inventory.splice(index, 1);
-
-  addHistory("Sold inventory item",
-    `${item.name} • +${formatCoins(item.value)} Coins`
-  );
-
-  saveState();
-  toast(`Sold ${item.name}.`);
-}
-
-function addHistory(title, detail) {
-  state.history.unshift({
-    title,
-    detail,
-    time: new Date().toLocaleString()
-  });
-
-  state.history = state.history.slice(0, 40);
-  saveState();
-}
-
-function renderHistory() {
-  const box = document.getElementById("historyList");
-
-  if (!state.history.length) {
-    box.innerHTML = `<div class="empty">No activity yet.</div>`;
-    return;
-  }
-
-  box.innerHTML = state.history.map(h => `
-    <div class="historyItem">
-      <div>
-        <div style="font-weight:900">${h.title}</div>
-        <div style="color:var(--muted);font-size:13px;margin-top:3px">${h.detail}</div>
-      </div>
-      <div style="font-size:11px;color:#687187">${h.time}</div>
-    </div>
-  `).join("");
-}
-
-/* ===========================
-   BATTLES
-   =========================== */
-
-function startBattle() {
-  const packId = document.getElementById("battlePack").value;
-  const rounds = Number(document.getElementById("battleRounds").value);
-  const pack = packs.find(p => p.id === packId);
-
-  const totalCost = pack.cost * rounds;
-
-  if (state.balance < totalCost) {
-    toast("Not enough Coins for this battle.");
-    return;
-  }
-
-  state.balance -= totalCost;
-  saveState();
-
-  let youScore = 0;
-  let botScore = 0;
-  let youItems = [];
-  let botItems = [];
-
-  for (let i = 0; i < rounds; i++) {
-    const a = weightedItem(pack);
-    const b = weightedItem(pack);
-
-    youItems.push(a);
-    botItems.push(b);
-
-    youScore += a.value;
-    botScore += b.value;
-  }
-
-  const output = document.getElementById("battleOutput");
-
-  output.innerHTML = `
-    <div class="battleArena">
-      <div class="playerPanel">
-        <div class="playerHead">
-          <span>YOU</span>
-          <span class="score">● ${formatCoins(youScore)}</span>
-        </div>
-        ${youItems.map(item => `
-          <div class="battlePull">
-            <div class="battleEmoji">${item.emoji}</div>
-            <div>
-              <div style="font-weight:900">${item.name}</div>
-              <div style="color:var(--gold);font-size:13px">● ${formatCoins(item.value)}</div>
-            </div>
-          </div>
-        `).join("")}
-      </div>
-
-      <div class="playerPanel">
-        <div class="playerHead">
-          <span>BOT</span>
-          <span class="score">● ${formatCoins(botScore)}</span>
-        </div>
-        ${botItems.map(item => `
-          <div class="battlePull">
-            <div class="battleEmoji">${item.emoji}</div>
-            <div>
-              <div style="font-weight:900">${item.name}</div>
-              <div style="color:var(--gold);font-size:13px">● ${formatCoins(item.value)}</div>
-            </div>
-          </div>
-        `).join("")}
-      </div>
-    </div>
-  `;
-
-  if (youScore > botScore) {
-    const winnings = [...youItems, ...botItems];
-
-    winnings.forEach(item => {
-      state.inventory.push({
-        ...item,
-        id: Date.now() + Math.random()
-      });
-    });
-
-    output.innerHTML += `
-      <div class="battleResult">
-        🏆 YOU WON! All ${winnings.length} virtual prizes were added to your inventory.
-      </div>
-    `;
-
-    addHistory("Battle win",
-      `${pack.name} • ${formatCoins(youScore)} vs ${formatCoins(botScore)}`
-    );
-
-    celebratorySound();
-
-  } else if (youScore === botScore) {
-    state.balance += totalCost;
-
-    output.innerHTML += `
-      <div class="battleResult">
-        🤝 TIE — Your entry Coins were returned.
-      </div>
-    `;
-
-    addHistory("Battle tie", pack.name);
-
-  } else {
-    output.innerHTML += `
-      <div class="battleResult">
-        😵 BOT WON — Better luck next time.
-      </div>
-    `;
-
-    addHistory("Battle loss",
-      `${pack.name} • ${formatCoins(youScore)} vs ${formatCoins(botScore)}`
-    );
-  }
-
-  saveState();
-}
-
-/* ===========================
-   JACKPOT
-   =========================== */
-
-function playJackpot() {
-  const bet = Math.floor(Number(document.getElementById("jackpotBet").value));
-
-  if (!bet || bet < 10) {
-    toast("Enter at least 10 Coins.");
-    return;
-  }
-
-  if (state.balance < bet) {
-    toast("Not enough Coins.");
-    return;
-  }
-
-  state.balance -= bet;
-  saveState();
-
-  const bots = [
-    {name:"Nova", amount: randomBetween(100,1400)},
-    {name:"Ghost", amount: randomBetween(100,1600)},
-    {name:"Blaze", amount: randomBetween(100,1200)}
+  const x=all[
+   Math.floor(Math.random()*all.length)
   ];
 
-  const players = [
-    {name:"YOU", amount:bet, you:true},
-    ...bots
-  ];
-
-  const total = players.reduce((s,p) => s+p.amount,0);
-
-  let cursor = 0;
-  const segments = players.map(p => {
-    const start = cursor;
-    const chance = p.amount / total;
-    cursor += chance;
-
-    return {
-      ...p,
-      chance,
-      start,
-      end: cursor
-    };
+  chosen.push({
+   ...x,
+   user:liveUsers[
+    Math.floor(Math.random()*liveUsers.length)
+   ]
   });
+ }
 
-  const roll = Math.random();
-  const winner = segments.find(p => roll >= p.start && roll < p.end) || segments[0];
+ document.getElementById("liveDrops").innerHTML=
+ chosen.map((x,i)=>`
 
-  document.getElementById("jackpotPlayers").innerHTML =
-    segments.map(p => `
-      <div class="jp">
-        <div style="font-weight:900">${p.name}</div>
-        <div style="color:var(--gold)">● ${formatCoins(p.amount)}</div>
-        <div style="color:var(--muted);margin-top:4px">${(p.chance*100).toFixed(1)}%</div>
-      </div>
-    `).join("");
+  <div class="liveCard">
 
-  const wheel = document.getElementById("wheel");
+   <img class="liveImg"
+    src="${x.image}"
+    alt="${x.name}">
 
-  wheel.style.transition = "none";
-  wheel.style.transform = "rotate(0deg)";
+   <div class="liveInfo">
 
-  requestAnimationFrame(() => {
-    requestAnimationFrame(() => {
-      const target = 1800 + Math.floor(Math.random()*720);
-      wheel.style.transition = "transform 4s cubic-bezier(.08,.68,.09,1)";
-      wheel.style.transform = `rotate(${target}deg)`;
-    });
-  });
-
-  document.getElementById("jackpotResult").textContent = "Spinning...";
-
-  setTimeout(() => {
-    if (winner.you) {
-      state.balance += total;
-
-      document.getElementById("jackpotResult").innerHTML =
-        `🏆 YOU WON <span style="color:var(--gold)">● ${formatCoins(total)}</span>`;
-
-      addHistory("Jackpot win",
-        `Won ${formatCoins(total)} virtual Coins`
-      );
-
-      celebratorySound();
-    } else {
-      document.getElementById("jackpotResult").innerHTML =
-        `🎯 ${winner.name} won the virtual pot of <span style="color:var(--gold)">● ${formatCoins(total)}</span>`;
-
-      addHistory("Jackpot loss",
-        `${winner.name} won ${formatCoins(total)} Coins`
-      );
-    }
-
-    saveState();
-
-  }, 4200);
-}
-
-function randomBetween(min,max) {
-  return Math.floor(Math.random()*(max-min+1))+min;
-}
-
-/* ===========================
-   LEADERBOARD
-   =========================== */
-
-function renderLeaderboard() {
-  const users = [
-    {name:"Nova", coins:89420, wins:124},
-    {name:"Blaze", coins:64800, wins:88},
-    {name:"Ghost", coins:53770, wins:76},
-    {name:"YOU", coins:state.balance, wins:state.opened},
-    {name:"Kairo", coins:25330, wins:42},
-    {name:"Vex", coins:18950, wins:37},
-    {name:"Orbit", coins:12400, wins:24}
-  ];
-
-  users.sort((a,b)=>b.coins-a.coins);
-
-  document.getElementById("leaderboardBox").innerHTML = `
-    <div class="leaderRow head">
-      <div>RANK</div>
-      <div>PLAYER</div>
-      <div>COINS</div>
-      <div class="leaderWins">PACKS/WINS</div>
+    <div class="liveUser">
+     @${x.user}
     </div>
 
-    ${users.map((u,i)=>`
-      <div class="leaderRow">
-        <div class="rank">${i+1}</div>
-        <div style="font-weight:900">${u.name}</div>
-        <div style="color:var(--gold);font-weight:900">● ${formatCoins(u.coins)}</div>
-        <div class="leaderWins" style="color:var(--muted)">${u.wins}</div>
-      </div>
-    `).join("")}
-  `;
+    <div class="liveName">
+     ${x.name}
+    </div>
+
+    <div class="liveTime">
+     ${i+1} min ago ·
+     <span style="color:var(--gold)">
+      ${coins(x.value)} Coins
+     </span>
+    </div>
+
+   </div>
+
+  </div>
+
+ `).join("");
 }
 
-/* ===========================
-   UI / AUDIO
-   =========================== */
 
-function toast(text) {
-  const t = document.getElementById("toast");
-  t.textContent = text;
-  t.classList.add("show");
+/* LEADERBOARD */
 
-  clearTimeout(window.toastTimer);
+function renderLeaderboard(){
 
-  window.toastTimer = setTimeout(() => {
-    t.classList.remove("show");
-  }, 2200);
+ const people=[
+  {name:"Nova",coins:185400,wins:328},
+  {name:"DropKing",coins:121800,wins:242},
+  {name:"NightWolf",coins:89500,wins:193},
+  {name:"Vortex",coins:62200,wins:141},
+  {name:"YOU",coins:state.balance,wins:state.opened},
+  {name:"Ace",coins:31500,wins:83},
+  {name:"Racer",coins:19200,wins:51}
+ ];
+
+ people.sort((a,b)=>b.coins-a.coins);
+
+ document.getElementById("leaderboardList").innerHTML=`
+
+  <div class="leader head">
+   <div>RANK</div>
+   <div>PLAYER</div>
+   <div>COINS</div>
+   <div class="leaderWins">PACKS</div>
+  </div>
+
+  ${people.map((x,i)=>`
+
+   <div class="leader">
+
+    <div>
+     ${i===0?"🥇":i===1?"🥈":i===2?"🥉":"#"+(i+1)}
+    </div>
+
+    <div style="font-weight:900">
+     ${x.name}
+    </div>
+
+    <div style="color:var(--gold);font-weight:900">
+     ${coins(x.coins)}
+    </div>
+
+    <div class="leaderWins"
+     style="color:var(--muted)">
+     ${x.wins}
+    </div>
+
+   </div>
+
+  `).join("")}
+ `;
 }
 
-function audioTone(freq, duration, volume=.05) {
-  try {
-    const ctx = new (window.AudioContext || window.webkitAudioContext)();
-    const osc = ctx.createOscillator();
-    const gain = ctx.createGain();
 
-    osc.frequency.value = freq;
-    osc.type = "sine";
+/* DAILY COINS */
 
-    gain.gain.value = volume;
+function dailyCoins(){
 
-    osc.connect(gain);
-    gain.connect(ctx.destination);
+ const today=new Date().toDateString();
 
-    osc.start();
+ if(state.daily===today){
 
-    setTimeout(() => {
-      osc.stop();
-      ctx.close();
-    }, duration);
-  } catch {}
+  toast("You already claimed today's free Coins.");
+
+  return;
+ }
+
+ state.daily=today;
+ state.balance+=2500;
+
+ save();
+
+ toast("+2,500 daily Pack Coins!");
 }
 
-function prizeSound() {
-  audioTone(520,120,.04);
-  setTimeout(()=>audioTone(720,180,.04),100);
+
+/* UI */
+
+function updateAll(){
+
+ document.getElementById("balance").textContent=
+ coins(state.balance);
+
+ document.getElementById("statOpened").textContent=
+ coins(state.opened);
+
+ document.getElementById("statInventory").textContent=
+ coins(state.inventory.length);
+
+ document.getElementById("statBest").textContent=
+ coins(state.best);
+
+ document.getElementById("statLevel").textContent=
+ state.level;
+
+ renderInventory();
+ renderLeaderboard();
 }
 
-function celebratorySound() {
-  audioTone(420,120,.05);
-  setTimeout(()=>audioTone(620,140,.05),120);
-  setTimeout(()=>audioTone(880,220,.05),260);
+
+function coins(n){
+ return Math.round(n).toLocaleString();
 }
 
-function playTickSequence() {
-  let count = 0;
 
-  const interval = setInterval(() => {
-    audioTone(250 + count*4, 35, .012);
-    count++;
+function toast(message){
 
-    if (count > 20) clearInterval(interval);
-  }, 145);
+ const t=document.getElementById("toast");
+
+ t.textContent=message;
+ t.classList.add("show");
+
+ clearTimeout(window.toastTimer);
+
+ window.toastTimer=setTimeout(()=>{
+  t.classList.remove("show");
+ },2200);
 }
 
-/* ===========================
-   DEV RESET
-   Type resetGame() in console
-   =========================== */
 
-function resetGame() {
-  localStorage.removeItem("packrushState");
-  state = {...defaultState};
-  saveState();
-  location.reload();
-}
+/* CLOSE MODAL WHEN CLICKING OUTSIDE */
 
-/* ===========================
-   INITIALIZE
-   =========================== */
+document.getElementById("overlay").addEventListener(
+ "click",
+ function(e){
+
+  if(e.target===this)
+   closeModal();
+
+ }
+);
+
+
+/* START */
 
 renderPacks();
-updateUI();
+renderLive();
+updateAll();
+
+setInterval(renderLive,30000);
 
 </script>
 
