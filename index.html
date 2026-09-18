@@ -24,10 +24,7 @@
 }
 
 *{box-sizing:border-box}
-
-html{
-  scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth}
 
 body{
   margin:0;
@@ -39,24 +36,10 @@ body{
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Arial,sans-serif;
 }
 
-button,input,select{
-  font:inherit;
-}
-
-button{
-  cursor:pointer;
-}
-
-img{
-  display:block;
-  width:100%;
-}
-
-.hidden{
-  display:none!important;
-}
-
-/* HEADER */
+button,input,select{font:inherit}
+button{cursor:pointer}
+img{display:block;width:100%}
+.hidden{display:none!important}
 
 header{
   height:var(--nav);
@@ -67,7 +50,7 @@ header{
   align-items:center;
   justify-content:space-between;
   padding:0 4%;
-  background:rgba(7,9,12,.91);
+  background:rgba(7,9,12,.93);
   backdrop-filter:blur(18px);
   border-bottom:1px solid rgba(255,255,255,.07);
 }
@@ -81,10 +64,7 @@ header{
   gap:8px;
 }
 
-.logoMark{
-  color:var(--gold);
-  font-size:21px;
-}
+.logoMark{color:var(--gold)}
 
 .desktopNav{
   display:flex;
@@ -102,10 +82,7 @@ header{
   position:relative;
 }
 
-.nav:hover,
-.nav.active{
-  color:white;
-}
+.nav.active{color:white}
 
 .nav.active:after{
   content:"";
@@ -120,58 +97,61 @@ header{
 .account{
   display:flex;
   align-items:center;
-  gap:7px;
+  gap:6px;
 }
 
 .balance{
   display:flex;
   align-items:center;
-  gap:7px;
-  padding:9px 12px;
+  gap:6px;
+  padding:8px 10px;
   background:#11161d;
   border:1px solid #252e3a;
-  border-radius:11px;
+  border-radius:10px;
   font-weight:900;
+  font-size:12px;
   white-space:nowrap;
 }
 
-.btcCoin{
-  width:20px;
-  height:20px;
-  display:inline-grid;
-  place-items:center;
+.moneyIcon,.btcIcon{
+  width:19px;
+  height:19px;
   border-radius:50%;
+  display:grid;
+  place-items:center;
+  font-size:10px;
+  font-weight:1000;
+}
+
+.moneyIcon{
+  background:linear-gradient(135deg,#ffe18c,#d69b2e);
+  color:#3a2600;
+}
+
+.btcIcon{
   background:#f7931a;
   color:white;
-  font-size:13px;
-  font-weight:1000;
 }
 
 .avatar{
-  width:38px;
-  height:38px;
+  width:37px;
+  height:37px;
   border-radius:50%;
-  background:linear-gradient(135deg,#27364d,#0e1218);
-  border:1px solid #394657;
   display:grid;
   place-items:center;
+  background:#19212c;
+  border:1px solid #344052;
+  font-size:11px;
   font-weight:1000;
-  font-size:12px;
 }
-
-/* LAYOUT */
 
 main{
   width:min(1480px,94%);
   margin:auto;
-  padding-bottom:100px;
+  padding-bottom:80px;
 }
 
-.page{
-  padding-top:24px;
-}
-
-/* HERO */
+.page{padding-top:24px}
 
 .hero{
   min-height:390px;
@@ -184,20 +164,12 @@ main{
   padding:50px;
   margin-bottom:25px;
   background:
-    linear-gradient(90deg,rgba(4,5,7,.96) 0%,rgba(4,5,7,.83) 42%,rgba(4,5,7,.18) 72%),
+    linear-gradient(90deg,rgba(4,5,7,.96),rgba(4,5,7,.75) 45%,rgba(4,5,7,.15)),
     url("https://images.unsplash.com/photo-1491933382434-500287f9b54b?auto=format&fit=crop&w=1800&q=85") center/cover;
 }
 
-.hero:after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(0deg,rgba(0,0,0,.6),transparent 50%);
-  pointer-events:none;
-}
-
 .heroContent{
-  max-width:570px;
+  max-width:580px;
   position:relative;
   z-index:2;
 }
@@ -205,52 +177,40 @@ main{
 .eyebrow{
   color:var(--gold);
   font-size:12px;
-  letter-spacing:2px;
   font-weight:1000;
-  margin-bottom:12px;
+  letter-spacing:2px;
 }
 
 .hero h1{
-  margin:0;
-  font-size:clamp(43px,6vw,78px);
+  font-size:clamp(45px,6vw,78px);
   line-height:.91;
   letter-spacing:-4px;
+  margin:10px 0 18px;
 }
 
-.hero h1 span{
-  color:var(--gold);
-}
+.hero h1 span{color:var(--gold)}
 
 .hero p{
   color:#bbc0c8;
-  max-width:510px;
   line-height:1.6;
-  font-size:16px;
-  margin:20px 0;
+  max-width:500px;
 }
-
-/* BUTTONS */
 
 .btn{
   border:0;
-  padding:12px 18px;
   border-radius:10px;
+  padding:12px 16px;
   font-weight:900;
-  transition:.17s;
-}
-
-.btn:hover{
-  transform:translateY(-1px);
 }
 
 .gold{
   background:linear-gradient(135deg,#ffe18c,#dca237);
-  color:#1b1303;
+  color:#1c1403;
 }
 
 .dark{
-  color:white;
   background:#171d26;
+  color:white;
   border:1px solid #303a49;
 }
 
@@ -259,33 +219,25 @@ main{
   color:white;
 }
 
-.appleBtn{
-  background:linear-gradient(135deg,#070707,#24272c);
+.apple{
+  background:#070707;
   color:white;
 }
 
-.visaBtn{
-  background:linear-gradient(135deg,#2046d8,#142b8d);
+.visa{
+  background:linear-gradient(135deg,#264fe3,#142b8d);
   color:white;
 }
 
-.amexBtn{
-  background:linear-gradient(135deg,#1c79cc,#0b497e);
+.amex{
+  background:linear-gradient(135deg,#247dc0,#0b497e);
   color:white;
 }
-
-.btcBtn{
-  background:linear-gradient(135deg,#f7a224,#d87900);
-  color:white;
-}
-
-/* STATS */
 
 .stats{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:10px;
-  margin-bottom:32px;
 }
 
 .stat{
@@ -301,70 +253,48 @@ main{
 }
 
 .statLabel{
-  margin-top:4px;
-  font-size:12px;
   color:var(--muted);
+  font-size:11px;
+  margin-top:5px;
 }
-
-/* TITLES */
 
 .titleRow{
   display:flex;
+  align-items:flex-end;
   justify-content:space-between;
-  align-items:end;
-  margin:28px 0 14px;
+  margin:30px 0 14px;
 }
 
-.titleRow h2{
-  margin:0;
-  font-size:23px;
-  letter-spacing:-.7px;
-}
-
+.titleRow h2{margin:0}
 .titleRow p{
-  margin:4px 0 0;
+  margin:5px 0 0;
   color:var(--muted);
-  font-size:13px;
+  font-size:12px;
 }
-
-.smallGold{
-  color:var(--gold);
-  font-size:13px;
-  font-weight:800;
-}
-
-/* FILTERS */
 
 .filters{
   display:flex;
   gap:8px;
-  overflow-x:auto;
-  padding:2px 0 14px;
-  scrollbar-width:none;
-}
-
-.filters::-webkit-scrollbar{
-  display:none;
+  overflow:auto;
+  padding-bottom:14px;
 }
 
 .filterBtn{
   flex:none;
   border:1px solid #2b3542;
-  background:#121820;
   color:#aab2be;
-  padding:9px 13px;
+  background:#121820;
   border-radius:9px;
-  font-size:12px;
+  padding:9px 13px;
+  font-size:11px;
   font-weight:900;
 }
 
 .filterBtn.active{
+  color:var(--gold);
   background:#2b2413;
   border-color:#725b25;
-  color:var(--gold);
 }
-
-/* PACKS */
 
 .packGrid{
   display:grid;
@@ -373,66 +303,40 @@ main{
 }
 
 .pack{
-  background:linear-gradient(180deg,#11161d,#0d1117);
+  background:#0f141b;
   border:1px solid #242d39;
   border-radius:16px;
   overflow:hidden;
-  transition:.2s;
-}
-
-.pack:hover{
-  transform:translateY(-4px);
-  border-color:#475466;
 }
 
 .packImage{
-  height:220px;
+  height:210px;
   position:relative;
-  overflow:hidden;
-  background:#151a21;
 }
 
 .packImage img{
   height:100%;
   object-fit:cover;
-  transition:.35s;
-}
-
-.pack:hover img{
-  transform:scale(1.035);
-}
-
-.packShade{
-  position:absolute;
-  inset:0;
-  background:linear-gradient(0deg,rgba(5,7,9,.78),transparent 55%);
 }
 
 .packBadge{
   position:absolute;
-  top:12px;
-  left:12px;
+  left:11px;
+  top:11px;
   padding:6px 8px;
-  background:rgba(8,10,13,.82);
-  border:1px solid rgba(255,255,255,.12);
   border-radius:7px;
-  font-size:10px;
+  background:rgba(5,7,9,.83);
+  border:1px solid rgba(255,255,255,.13);
+  font-size:9px;
   font-weight:1000;
-  backdrop-filter:blur(8px);
 }
 
-.packBody{
-  padding:14px;
-}
-
-.packName{
-  font-weight:1000;
-  font-size:17px;
-}
+.packBody{padding:14px}
+.packName{font-size:17px;font-weight:1000}
 
 .packDesc{
   color:var(--muted);
-  font-size:12px;
+  font-size:11px;
   margin:5px 0 13px;
 }
 
@@ -450,21 +354,17 @@ main{
 .packBTC{
   color:#f7931a;
   font-size:10px;
-  margin-top:2px;
   font-weight:900;
 }
 
 .openBtn{
   border:1px solid #344052;
-  color:white;
   background:#1b222d;
-  padding:8px 11px;
+  color:white;
+  padding:8px 12px;
   border-radius:8px;
-  font-size:12px;
   font-weight:900;
 }
-
-/* LIVE */
 
 .liveGrid{
   display:grid;
@@ -473,68 +373,48 @@ main{
 }
 
 .liveCard{
-  background:#0e1319;
   border:1px solid #232c37;
   border-radius:12px;
   overflow:hidden;
+  background:#0e1319;
 }
 
-.liveImg{
-  height:130px;
+.liveCard img{
+  height:125px;
   object-fit:cover;
 }
 
-.liveInfo{
-  padding:10px;
-}
-
-.liveUser{
-  color:var(--blue);
-  font-size:11px;
-  font-weight:900;
-}
-
-.liveName{
-  font-size:12px;
-  font-weight:900;
-  margin-top:4px;
-}
-
-.liveTime{
-  color:#626c7b;
-  font-size:10px;
-  margin-top:5px;
-}
-
-/* INVENTORY */
+.liveInfo{padding:10px}
+.liveUser{color:var(--blue);font-size:10px;font-weight:900}
+.liveName{font-size:12px;font-weight:900;margin-top:4px}
+.liveTime{font-size:10px;color:#697483;margin-top:5px}
 
 .inventoryGrid{
   display:grid;
-  grid-template-columns:repeat(5,1fr);
-  gap:13px;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
 }
 
 .inventoryCard{
-  border:1px solid #252f3c;
-  border-radius:14px;
+  border:1px solid #27313d;
   background:#10151c;
+  border-radius:14px;
   overflow:hidden;
 }
 
-.inventoryPhoto{
-  height:170px;
+.inventoryCard img{
+  height:165px;
   object-fit:cover;
 }
 
-.inventoryBody{
-  padding:12px;
-}
+.inventoryBody{padding:12px}
+.inventoryName{font-weight:900}
+.inventoryValue{color:var(--gold);font-weight:900;margin:7px 0}
 
 .rarity{
   font-size:9px;
   font-weight:1000;
   letter-spacing:1px;
-  margin-bottom:5px;
 }
 
 .common{color:#aeb5c0}
@@ -542,173 +422,32 @@ main{
 .epic{color:var(--purple)}
 .legendary{color:var(--gold)}
 
-.inventoryName{
-  font-weight:900;
-  min-height:40px;
-}
-
-.inventoryValue{
-  color:var(--gold);
-  font-weight:900;
-  margin:7px 0 10px;
-}
-
-.inventoryButtons{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:6px;
-}
-
-.inventoryButtons .btn{
-  padding:9px 5px;
-  font-size:10px;
-}
-
-/* BATTLES */
-
-.battleSetup{
-  display:grid;
-  grid-template-columns:1fr 1fr 1fr auto;
-  gap:10px;
-  background:#0e1319;
-  border:1px solid #252e3a;
-  padding:14px;
-  border-radius:14px;
-}
-
-select,input{
-  width:100%;
-  padding:12px;
-  color:white;
-  background:#151b23;
-  border:1px solid #303a48;
-  border-radius:9px;
-  outline:none;
-}
-
-.battleArena{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:14px;
-  margin-top:18px;
-}
-
-.fighter{
-  background:#0f141b;
-  border:1px solid #252e3a;
-  border-radius:15px;
-  overflow:hidden;
-}
-
-.fighterHeader{
-  padding:15px;
-  display:flex;
-  justify-content:space-between;
-  border-bottom:1px solid #252e3a;
-  font-weight:1000;
-}
-
-.fighterScore{
-  color:var(--gold);
-}
-
-.pull{
-  display:grid;
-  grid-template-columns:85px 1fr;
-  align-items:center;
-  border-bottom:1px solid #1e2630;
-}
-
-.pull img{
-  height:75px;
-  object-fit:cover;
-}
-
-.pullInfo{
-  padding:10px;
-}
-
-.pullName{
-  font-weight:900;
-}
-
-.pullValue{
-  color:var(--gold);
-  font-size:12px;
-  margin-top:4px;
-}
-
-.result{
-  margin-top:14px;
-  text-align:center;
-  border:1px solid #2e3947;
-  background:#121820;
-  padding:18px;
-  border-radius:12px;
-  font-size:17px;
-  font-weight:1000;
-}
-
-/* LEADERBOARD */
-
-.leaderboard{
-  border:1px solid #252e3a;
-  border-radius:14px;
-  overflow:hidden;
-}
-
-.leader{
-  display:grid;
-  grid-template-columns:70px 1fr 160px 130px;
-  padding:15px;
-  border-bottom:1px solid #202832;
-  background:#0f141a;
-}
-
-.leader:last-child{
-  border:0;
-}
-
-.leader.head{
-  color:var(--muted);
-  background:#0b0f14;
-  font-size:11px;
-  font-weight:900;
-}
-
-/* PACK OPENING */
-
 .overlay{
   position:fixed;
   inset:0;
   z-index:1000;
   display:grid;
   place-items:center;
-  background:rgba(0,0,0,.82);
-  backdrop-filter:blur(10px);
   padding:14px;
+  background:rgba(0,0,0,.84);
+  backdrop-filter:blur(12px);
 }
 
 .modal{
   width:min(1100px,98vw);
   max-height:94vh;
   overflow:auto;
-  background:#0d1117;
   border:1px solid #303a47;
   border-radius:20px;
-  box-shadow:0 30px 100px #000;
+  background:#0d1117;
 }
 
 .modalTop{
-  padding:16px 18px;
   display:flex;
   justify-content:space-between;
   align-items:center;
+  padding:16px 18px;
   border-bottom:1px solid #242c37;
-}
-
-.modalTitle{
-  font-weight:1000;
 }
 
 .close{
@@ -721,75 +460,46 @@ select,input{
 }
 
 .reelWindow{
-  height:240px;
+  height:230px;
   overflow:hidden;
   position:relative;
-  background:
-    linear-gradient(90deg,#080b0f,transparent 15%,transparent 85%,#080b0f),
-    #090c11;
+  background:#080b0f;
 }
 
 .marker{
   position:absolute;
+  left:50%;
   top:0;
   bottom:0;
-  left:50%;
-  transform:translateX(-50%);
   width:3px;
-  z-index:20;
   background:var(--gold);
-  box-shadow:0 0 22px var(--gold);
-}
-
-.marker:before{
-  content:"";
-  position:absolute;
-  top:0;
-  left:50%;
-  transform:translateX(-50%);
-  border-left:10px solid transparent;
-  border-right:10px solid transparent;
-  border-top:14px solid var(--gold);
-}
-
-.marker:after{
-  content:"";
-  position:absolute;
-  bottom:0;
-  left:50%;
-  transform:translateX(-50%);
-  border-left:10px solid transparent;
-  border-right:10px solid transparent;
-  border-bottom:14px solid var(--gold);
+  z-index:20;
+  box-shadow:0 0 20px var(--gold);
 }
 
 .reel{
-  height:100%;
   display:flex;
   align-items:center;
+  height:100%;
   gap:10px;
-  padding-left:0;
   will-change:transform;
 }
 
 .reelItem{
-  flex:0 0 180px;
-  width:180px;
-  height:195px;
-  border:1px solid #313a47;
+  flex:0 0 175px;
+  height:190px;
+  background:#121820;
+  border:1px solid #303a47;
   border-radius:12px;
   overflow:hidden;
-  background:#121820;
 }
 
 .reelItem img{
-  height:135px;
+  height:130px;
   object-fit:cover;
 }
 
-.reelText{
-  padding:8px;
-}
+.reelText{padding:8px}
 
 .reelName{
   font-size:11px;
@@ -801,18 +511,8 @@ select,input{
 
 .reelPrice{
   color:var(--gold);
-  font-size:11px;
-  font-weight:900;
-  margin-top:4px;
-}
-
-.reelItem.r-common{border-bottom:4px solid #7e8794}
-.reelItem.r-rare{border-bottom:4px solid var(--blue)}
-.reelItem.r-epic{border-bottom:4px solid var(--purple)}
-
-.reelItem.r-legendary{
-  border-bottom:4px solid var(--gold);
-  box-shadow:0 0 20px rgba(246,198,91,.15);
+  font-size:10px;
+  margin-top:5px;
 }
 
 .modalAction{
@@ -823,32 +523,31 @@ select,input{
 .paymentChoices{
   display:grid;
   grid-template-columns:repeat(2,1fr);
-  gap:10px;
-  max-width:760px;
-  margin:16px auto 0;
+  gap:9px;
+  max-width:700px;
+  margin:15px auto 0;
 }
 
 .payChoice{
-  min-height:96px;
+  min-height:90px;
 }
 
 .paymentBalance{
-  color:rgba(255,255,255,.68);
   font-size:10px;
+  color:rgba(255,255,255,.65);
   margin-top:7px;
 }
 
 .wonPhoto{
-  width:min(330px,80%);
+  width:min(320px,80%);
   height:220px;
   object-fit:cover;
   border-radius:14px;
   margin:0 auto 14px;
-  border:1px solid #394454;
 }
 
 .wonName{
-  font-size:25px;
+  font-size:24px;
   font-weight:1000;
 }
 
@@ -856,183 +555,168 @@ select,input{
   color:var(--gold);
   font-size:20px;
   font-weight:1000;
-  margin:7px;
-}
-
-.wonBTC{
-  color:#f7931a;
-  font-size:12px;
-  font-weight:900;
 }
 
 .actionRow{
   display:flex;
+  flex-wrap:wrap;
   justify-content:center;
   gap:8px;
-  flex-wrap:wrap;
   margin-top:14px;
 }
 
-/* PAYMENT CHECKOUT */
+/* WALLET */
 
-.payOverlay{
+.walletSection{
+  margin-top:42px;
+}
+
+.walletGrid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:11px;
+}
+
+.walletCard{
+  min-height:190px;
+  padding:16px;
+  border-radius:16px;
+  border:1px solid #2b3541;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+.walletCash{background:#11171d}
+.walletApple{background:linear-gradient(135deg,#0d0e11,#272b31)}
+.walletVisa{background:linear-gradient(135deg,#2448d9,#101f65)}
+.walletAmex{background:linear-gradient(135deg,#1769aa,#082d50)}
+.walletBTC{background:linear-gradient(135deg,#e48c0c,#6e3c00)}
+
+.walletBrand{
+  font-weight:1000;
+  font-size:14px;
+}
+
+.walletMeta{
+  color:rgba(255,255,255,.65);
+  font-size:10px;
+  margin-top:4px;
+}
+
+.walletAmount{
+  font-size:22px;
+  font-weight:1000;
+  margin-top:24px;
+}
+
+.walletLabel{
+  color:rgba(255,255,255,.55);
+  font-size:9px;
+  letter-spacing:1px;
+  margin-top:3px;
+}
+
+.walletButtons{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+  margin-top:15px;
+}
+
+.walletBtn{
+  border:1px solid rgba(255,255,255,.17);
+  background:rgba(0,0,0,.16);
+  color:white;
+  border-radius:8px;
+  padding:8px 5px;
+  font-size:10px;
+  font-weight:900;
+}
+
+.walletViewOnly{
+  color:var(--gold);
+  font-size:9px;
+  font-weight:900;
+  margin-top:15px;
+}
+
+/* PAYMENT WINDOW */
+
+.paymentOverlay{
   position:fixed;
   inset:0;
   z-index:3000;
   display:grid;
   place-items:center;
-  padding:18px;
+  padding:16px;
   background:rgba(0,0,0,.88);
   backdrop-filter:blur(15px);
 }
 
-.payBox{
-  width:min(430px,100%);
+.paymentBox{
+  width:min(430px,96vw);
   background:#0d1117;
-  border:1px solid #293442;
-  border-radius:22px;
+  border:1px solid #303a47;
+  border-radius:20px;
   overflow:hidden;
-  box-shadow:0 35px 100px rgba(0,0,0,.7);
 }
 
-.payHeader{
-  padding:18px 20px;
-  border-bottom:1px solid #242d38;
+.paymentHeader{
+  padding:17px;
+  border-bottom:1px solid #252e39;
   display:flex;
   justify-content:space-between;
-  align-items:center;
-}
-
-.payHeaderTitle{
-  font-size:16px;
-  font-weight:1000;
 }
 
 .demoBadge{
-  font-size:8px;
-  letter-spacing:1.2px;
-  font-weight:1000;
-  border:1px solid #60501f;
-  color:#f6c65b;
-  padding:5px 7px;
+  color:var(--gold);
+  border:1px solid #645326;
+  background:#201a0e;
   border-radius:6px;
-  background:#211b0e;
+  padding:5px 7px;
+  font-size:8px;
+  font-weight:1000;
 }
 
-.payBody{
-  padding:20px;
-}
+.paymentBody{padding:20px}
 
-.checkoutTotal{
+.paymentTotal{
   text-align:center;
-  margin-bottom:20px;
+  margin-bottom:18px;
 }
 
-.checkoutSmall{
-  color:#7f8998;
-  font-size:10px;
-  font-weight:800;
-  text-transform:uppercase;
+.paymentTotal small{
+  color:var(--muted);
+  font-size:9px;
   letter-spacing:1px;
 }
 
-.checkoutAmount{
-  font-size:38px;
-  font-weight:1000;
-  margin-top:5px;
-  letter-spacing:-1.5px;
+.paymentTotal strong{
+  display:block;
+  font-size:37px;
+  margin-top:4px;
 }
 
-.demoPayCard{
-  position:relative;
-  min-height:215px;
+.demoCard{
+  min-height:210px;
   border-radius:17px;
-  padding:22px;
-  overflow:hidden;
-  border:1px solid rgba(255,255,255,.18);
-  box-shadow:0 20px 45px rgba(0,0,0,.4);
+  padding:21px;
+  border:1px solid rgba(255,255,255,.16);
 }
 
-.demoPayCard:after{
-  content:"";
-  position:absolute;
-  width:180px;
-  height:180px;
-  right:-60px;
-  bottom:-85px;
-  border:25px solid rgba(255,255,255,.05);
-  border-radius:50%;
-}
-
-.cardTheme-wallet{
-  background:
-    radial-gradient(circle at 80% 10%,rgba(255,255,255,.13),transparent 28%),
-    linear-gradient(135deg,#0d0f12,#30343a 54%,#15181d);
-}
-
-.cardTheme-visa{
-  background:
-    radial-gradient(circle at 80% 10%,rgba(255,255,255,.14),transparent 28%),
-    linear-gradient(135deg,#2448d9,#182f9a 54%,#101f65);
-}
-
-.cardTheme-amex{
-  background:
-    radial-gradient(circle at 80% 10%,rgba(255,255,255,.15),transparent 28%),
-    linear-gradient(135deg,#1769aa,#0c3f72 54%,#082d50);
-}
-
-.cardTop{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
+.demoApple{background:linear-gradient(135deg,#101114,#34383f)}
+.demoVisa{background:linear-gradient(135deg,#2348d5,#10246c)}
+.demoAmex{background:linear-gradient(135deg,#1b75b9,#07395f)}
 
 .cardBrand{
-  font-size:17px;
+  font-size:18px;
   font-weight:1000;
-  letter-spacing:-.5px;
-}
-
-.cardSubBrand{
-  font-size:9px;
-  color:rgba(255,255,255,.7);
-  margin-top:4px;
-  text-transform:uppercase;
-  letter-spacing:1px;
-  font-weight:800;
-}
-
-.cardChip{
-  width:42px;
-  height:31px;
-  border-radius:7px;
-  background:linear-gradient(135deg,#e5ce7a,#98833a);
-  position:relative;
-}
-
-.cardChip:before,
-.cardChip:after{
-  content:"";
-  position:absolute;
-  border:1px solid rgba(0,0,0,.25);
-}
-
-.cardChip:before{
-  left:13px;
-  top:0;
-  bottom:0;
-}
-
-.cardChip:after{
-  left:0;
-  right:0;
-  top:14px;
 }
 
 .cardNumber{
-  margin-top:44px;
-  font-size:21px;
+  margin-top:55px;
+  font-size:20px;
   font-weight:900;
   letter-spacing:2px;
 }
@@ -1040,260 +724,153 @@ select,input{
 .cardBottom{
   display:flex;
   justify-content:space-between;
-  margin-top:27px;
+  margin-top:28px;
   font-size:11px;
 }
 
-.cardLabel{
-  color:rgba(255,255,255,.65);
+.cardSmall{
+  color:rgba(255,255,255,.6);
   font-size:8px;
-  letter-spacing:1px;
   margin-bottom:3px;
 }
 
-.payLine{
+.paymentRow{
   display:flex;
   justify-content:space-between;
-  gap:10px;
-  padding:15px 0;
+  padding:14px 0;
   border-bottom:1px solid #202833;
-  font-size:13px;
+  font-size:12px;
 }
 
-.payMuted{
-  color:#838d9c;
-}
+.paymentMuted{color:var(--muted)}
 
-.payActions{
+.paymentActions{
   padding:0 20px 20px;
 }
 
-.confirmPayment{
+.confirm{
   width:100%;
   border:0;
+  border-radius:10px;
   padding:14px;
-  border-radius:11px;
-  font-weight:1000;
   background:linear-gradient(135deg,#ffe18c,#dca237);
   color:#1b1303;
+  font-weight:1000;
 }
 
-.cancelPayment{
+.cancel{
   width:100%;
   margin-top:8px;
-  border:1px solid #303a48;
+  border:1px solid #303a49;
+  border-radius:10px;
+  padding:12px;
   background:#171d26;
   color:white;
-  padding:12px;
-  border-radius:11px;
   font-weight:900;
-}
-
-.paySuccess{
-  padding:42px 25px;
-  text-align:center;
-}
-
-.successCircle{
-  width:70px;
-  height:70px;
-  display:grid;
-  place-items:center;
-  margin:auto;
-  border-radius:50%;
-  background:#163c27;
-  border:1px solid #2f8551;
-  color:#5cf39a;
-  font-size:34px;
-}
-
-.successTitle{
-  font-size:23px;
-  font-weight:1000;
-  margin-top:16px;
-}
-
-.successSub{
-  color:#87909f;
-  font-size:12px;
-  margin-top:6px;
-}
-
-.empty{
-  border:1px dashed #303a48;
-  color:var(--muted);
-  padding:50px;
-  border-radius:14px;
-  text-align:center;
 }
 
 .toast{
   position:fixed;
-  right:20px;
+  right:18px;
   bottom:90px;
-  z-index:4000;
+  z-index:5000;
   padding:12px 15px;
   border-radius:10px;
-  border:1px solid #344051;
-  background:#171e27;
-  transform:translateY(20px);
+  background:#171d26;
+  border:1px solid #344052;
   opacity:0;
+  transform:translateY(15px);
   transition:.2s;
-  pointer-events:none;
 }
 
 .toast.show{
-  transform:none;
   opacity:1;
+  transform:none;
 }
 
 .siteFooter{
-  width:min(1480px,94%);
-  margin:0 auto 90px;
-  border-top:1px solid #1d242e;
-  padding:18px 4px;
-  color:#4f5967;
-  font-size:10px;
-  line-height:1.5;
+  margin:40px 0 90px;
+  border-top:1px solid #202833;
+  padding:18px 0;
+  color:#56606e;
+  font-size:9px;
   text-align:center;
 }
 
-.mobileNav{
-  display:none;
-}
+.mobileNav{display:none}
 
-/* MOBILE */
-
-@media(max-width:1000px){
+@media(max-width:950px){
   .desktopNav{display:none}
   .packGrid{grid-template-columns:repeat(2,1fr)}
-  .inventoryGrid{grid-template-columns:repeat(3,1fr)}
+  .walletGrid{grid-template-columns:repeat(2,1fr)}
   .liveGrid{grid-template-columns:repeat(3,1fr)}
   .stats{grid-template-columns:repeat(2,1fr)}
 }
 
 @media(max-width:650px){
 
-  :root{
-    --nav:62px;
-  }
+  :root{--nav:62px}
 
-  header{
-    padding:0 7px 0 11px;
-  }
+  header{padding:0 7px 0 10px}
 
-  .logo{
-    font-size:20px;
-  }
-
-  .account{
-    gap:3px;
-  }
-
-  .account .avatar{
-    display:none;
-  }
+  .logo{font-size:19px}
 
   .balance{
-    padding:7px 6px;
+    padding:6px;
     font-size:9px;
-    gap:3px;
   }
 
-  .btcCoin{
-    width:16px;
-    height:16px;
-    font-size:9px;
-  }
+  .avatar{display:none}
 
   main{
     width:100%;
-    padding:0 12px 100px;
-  }
-
-  .page{
-    padding-top:14px;
+    padding:0 12px 90px;
   }
 
   .hero{
-    min-height:430px;
+    min-height:420px;
     padding:25px;
     align-items:flex-end;
-    background:
-      linear-gradient(0deg,rgba(4,5,7,.98) 0%,rgba(4,5,7,.6) 55%,rgba(4,5,7,.15)),
-      url("https://images.unsplash.com/photo-1491933382434-500287f9b54b?auto=format&fit=crop&w=900&q=85") center/cover;
   }
 
-  .hero h1{
-    font-size:50px;
-    letter-spacing:-3px;
-  }
+  .hero h1{font-size:48px}
 
-  .packGrid{
-    grid-template-columns:repeat(2,1fr);
-    gap:9px;
-  }
+  .packImage{height:145px}
 
-  .packImage{
-    height:150px;
-  }
-
-  .packBody{
-    padding:10px;
-  }
-
-  .packName{
-    font-size:14px;
-  }
-
-  .packDesc{
-    display:none;
-  }
+  .packDesc{display:none}
 
   .packBottom{
-    align-items:flex-start;
     flex-direction:column;
+    align-items:flex-start;
     gap:8px;
   }
 
-  .openBtn{
-    width:100%;
-  }
+  .openBtn{width:100%}
 
   .liveGrid{
     display:flex;
     overflow:auto;
-    padding-bottom:5px;
   }
 
-  .liveCard{
-    min-width:160px;
-  }
+  .liveCard{min-width:160px}
 
   .inventoryGrid{
     grid-template-columns:repeat(2,1fr);
-    gap:9px;
   }
 
-  .inventoryPhoto{
-    height:135px;
+  .walletGrid{
+    grid-template-columns:repeat(2,1fr);
   }
 
-  .battleSetup{
+  .walletCard{
+    min-height:170px;
+    padding:13px;
+  }
+
+  .walletAmount{font-size:18px}
+
+  .paymentChoices{
     grid-template-columns:1fr;
-  }
-
-  .battleArena{
-    grid-template-columns:1fr;
-  }
-
-  .leader{
-    grid-template-columns:45px 1fr 90px;
-    font-size:12px;
-  }
-
-  .leaderWins{
-    display:none;
   }
 
   .mobileNav{
@@ -1304,55 +881,25 @@ select,input{
     right:0;
     bottom:0;
     z-index:500;
-    padding:7px 5px calc(7px + env(safe-area-inset-bottom));
-    background:rgba(9,12,16,.95);
-    backdrop-filter:blur(16px);
+    background:rgba(9,12,16,.96);
     border-top:1px solid #242d38;
+    padding:7px 5px calc(7px + env(safe-area-inset-bottom));
   }
 
   .mnav{
     border:0;
     background:none;
     color:#747e8d;
-    font-size:10px;
-    font-weight:800;
-    padding:5px 2px;
+    font-size:9px;
+    font-weight:900;
   }
+
+  .mnav.active{color:var(--gold)}
 
   .mnavIcon{
     display:block;
-    font-size:19px;
+    font-size:18px;
     margin-bottom:2px;
-  }
-
-  .mnav.active{
-    color:var(--gold);
-  }
-
-  .reelWindow{
-    height:210px;
-  }
-
-  .reelItem{
-    flex-basis:145px;
-    width:145px;
-    height:165px;
-  }
-
-  .reelItem img{
-    height:110px;
-  }
-
-  .paymentChoices{
-    grid-template-columns:1fr;
-  }
-
-  .demoPayCard{
-    min-height:195px;
-  }
-
-  .cardNumber{
-    font-size:17px;
   }
 }
 </style>
@@ -1362,28 +909,32 @@ select,input{
 
 <header>
 
-  <div class="logo">
-    <span class="logoMark">♛</span>
-    PACKR
+<div class="logo">
+  <span class="logoMark">♛</span>
+  PACKR
+</div>
+
+<nav class="desktopNav">
+  <button class="nav active" data-page="home">Packs</button>
+  <button class="nav" data-page="inventory">Inventory</button>
+  <button class="nav" onclick="scrollWallet()">Wallet</button>
+</nav>
+
+<div class="account">
+
+  <div class="balance">
+    <span class="moneyIcon">$</span>
+    <span id="cashBalance">25,000.00</span>
   </div>
 
-  <nav class="desktopNav">
-    <button class="nav active" data-page="home">Packs</button>
-    <button class="nav" data-page="battle">Battles</button>
-    <button class="nav" data-page="inventory">Inventory</button>
-    <button class="nav" data-page="leaderboard">Leaderboard</button>
-  </nav>
-
-  <div class="account">
-
-    <div class="balance">
-      <span class="btcCoin">₿</span>
-      <span id="btcBalance">0.250000</span>
-    </div>
-
-    <div class="avatar">IF</div>
-
+  <div class="balance">
+    <span class="btcIcon">₿</span>
+    <span id="btcBalance">0.250000</span>
   </div>
+
+  <div class="avatar">IF</div>
+
+</div>
 
 </header>
 
@@ -1392,171 +943,303 @@ select,input{
 
 <section class="page" id="home">
 
-  <div class="hero">
+<div class="hero">
 
-    <div class="heroContent">
+  <div class="heroContent">
 
-      <div class="eyebrow">
-        THE DROP EXPERIENCE
-      </div>
-
-      <h1>
-        OPEN.<br>
-        COLLECT.<br>
-        <span>COMPETE.</span>
-      </h1>
-
-      <p>
-        Open premium packs, collect rare items and compete
-        in head-to-head battles.
-      </p>
-
-      <button class="btn gold" onclick="scrollPacks()">
-        EXPLORE PACKS →
-      </button>
-
+    <div class="eyebrow">
+      THE DROP EXPERIENCE
     </div>
 
-  </div>
+    <h1>
+      OPEN.<br>
+      COLLECT.<br>
+      <span>COMPETE.</span>
+    </h1>
 
+    <p>
+      Open premium packs and collect rare drops.
+    </p>
 
-  <div class="stats">
-
-    <div class="stat">
-      <div class="statValue" id="statOpened">0</div>
-      <div class="statLabel">PACKS OPENED</div>
-    </div>
-
-    <div class="stat">
-      <div class="statValue" id="statInventory">0</div>
-      <div class="statLabel">ITEMS OWNED</div>
-    </div>
-
-    <div class="stat">
-      <div class="statValue" id="statBest">$0</div>
-      <div class="statLabel">BEST DROP VALUE</div>
-    </div>
-
-    <div class="stat">
-      <div class="statValue" id="statLevel">1</div>
-      <div class="statLabel">PLAYER LEVEL</div>
-    </div>
-
-  </div>
-
-
-  <div class="titleRow" id="packsAnchor">
-
-    <div>
-      <h2>🔥 Featured Packs</h2>
-      <p>Choose a pack and open it.</p>
-    </div>
-
-    <span class="smallGold">LIVE DROPS</span>
-
-  </div>
-
-
-  <div class="filters">
-
-    <button class="filterBtn active" onclick="filterPacks('all',this)">ALL</button>
-    <button class="filterBtn" onclick="filterPacks('tech',this)">TECH</button>
-    <button class="filterBtn" onclick="filterPacks('gaming',this)">GAMING</button>
-    <button class="filterBtn" onclick="filterPacks('sneakers',this)">SNEAKERS</button>
-    <button class="filterBtn" onclick="filterPacks('style',this)">STYLE</button>
-    <button class="filterBtn" onclick="filterPacks('rides',this)">RIDES</button>
-    <button class="filterBtn" onclick="filterPacks('premium',this)">PREMIUM</button>
-    <button class="filterBtn" onclick="filterPacks('mystery',this)">MYSTERY</button>
-
-  </div>
-
-
-  <div class="packGrid" id="packGrid"></div>
-
-
-  <div class="titleRow">
-
-    <div>
-      <h2>● Live Drops</h2>
-      <p>Recent community openings.</p>
-    </div>
-
-  </div>
-
-  <div class="liveGrid" id="liveDrops"></div>
-
-</section>
-
-
-<section class="page hidden" id="battle">
-
-  <div class="titleRow">
-
-    <div>
-      <h2>⚔️ Pack Battles</h2>
-      <p>Open identical packs against a bot. Highest total wins all items.</p>
-    </div>
-
-  </div>
-
-  <div class="battleSetup">
-
-    <select id="battlePack"></select>
-
-    <select id="battleRounds">
-      <option value="1">1 Round</option>
-      <option value="3">3 Rounds</option>
-      <option value="5">5 Rounds</option>
-    </select>
-
-    <select id="battleMode">
-      <option>Classic</option>
-      <option>Upside Down</option>
-    </select>
-
-    <button class="btn gold" onclick="startBattle()">
-      START BATTLE
+    <button class="btn gold" onclick="scrollPacks()">
+      EXPLORE PACKS →
     </button>
 
   </div>
 
-  <div id="battleOutput"></div>
+</div>
+
+
+<div class="stats">
+
+  <div class="stat">
+    <div class="statValue" id="statOpened">0</div>
+    <div class="statLabel">PACKS OPENED</div>
+  </div>
+
+  <div class="stat">
+    <div class="statValue" id="statInventory">0</div>
+    <div class="statLabel">ITEMS OWNED</div>
+  </div>
+
+  <div class="stat">
+    <div class="statValue" id="statBest">$0</div>
+    <div class="statLabel">BEST DROP</div>
+  </div>
+
+  <div class="stat">
+    <div class="statValue" id="statLevel">1</div>
+    <div class="statLabel">LEVEL</div>
+  </div>
+
+</div>
+
+
+<div class="titleRow" id="packsAnchor">
+
+  <div>
+    <h2>🔥 Featured Packs</h2>
+    <p>Choose a pack to open.</p>
+  </div>
+
+</div>
+
+
+<div class="filters">
+
+  <button class="filterBtn active" onclick="filterPacks('all',this)">ALL</button>
+  <button class="filterBtn" onclick="filterPacks('tech',this)">TECH</button>
+  <button class="filterBtn" onclick="filterPacks('gaming',this)">GAMING</button>
+  <button class="filterBtn" onclick="filterPacks('sneakers',this)">SNEAKERS</button>
+  <button class="filterBtn" onclick="filterPacks('style',this)">STYLE</button>
+  <button class="filterBtn" onclick="filterPacks('rides',this)">RIDES</button>
+  <button class="filterBtn" onclick="filterPacks('premium',this)">PREMIUM</button>
+
+</div>
+
+
+<div class="packGrid" id="packGrid"></div>
+
+
+<div class="titleRow">
+  <div>
+    <h2>● Live Drops</h2>
+    <p>Recent openings.</p>
+  </div>
+</div>
+
+<div class="liveGrid" id="liveDrops"></div>
+
+
+<div class="walletSection" id="walletSection">
+
+  <div class="titleRow">
+
+    <div>
+      <h2>💳 Wallet</h2>
+      <p>Manage your PACKR balances and payment methods.</p>
+    </div>
+
+  </div>
+
+
+  <div class="walletGrid">
+
+    <div class="walletCard walletCash">
+
+      <div>
+
+        <div class="walletBrand">
+          CASH BALANCE
+        </div>
+
+        <div class="walletMeta">
+          PACKR account
+        </div>
+
+        <div class="walletAmount" id="walletCash">
+          $25,000.00
+        </div>
+
+        <div class="walletLabel">
+          ACCOUNT BALANCE
+        </div>
+
+      </div>
+
+      <div class="walletViewOnly">
+        VIEW ONLY · NOT USED FOR PACKS
+      </div>
+
+    </div>
+
+
+    <div class="walletCard walletApple">
+
+      <div>
+
+        <div class="walletBrand">
+           Pay
+        </div>
+
+        <div class="walletMeta">
+          •••• 8421 · ISAIAH F
+        </div>
+
+        <div class="walletAmount" id="walletApple">
+          $10,000.00
+        </div>
+
+        <div class="walletLabel">
+          AVAILABLE
+        </div>
+
+      </div>
+
+      <div class="walletButtons">
+
+        <button class="walletBtn" onclick="addFunds('apple',500)">
+          + $500
+        </button>
+
+        <button class="walletBtn" onclick="addFunds('apple',2500)">
+          + $2,500
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div class="walletCard walletVisa">
+
+      <div>
+
+        <div class="walletBrand">
+          VISA
+        </div>
+
+        <div class="walletMeta">
+          •••• 4821 · ISAIAH F
+        </div>
+
+        <div class="walletAmount" id="walletVisa">
+          $10,000.00
+        </div>
+
+        <div class="walletLabel">
+          AVAILABLE
+        </div>
+
+      </div>
+
+      <div class="walletButtons">
+
+        <button class="walletBtn" onclick="addFunds('visa',500)">
+          + $500
+        </button>
+
+        <button class="walletBtn" onclick="addFunds('visa',2500)">
+          + $2,500
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div class="walletCard walletAmex">
+
+      <div>
+
+        <div class="walletBrand">
+          AMERICAN EXPRESS
+        </div>
+
+        <div class="walletMeta">
+          •••• 1005 · ISAIAH F
+        </div>
+
+        <div class="walletAmount" id="walletAmex">
+          $10,000.00
+        </div>
+
+        <div class="walletLabel">
+          AVAILABLE
+        </div>
+
+      </div>
+
+      <div class="walletButtons">
+
+        <button class="walletBtn" onclick="addFunds('amex',500)">
+          + $500
+        </button>
+
+        <button class="walletBtn" onclick="addFunds('amex',2500)">
+          + $2,500
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div class="walletCard walletBTC">
+
+      <div>
+
+        <div class="walletBrand">
+          ₿ BITCOIN
+        </div>
+
+        <div class="walletMeta">
+          PACKR WALLET
+        </div>
+
+        <div class="walletAmount" id="walletBTC">
+          ₿0.250000
+        </div>
+
+        <div class="walletLabel">
+          AVAILABLE
+        </div>
+
+      </div>
+
+      <div class="walletButtons">
+
+        <button class="walletBtn" onclick="addBTC(.01)">
+          + ₿0.01
+        </button>
+
+        <button class="walletBtn" onclick="addBTC(.05)">
+          + ₿0.05
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
 
 </section>
 
 
 <section class="page hidden" id="inventory">
 
-  <div class="titleRow">
+<div class="titleRow">
 
-    <div>
-      <h2>🎒 My Collection</h2>
-      <p>Keep drops or convert them to Bitcoin balance.</p>
-    </div>
-
-    <span class="smallGold" id="inventoryCount">
-      0 ITEMS
-    </span>
-
+  <div>
+    <h2>🎒 Inventory</h2>
+    <p>Your saved drops.</p>
   </div>
 
-  <div id="inventoryGrid" class="inventoryGrid"></div>
+</div>
 
-</section>
-
-
-<section class="page hidden" id="leaderboard">
-
-  <div class="titleRow">
-
-    <div>
-      <h2>🏆 Leaderboard</h2>
-      <p>Top PACKR players.</p>
-    </div>
-
-  </div>
-
-  <div class="leaderboard" id="leaderboardList"></div>
+<div class="inventoryGrid" id="inventoryGrid"></div>
 
 </section>
 
@@ -1564,224 +1247,178 @@ select,input{
 
 
 <footer class="siteFooter">
-  PACKR is a demo game experience. Payment methods, balances, Bitcoin, cards, transactions and prizes shown here are fictional and have no real-world monetary value. Product imagery is illustrative.
+PACKR is a simulated game experience. Payment methods, card balances, Bitcoin, transactions and prizes displayed here are demo data and have no real-world monetary value.
 </footer>
 
 
 <div class="mobileNav">
 
-  <button class="mnav active" data-page="home">
-    <span class="mnavIcon">▦</span>
-    Packs
-  </button>
+<button class="mnav active" data-page="home">
+  <span class="mnavIcon">▦</span>
+  Packs
+</button>
 
-  <button class="mnav" data-page="battle">
-    <span class="mnavIcon">⚔</span>
-    Battle
-  </button>
+<button class="mnav" data-page="inventory">
+  <span class="mnavIcon">◇</span>
+  Items
+</button>
 
-  <button class="mnav" data-page="inventory">
-    <span class="mnavIcon">◇</span>
-    Items
-  </button>
+<button class="mnav" onclick="showPage('home');setTimeout(scrollWallet,100)">
+  <span class="mnavIcon">💳</span>
+  Wallet
+</button>
 
-  <button class="mnav" data-page="leaderboard">
-    <span class="mnavIcon">♜</span>
-    Ranks
-  </button>
+<button class="mnav" onclick="addFunds('apple',500)">
+  <span class="mnavIcon">＋</span>
+  Add
+</button>
 
-  <button class="mnav" onclick="dailyMoney()">
-    <span class="mnavIcon">＋</span>
-    Bonus
-  </button>
+<button class="mnav" onclick="dailyBonus()">
+  <span class="mnavIcon">★</span>
+  Bonus
+</button>
 
 </div>
 
 
-<!-- PACK OPENING MODAL -->
+<!-- PACK MODAL -->
 
 <div class="overlay hidden" id="overlay">
 
-  <div class="modal">
+<div class="modal">
 
-    <div class="modalTop">
+  <div class="modalTop">
 
-      <div>
+    <div>
+      <strong id="modalPackName">Pack</strong>
 
-        <div class="modalTitle" id="modalPackName">
-          Pack
-        </div>
-
-        <div style="color:var(--muted);font-size:11px;margin-top:3px"
-             id="modalPackPrice">
-        </div>
-
+      <div
+        id="modalPackPrice"
+        style="font-size:10px;color:#87909f;margin-top:3px">
       </div>
-
-      <button class="close" onclick="closeModal()">
-        ✕
-      </button>
-
     </div>
 
-
-    <div class="reelWindow" id="reelWindow">
-
-      <div class="marker"></div>
-
-      <div class="reel" id="reel"></div>
-
-    </div>
-
-
-    <div class="modalAction" id="modalAction"></div>
+    <button class="close" onclick="closeModal()">✕</button>
 
   </div>
+
+
+  <div class="reelWindow" id="reelWindow">
+
+    <div class="marker"></div>
+
+    <div class="reel" id="reel"></div>
+
+  </div>
+
+
+  <div class="modalAction" id="modalAction"></div>
+
+</div>
 
 </div>
 
 
-<!-- PAYMENT CHECKOUT -->
+<!-- PAYMENT WINDOW -->
 
-<div class="payOverlay hidden" id="cardPaymentOverlay">
+<div class="paymentOverlay hidden" id="paymentOverlay">
 
-  <div class="payBox" id="cardPaymentBox">
+<div class="paymentBox" id="paymentBox">
 
-    <div class="payHeader">
+  <div class="paymentHeader">
 
-      <div class="payHeaderTitle" id="checkoutTitle">
-        Secure Checkout
-      </div>
+    <strong id="paymentTitle">
+      Secure Checkout
+    </strong>
 
-      <div class="demoBadge">
-        DEMO
-      </div>
+    <span class="demoBadge">
+      DEMO
+    </span>
+
+  </div>
+
+
+  <div class="paymentBody">
+
+    <div class="paymentTotal">
+
+      <small>ORDER TOTAL</small>
+
+      <strong id="paymentAmount">
+        $0.00
+      </strong>
 
     </div>
 
 
-    <div class="payBody">
+    <div class="demoCard demoAmex" id="paymentCard">
 
-      <div class="checkoutTotal">
-
-        <div class="checkoutSmall">
-          Order Total
-        </div>
-
-        <div class="checkoutAmount" id="checkoutAmount">
-          $0.00
-        </div>
-
+      <div class="cardBrand" id="paymentBrand">
+        AMERICAN EXPRESS
       </div>
 
-
-      <div class="demoPayCard cardTheme-amex" id="demoPaymentCard">
-
-        <div class="cardTop">
-
-          <div>
-
-            <div class="cardBrand" id="demoBrandLabel">
-              AMERICAN EXPRESS
-            </div>
-
-            <div class="cardSubBrand" id="demoSubBrand">
-              Demo payment method
-            </div>
-
-          </div>
-
-          <div class="cardChip"></div>
-
-        </div>
-
-
-        <div class="cardNumber" id="demoCardNumber">
-          •••• •••••• •1005
-        </div>
-
-
-        <div class="cardBottom">
-
-          <div>
-
-            <div class="cardLabel">
-              CARD MEMBER
-            </div>
-
-            <span id="demoCardName">
-              ISAIAH F
-            </span>
-
-          </div>
-
-
-          <div>
-
-            <div class="cardLabel">
-              EXPIRES
-            </div>
-
-            <span id="demoCardExp">
-              09/29
-            </span>
-
-          </div>
-
-        </div>
-
+      <div class="cardNumber" id="paymentNumber">
+        •••• •••••• •1005
       </div>
 
+      <div class="cardBottom">
 
-      <div class="payLine">
+        <div>
+          <div class="cardSmall">CARD MEMBER</div>
+          ISAIAH F
+        </div>
 
-        <span class="payMuted">
-          Payment method
-        </span>
-
-        <strong id="checkoutMethodLabel">
-          AMEX •••• 1005
-        </strong>
-
-      </div>
-
-
-      <div class="payLine">
-
-        <span class="payMuted">
-          Purchase
-        </span>
-
-        <strong id="checkoutPackName">
-          PACKR Pack
-        </strong>
+        <div>
+          <div class="cardSmall">EXPIRES</div>
+          09/29
+        </div>
 
       </div>
 
     </div>
 
 
-    <div class="payActions">
+    <div class="paymentRow">
 
-      <button
-        class="confirmPayment"
-        onclick="finishDemoCardPayment()">
+      <span class="paymentMuted">
+        Payment method
+      </span>
 
-        CONFIRM PAYMENT
+      <strong id="paymentMethod">
+        AMEX •••• 1005
+      </strong>
 
-      </button>
+    </div>
 
-      <button
-        class="cancelPayment"
-        onclick="closeDemoCardPayment()">
 
-        CANCEL
+    <div class="paymentRow">
 
-      </button>
+      <span class="paymentMuted">
+        Purchase
+      </span>
+
+      <strong id="paymentPurchase">
+        PACKR Pack
+      </strong>
 
     </div>
 
   </div>
+
+
+  <div class="paymentActions">
+
+    <button class="confirm" onclick="confirmPayment()">
+      CONFIRM PAYMENT
+    </button>
+
+    <button class="cancel" onclick="closePayment()">
+      CANCEL
+    </button>
+
+  </div>
+
+</div>
 
 </div>
 
@@ -1791,2074 +1428,338 @@ select,input{
 
 <script>
 
-/* =========================================================
-   PACKR DEMO
-
-   All cards, payment approvals, BTC and prizes are simulated.
-   No real payment, account, wallet or card connection occurs.
-   ========================================================= */
-
 const BTC_RATE=100000;
 
-const FALLBACK=
-"https://images.unsplash.com/photo-1491933382434-500287f9b54b?auto=format&fit=crop&w=900&q=80";
-
-
-function imgFallback(img){
-
-  img.onerror=null;
-  img.src=FALLBACK;
-
-}
-
+const F="https://images.unsplash.com/";
 
 function U(id){
-
-  return `https://images.unsplash.com/${id}?auto=format&fit=crop&w=900&q=85`;
-
+  return `${F}${id}?auto=format&fit=crop&w=900&q=85`;
 }
 
-
-/* PRODUCT IMAGES */
-
-const P={
-
-shoe1:U("photo-1542291026-7eec264c27ff"),
-shoe2:U("photo-1600185365483-26d7a4cc7519"),
-shoe3:U("photo-1552346154-21d32810aba3"),
-shoe4:U("photo-1600269452121-4f2416e55c28"),
-shoe5:U("photo-1495555961986-6d4c1ecb7be3"),
-shoe6:U("photo-1607522370275-f14206abe5d3"),
-shoe7:U("photo-1543508282-6319a3e2621f"),
-shoe8:U("photo-1595950653106-6c9ebd614d3a"),
-shoe9:U("photo-1603808033192-082d6919d3e1"),
-shoe10:U("photo-1597045566677-8cf032ed6634"),
-shoe11:U("photo-1525966222134-fcfa99b8ae77"),
-shoe12:U("photo-1584735175315-9d5df23be620"),
-
-phone1:U("photo-1592750475338-74b7b21085ab"),
-phone2:U("photo-1511707171634-5f897ff02aa9"),
-phone3:U("photo-1510557880182-3d4d3cba35a5"),
-phone4:U("photo-1580910051074-3eb694886505"),
-
-laptop1:U("photo-1496181133206-80ce9b88a853"),
-laptop2:U("photo-1517336714731-489689fd1ca8"),
-laptop3:U("photo-1525547719571-a2d4ac8945e2"),
-
-head1:U("photo-1505740420928-5e560c06d30e"),
-head2:U("photo-1484704849700-f032a568e944"),
-
-speaker:U("photo-1608043152269-423dbba4e7e1"),
-
-keyboard:U("photo-1587829741301-dc798b83add3"),
-
-desk1:U("photo-1593640408182-31c70c8268f5"),
-desk2:U("photo-1527443224154-c4a3942d3acf"),
-
-camera1:U("photo-1516035069371-29a1b244cc32"),
-camera2:U("photo-1508614589041-895b88991e3e"),
-camera3:U("photo-1473968512647-3e447244af8f"),
-
-gaming1:U("photo-1598550476439-6847785fcea6"),
-gaming2:U("photo-1511512578047-dfb367046420"),
-gaming3:U("photo-1493711662062-fa541adb3fc8"),
-gaming4:U("photo-1547394765-185e1e68f34e"),
-
-watch1:U("photo-1523170335258-f5ed11844a49"),
-watch2:U("photo-1524805444758-089113d48a6d"),
-watch3:U("photo-1547996160-81dfa63595aa"),
-watch4:U("photo-1522312346375-d1a52e2b99b3"),
-watch5:U("photo-1594534475808-b18fc33b045e"),
-watch6:U("photo-1508685096489-7aacd43bd3b1"),
-
-bag1:U("photo-1553062407-98eeb64c6a62"),
-bag2:U("photo-1584917865442-de89df76afd3"),
-bag3:U("photo-1590874103328-eac38a683ce7"),
-
-sunglasses:U("photo-1511499767150-a48a237f0083"),
-
-street1:U("photo-1523398002811-999ca8dec234"),
-street2:U("photo-1529139574466-a303027c1d8e"),
-street3:U("photo-1551488831-00ddcb6c6bd3"),
-street4:U("photo-1521572163474-6864f9cf17ab"),
-street5:U("photo-1515886657613-9f3515b0c78f"),
-street6:U("photo-1483985988355-763728e1935b"),
-
-car1:U("photo-1503376780353-7e6692767b70"),
-car2:U("photo-1492144534655-ae79c964c9d7"),
-car3:U("photo-1494976388531-d1058494cdd8"),
-car4:U("photo-1544636331-e26879cd4d9b"),
-car5:U("photo-1552519507-da3b142c6e3d"),
-car6:U("photo-1504215680853-026ed2a45def"),
-car7:U("photo-1553440569-bcc63803a83d"),
-car8:U("photo-1542282088-fe8426682b8f"),
-car9:U("photo-1503736334956-4c8f8e92946d"),
-car10:U("photo-1519641471654-76ce0107ad1b"),
-car11:U("photo-1551830820-330a71b99659"),
-car12:U("photo-1494905998402-395d579af36f"),
-
-bike1:U("photo-1558981806-ec527fa84c39"),
-bike2:U("photo-1558980394-0c7b3bc4a8c1"),
-bike3:U("photo-1524591652733-73fa1ae7b5ee"),
-bike4:U("photo-1568772585407-9361f9bf3a87"),
-
-cycle1:U("photo-1502744688674-c619d1586c9e"),
-cycle2:U("photo-1529422643029-d4585747aaf2"),
-
-luxury:U("photo-1614164185128-e4ec99c436d7"),
-travel:U("photo-1476514525535-07fb3b4ae5f1")
-
+const IMG={
+  headphones:U("photo-1505740420928-5e560c06d30e"),
+  phone:U("photo-1592750475338-74b7b21085ab"),
+  laptop:U("photo-1496181133206-80ce9b88a853"),
+  keyboard:U("photo-1587829741301-dc798b83add3"),
+  camera:U("photo-1516035069371-29a1b244cc32"),
+  gaming:U("photo-1598550476439-6847785fcea6"),
+  shoe1:U("photo-1542291026-7eec264c27ff"),
+  shoe2:U("photo-1600185365483-26d7a4cc7519"),
+  shoe3:U("photo-1552346154-21d32810aba3"),
+  shoe4:U("photo-1600269452121-4f2416e55c28"),
+  street:U("photo-1523398002811-999ca8dec234"),
+  watch:U("photo-1523170335258-f5ed11844a49"),
+  bag:U("photo-1553062407-98eeb64c6a62"),
+  bike:U("photo-1558981806-ec527fa84c39"),
+  car:U("photo-1503376780353-7e6692767b70"),
+  car2:U("photo-1492144534655-ae79c964c9d7"),
+  luxury:U("photo-1614164185128-e4ec99c436d7")
 };
 
-
-function item(
-  name,
-  value,
-  rarity,
-  weight,
-  image
-){
-
-  return {
-    name,
-    value,
-    rarity,
-    weight,
-    image
-  };
-
+function item(name,value,rarity,weight,image){
+  return {name,value,rarity,weight,image};
 }
-
-
-/* PACK DATABASE */
 
 const PACKS=[
 
 {
- id:"starter",
- category:"tech",
- name:"Starter Drop",
- desc:"Affordable tech and accessories",
- price:100,
- image:P.head1,
- badge:"START HERE",
-
- items:[
-
-  item(
-    "Wireless Charger",
-    25,
-    "common",
-    30,
-    P.phone1
-  ),
-
-  item(
-    "Mini Bluetooth Speaker",
-    55,
-    "common",
-    25,
-    P.speaker
-  ),
-
-  item(
-    "Wireless Earbuds",
-    120,
-    "rare",
-    20,
-    P.head1
-  ),
-
-  item(
-    "Mechanical Keyboard",
-    240,
-    "rare",
-    15,
-    P.keyboard
-  ),
-
-  item(
-    "Premium Headphones",
-    650,
-    "epic",
-    8,
-    P.head2
-  ),
-
-  item(
-    "Laptop Bundle",
-    1800,
-    "legendary",
-    2,
-    P.laptop1
-  )
-
- ]
+  id:"starter",
+  category:"tech",
+  name:"Starter Drop",
+  desc:"Tech and accessories",
+  price:100,
+  image:IMG.headphones,
+  badge:"START HERE",
+  items:[
+    item("Wireless Charger",25,"common",30,IMG.phone),
+    item("Wireless Earbuds",120,"common",25,IMG.headphones),
+    item("Mechanical Keyboard",240,"rare",20,IMG.keyboard),
+    item("Smartphone",850,"rare",15,IMG.phone),
+    item("Laptop",1800,"epic",8,IMG.laptop),
+    item("Ultimate Tech Bundle",5000,"legendary",2,IMG.laptop)
+  ]
 },
 
 {
- id:"pockettech",
- category:"tech",
- name:"Pocket Tech",
- desc:"Phones, audio and smart devices",
- price:250,
- image:P.phone2,
- badge:"VALUE",
-
- items:[
-
-  item(
-    "Portable Charger",
-    60,
-    "common",
-    30,
-    P.phone2
-  ),
-
-  item(
-    "Bluetooth Speaker",
-    125,
-    "common",
-    25,
-    P.speaker
-  ),
-
-  item(
-    "Wireless Earbuds",
-    280,
-    "rare",
-    20,
-    P.head1
-  ),
-
-  item(
-    "Smart Watch",
-    650,
-    "rare",
-    15,
-    P.watch6
-  ),
-
-  item(
-    "Premium Smartphone",
-    1600,
-    "epic",
-    8,
-    P.phone3
-  ),
-
-  item(
-    "Mobile Tech Bundle",
-    4500,
-    "legendary",
-    2,
-    P.phone4
-  )
-
- ]
+  id:"tech",
+  category:"tech",
+  name:"Tech Vault",
+  desc:"Premium electronics",
+  price:600,
+  image:IMG.laptop,
+  badge:"POPULAR",
+  items:[
+    item("Premium Headphones",180,"common",30,IMG.headphones),
+    item("Mechanical Keyboard",420,"common",25,IMG.keyboard),
+    item("Smartphone",1000,"rare",20,IMG.phone),
+    item("Camera Kit",2200,"rare",15,IMG.camera),
+    item("Creator Laptop",5000,"epic",8,IMG.laptop),
+    item("Ultimate Setup",15000,"legendary",2,IMG.gaming)
+  ]
 },
 
 {
- id:"techvault",
- category:"tech",
- name:"Tech Vault",
- desc:"Premium electronics and setups",
- price:600,
- image:P.laptop1,
- badge:"POPULAR",
-
- items:[
-
-  item(
-    "Premium Headphones",
-    180,
-    "common",
-    30,
-    P.head2
-  ),
-
-  item(
-    "Mechanical Keyboard",
-    420,
-    "common",
-    25,
-    P.keyboard
-  ),
-
-  item(
-    "Smart Watch",
-    850,
-    "rare",
-    20,
-    P.watch1
-  ),
-
-  item(
-    "Flagship Phone",
-    1800,
-    "rare",
-    15,
-    P.phone1
-  ),
-
-  item(
-    "Creator Laptop",
-    4800,
-    "epic",
-    8,
-    P.laptop2
-  ),
-
-  item(
-    "Ultimate Desk Setup",
-    14000,
-    "legendary",
-    2,
-    P.desk1
-  )
-
- ]
+  id:"gaming",
+  category:"gaming",
+  name:"Gaming Drop",
+  desc:"Gaming gear and setups",
+  price:950,
+  image:IMG.gaming,
+  badge:"GAMING",
+  items:[
+    item("Gaming Headset",180,"common",30,IMG.headphones),
+    item("Gaming Keyboard",450,"common",25,IMG.keyboard),
+    item("Gaming Console",1300,"rare",20,IMG.gaming),
+    item("Gaming Monitor",2600,"rare",15,IMG.gaming),
+    item("Gaming PC",6500,"epic",8,IMG.gaming),
+    item("Dream Gaming Room",18000,"legendary",2,IMG.gaming)
+  ]
 },
 
 {
- id:"phonevault",
- category:"tech",
- name:"Phone Vault",
- desc:"Phones, watches and mobile gear",
- price:950,
- image:P.phone1,
- badge:"MOBILE",
-
- items:[
-
-  item(
-    "Premium Earbuds",
-    220,
-    "common",
-    30,
-    P.head1
-  ),
-
-  item(
-    "Smart Watch",
-    550,
-    "common",
-    25,
-    P.watch6
-  ),
-
-  item(
-    "Premium Smartphone",
-    1200,
-    "rare",
-    20,
-    P.phone2
-  ),
-
-  item(
-    "Flagship Pro Phone",
-    2600,
-    "rare",
-    15,
-    P.phone3
-  ),
-
-  item(
-    "Phone + Watch Bundle",
-    6200,
-    "epic",
-    8,
-    P.phone4
-  ),
-
-  item(
-    "Ultimate Mobile Collection",
-    18000,
-    "legendary",
-    2,
-    P.phone1
-  )
-
- ]
+  id:"sneaker",
+  category:"sneakers",
+  name:"Sneaker Vault",
+  desc:"Sneakers at every tier",
+  price:750,
+  image:IMG.shoe1,
+  badge:"HOT",
+  items:[
+    item("Nike Air Force 1",140,"common",25,IMG.shoe1),
+    item("Adidas Campus",280,"common",22,IMG.shoe2),
+    item("New Balance 550",550,"rare",20,IMG.shoe3),
+    item("Nike Dunk Low",950,"rare",17,IMG.shoe4),
+    item("Collector Sneaker",2400,"epic",12,IMG.shoe2),
+    item("Sneaker Grail",8000,"legendary",4,IMG.shoe3)
+  ]
 },
 
 {
- id:"audio",
- category:"tech",
- name:"Audio Vault",
- desc:"Headphones, speakers and studio gear",
- price:700,
- image:P.head2,
- badge:"AUDIO",
-
- items:[
-
-  item(
-    "Portable Speaker",
-    140,
-    "common",
-    30,
-    P.speaker
-  ),
-
-  item(
-    "Wireless Headphones",
-    380,
-    "common",
-    25,
-    P.head1
-  ),
-
-  item(
-    "Premium Headphones",
-    850,
-    "rare",
-    20,
-    P.head2
-  ),
-
-  item(
-    "Studio Audio Setup",
-    1800,
-    "rare",
-    15,
-    P.desk2
-  ),
-
-  item(
-    "Premium Speaker System",
-    5000,
-    "epic",
-    8,
-    P.speaker
-  ),
-
-  item(
-    "Ultimate Audio Room",
-    15000,
-    "legendary",
-    2,
-    P.desk1
-  )
-
- ]
+  id:"jordan",
+  category:"sneakers",
+  name:"Jordan Vault",
+  desc:"Collector basketball sneakers",
+  price:1200,
+  image:IMG.shoe3,
+  badge:"JORDAN",
+  items:[
+    item("Air Jordan 1 High",220,"common",25,IMG.shoe1),
+    item("Air Jordan 3 Retro",550,"common",22,IMG.shoe2),
+    item("Air Jordan 4 Retro",1100,"rare",20,IMG.shoe3),
+    item("Air Jordan 5 Retro",2100,"rare",17,IMG.shoe4),
+    item("Air Jordan 11",5200,"epic",12,IMG.shoe2),
+    item("Jordan Grail",16000,"legendary",4,IMG.shoe3)
+  ]
 },
 
 {
- id:"creator",
- category:"tech",
- name:"Creator Pack",
- desc:"Cameras and creator gear",
- price:1100,
- image:P.camera1,
- badge:"CREATOR",
-
- items:[
-
-  item(
-    "Creator Microphone",
-    250,
-    "common",
-    30,
-    P.desk2
-  ),
-
-  item(
-    "Studio Headphones",
-    600,
-    "common",
-    25,
-    P.head2
-  ),
-
-  item(
-    "Mirrorless Camera",
-    1400,
-    "rare",
-    20,
-    P.camera2
-  ),
-
-  item(
-    "Pro Camera Kit",
-    3200,
-    "rare",
-    15,
-    P.camera1
-  ),
-
-  item(
-    "Creator Laptop",
-    7500,
-    "epic",
-    8,
-    P.laptop2
-  ),
-
-  item(
-    "Ultimate Creator Studio",
-    22000,
-    "legendary",
-    2,
-    P.camera3
-  )
-
- ]
+  id:"streetwear",
+  category:"style",
+  name:"Streetwear Drop",
+  desc:"Premium fits",
+  price:500,
+  image:IMG.street,
+  badge:"STYLE",
+  items:[
+    item("Premium Tee",85,"common",25,IMG.street),
+    item("Streetwear Hoodie",240,"common",22,IMG.street),
+    item("Premium Jacket",550,"rare",20,IMG.street),
+    item("Full Fit",1100,"rare",17,IMG.street),
+    item("Collector Fit",3000,"epic",12,IMG.street),
+    item("Ultimate Wardrobe",9500,"legendary",4,IMG.street)
+  ]
 },
 
 {
- id:"gaming",
- category:"gaming",
- name:"Gaming Drop",
- desc:"Gaming gear, consoles and setups",
- price:950,
- image:P.gaming1,
- badge:"GAMING",
-
- items:[
-
-  item(
-    "Gaming Controller",
-    180,
-    "common",
-    30,
-    P.gaming2
-  ),
-
-  item(
-    "Gaming Headset",
-    450,
-    "common",
-    25,
-    P.head1
-  ),
-
-  item(
-    "Mechanical Gaming Keyboard",
-    900,
-    "rare",
-    20,
-    P.keyboard
-  ),
-
-  item(
-    "Console Bundle",
-    2200,
-    "rare",
-    15,
-    P.gaming4
-  ),
-
-  item(
-    "Gaming PC",
-    5800,
-    "epic",
-    8,
-    P.gaming1
-  ),
-
-  item(
-    "Dream Gaming Room",
-    18000,
-    "legendary",
-    2,
-    P.gaming3
-  )
-
- ]
+  id:"watch",
+  category:"premium",
+  name:"Watch Box",
+  desc:"Premium watches",
+  price:1000,
+  image:IMG.watch,
+  badge:"WATCHES",
+  items:[
+    item("Sport Watch",180,"common",25,IMG.watch),
+    item("Steel Watch",480,"common",22,IMG.watch),
+    item("Automatic Watch",1100,"rare",20,IMG.watch),
+    item("Luxury Chronograph",2800,"rare",17,IMG.watch),
+    item("Collector Timepiece",7500,"epic",12,IMG.watch),
+    item("Watch Grail",24000,"legendary",4,IMG.watch)
+  ]
 },
 
 {
- id:"pcbuilder",
- category:"gaming",
- name:"PC Builder",
- desc:"Build the ultimate setup",
- price:1300,
- image:P.desk1,
- badge:"PC",
-
- items:[
-
-  item(
-    "Gaming Mouse",
-    220,
-    "common",
-    30,
-    P.gaming2
-  ),
-
-  item(
-    "RGB Keyboard",
-    520,
-    "common",
-    25,
-    P.keyboard
-  ),
-
-  item(
-    "Gaming Monitor",
-    1400,
-    "rare",
-    20,
-    P.desk2
-  ),
-
-  item(
-    "PC Upgrade Bundle",
-    3400,
-    "rare",
-    15,
-    P.desk1
-  ),
-
-  item(
-    "Gaming PC",
-    7800,
-    "epic",
-    8,
-    P.gaming1
-  ),
-
-  item(
-    "Ultimate Battle Station",
-    26000,
-    "legendary",
-    2,
-    P.desk1
-  )
-
- ]
+  id:"luxury",
+  category:"premium",
+  name:"Luxury Collection",
+  desc:"Premium accessories",
+  price:1500,
+  image:IMG.luxury,
+  badge:"PREMIUM",
+  items:[
+    item("Premium Bag",280,"common",25,IMG.bag),
+    item("Leather Travel Bag",750,"common",22,IMG.bag),
+    item("Luxury Accessory",1600,"rare",20,IMG.luxury),
+    item("Luxury Timepiece",3600,"rare",17,IMG.watch),
+    item("Collector Watch",9000,"epic",12,IMG.watch),
+    item("Ultimate Luxury Collection",28000,"legendary",4,IMG.luxury)
+  ]
 },
 
 {
- id:"console",
- category:"gaming",
- name:"Console Rush",
- desc:"Controllers, consoles and entertainment",
- price:750,
- image:P.gaming4,
- badge:"PLAY",
-
- items:[
-
-  item(
-    "Wireless Controller",
-    140,
-    "common",
-    30,
-    P.gaming2
-  ),
-
-  item(
-    "Gaming Headset",
-    350,
-    "common",
-    25,
-    P.head2
-  ),
-
-  item(
-    "Elite Controller",
-    750,
-    "rare",
-    20,
-    P.gaming4
-  ),
-
-  item(
-    "Game Console",
-    1700,
-    "rare",
-    15,
-    P.gaming1
-  ),
-
-  item(
-    "Console + Display Setup",
-    4200,
-    "epic",
-    8,
-    P.desk2
-  ),
-
-  item(
-    "Ultimate Game Room",
-    13500,
-    "legendary",
-    2,
-    P.gaming3
-  )
-
- ]
+  id:"bike",
+  category:"rides",
+  name:"Ride Pack",
+  desc:"Bikes and performance rides",
+  price:2200,
+  image:IMG.bike,
+  badge:"RIDES",
+  items:[
+    item("Premium Riding Gear",450,"common",25,IMG.bike),
+    item("Performance Helmet",1100,"common",22,IMG.bike),
+    item("Electric Bike",2800,"rare",20,IMG.bike),
+    item("Street Motorcycle",6200,"rare",17,IMG.bike),
+    item("Performance Motorcycle",15500,"epic",12,IMG.bike),
+    item("Dream Ride",45000,"legendary",4,IMG.car)
+  ]
 },
 
 {
- id:"sneaker",
- category:"sneakers",
- name:"Sneaker Vault",
- desc:"Different sneakers at every tier",
- price:750,
- image:P.shoe1,
- badge:"HOT",
-
- items:[
-
-  item(
-    "Nike Air Force 1",
-    140,
-    "common",
-    25,
-    P.shoe1
-  ),
-
-  item(
-    "Adidas Campus",
-    280,
-    "common",
-    22,
-    P.shoe2
-  ),
-
-  item(
-    "New Balance 550",
-    550,
-    "rare",
-    20,
-    P.shoe3
-  ),
-
-  item(
-    "Nike Dunk Low",
-    950,
-    "rare",
-    17,
-    P.shoe4
-  ),
-
-  item(
-    "Yeezy 350 V2",
-    2400,
-    "epic",
-    12,
-    P.shoe5
-  ),
-
-  item(
-    "Collector Sneaker Grail",
-    8000,
-    "legendary",
-    4,
-    P.shoe6
-  )
-
- ]
-},
-
-{
- id:"jordan",
- category:"sneakers",
- name:"Jordan Vault",
- desc:"Jordan drops across multiple tiers",
- price:1200,
- image:P.shoe7,
- badge:"JORDAN",
-
- items:[
-
-  item(
-    "Air Jordan 1 High",
-    220,
-    "common",
-    25,
-    P.shoe7
-  ),
-
-  item(
-    "Air Jordan 3 Retro",
-    550,
-    "common",
-    22,
-    P.shoe8
-  ),
-
-  item(
-    "Air Jordan 4 Retro",
-    1100,
-    "rare",
-    20,
-    P.shoe9
-  ),
-
-  item(
-    "Air Jordan 5 Retro",
-    2100,
-    "rare",
-    17,
-    P.shoe10
-  ),
-
-  item(
-    "Air Jordan 11",
-    5200,
-    "epic",
-    12,
-    P.shoe11
-  ),
-
-  item(
-    "Rare Jordan Grail",
-    16000,
-    "legendary",
-    4,
-    P.shoe12
-  )
-
- ]
-},
-
-{
- id:"dunks",
- category:"sneakers",
- name:"Dunk Vault",
- desc:"Dunks and collector sneaker drops",
- price:1000,
- image:P.shoe4,
- badge:"DUNKS",
-
- items:[
-
-  item(
-    "Black & White Dunk Low",
-    180,
-    "common",
-    25,
-    P.shoe4
-  ),
-
-  item(
-    "University Blue Dunk",
-    420,
-    "common",
-    22,
-    P.shoe6
-  ),
-
-  item(
-    "SB Dunk Low",
-    900,
-    "rare",
-    20,
-    P.shoe2
-  ),
-
-  item(
-    "Orange SB Dunk",
-    1800,
-    "rare",
-    17,
-    P.shoe8
-  ),
-
-  item(
-    "Collector SB Pair",
-    4500,
-    "epic",
-    12,
-    P.shoe10
-  ),
-
-  item(
-    "Rare Dunk Grail",
-    14000,
-    "legendary",
-    4,
-    P.shoe11
-  )
-
- ]
-},
-
-{
- id:"streetwear",
- category:"style",
- name:"Streetwear Drop",
- desc:"Hoodies, sneakers and full fits",
- price:500,
- image:P.street1,
- badge:"STYLE",
-
- items:[
-
-  item(
-    "Premium Graphic Tee",
-    85,
-    "common",
-    25,
-    P.street1
-  ),
-
-  item(
-    "Streetwear Hoodie",
-    240,
-    "common",
-    22,
-    P.street2
-  ),
-
-  item(
-    "Premium Jacket",
-    550,
-    "rare",
-    20,
-    P.street3
-  ),
-
-  item(
-    "Sneaker + Hoodie Fit",
-    1100,
-    "rare",
-    17,
-    P.street4
-  ),
-
-  item(
-    "Collector Streetwear Fit",
-    3000,
-    "epic",
-    12,
-    P.street5
-  ),
-
-  item(
-    "Ultimate Wardrobe",
-    9500,
-    "legendary",
-    4,
-    P.street6
-  )
-
- ]
-},
-
-{
- id:"watch",
- category:"premium",
- name:"Watch Box",
- desc:"Sport to collector timepieces",
- price:1000,
- image:P.watch1,
- badge:"WATCHES",
-
- items:[
-
-  item(
-    "Sport Watch",
-    180,
-    "common",
-    25,
-    P.watch1
-  ),
-
-  item(
-    "Classic Steel Watch",
-    480,
-    "common",
-    22,
-    P.watch2
-  ),
-
-  item(
-    "Automatic Watch",
-    1100,
-    "rare",
-    20,
-    P.watch3
-  ),
-
-  item(
-    "Luxury Chronograph",
-    2800,
-    "rare",
-    17,
-    P.watch4
-  ),
-
-  item(
-    "Collector Timepiece",
-    7500,
-    "epic",
-    12,
-    P.watch5
-  ),
-
-  item(
-    "Vault Grail Watch",
-    24000,
-    "legendary",
-    4,
-    P.watch6
-  )
-
- ]
-},
-
-{
- id:"luxury",
- category:"premium",
- name:"Luxury Collection",
- desc:"Watches, bags and premium accessories",
- price:1500,
- image:P.luxury,
- badge:"PREMIUM",
-
- items:[
-
-  item(
-    "Premium Sunglasses",
-    280,
-    "common",
-    25,
-    P.sunglasses
-  ),
-
-  item(
-    "Leather Travel Bag",
-    750,
-    "common",
-    22,
-    P.bag1
-  ),
-
-  item(
-    "Luxury Handbag",
-    1600,
-    "rare",
-    20,
-    P.bag2
-  ),
-
-  item(
-    "Luxury Timepiece",
-    3600,
-    "rare",
-    17,
-    P.watch4
-  ),
-
-  item(
-    "Collector Watch",
-    9000,
-    "epic",
-    12,
-    P.watch5
-  ),
-
-  item(
-    "Ultimate Luxury Collection",
-    28000,
-    "legendary",
-    4,
-    P.luxury
-  )
-
- ]
-},
-
-{
- id:"travel",
- category:"style",
- name:"Travel Pack",
- desc:"Premium bags and travel gear",
- price:650,
- image:P.travel,
- badge:"TRAVEL",
-
- items:[
-
-  item(
-    "Premium Backpack",
-    140,
-    "common",
-    25,
-    P.bag1
-  ),
-
-  item(
-    "Carry-On Bag",
-    320,
-    "common",
-    22,
-    P.bag3
-  ),
-
-  item(
-    "Travel Luggage Set",
-    750,
-    "rare",
-    20,
-    P.travel
-  ),
-
-  item(
-    "Premium Travel Kit",
-    1600,
-    "rare",
-    17,
-    P.bag2
-  ),
-
-  item(
-    "Luxury Travel Collection",
-    4200,
-    "epic",
-    12,
-    P.luxury
-  ),
-
-  item(
-    "Ultimate Travel Setup",
-    12000,
-    "legendary",
-    4,
-    P.travel
-  )
-
- ]
-},
-
-{
- id:"ebike",
- category:"rides",
- name:"E-Bike Drop",
- desc:"Electric bikes and premium rides",
- price:1200,
- image:P.cycle1,
- badge:"E-RIDE",
-
- items:[
-
-  item(
-    "Riding Gear",
-    220,
-    "common",
-    25,
-    P.cycle1
-  ),
-
-  item(
-    "Premium Helmet",
-    520,
-    "common",
-    22,
-    P.cycle2
-  ),
-
-  item(
-    "Commuter E-Bike",
-    1400,
-    "rare",
-    20,
-    P.cycle1
-  ),
-
-  item(
-    "Performance E-Bike",
-    3200,
-    "rare",
-    17,
-    P.cycle2
-  ),
-
-  item(
-    "Premium Electric Ride",
-    8000,
-    "epic",
-    12,
-    P.bike1
-  ),
-
-  item(
-    "Ultimate E-Ride Setup",
-    22000,
-    "legendary",
-    4,
-    P.bike2
-  )
-
- ]
-},
-
-{
- id:"dirtbike",
- category:"rides",
- name:"Dirt Bike Drop",
- desc:"Off-road riding gear and bikes",
- price:1600,
- image:P.bike3,
- badge:"OFF ROAD",
-
- items:[
-
-  item(
-    "Riding Gear Set",
-    300,
-    "common",
-    25,
-    P.bike1
-  ),
-
-  item(
-    "Premium Moto Helmet",
-    750,
-    "common",
-    22,
-    P.bike2
-  ),
-
-  item(
-    "Pit Bike",
-    1900,
-    "rare",
-    20,
-    P.bike3
-  ),
-
-  item(
-    "Electric Dirt Bike",
-    4200,
-    "rare",
-    17,
-    P.bike4
-  ),
-
-  item(
-    "Performance Dirt Bike",
-    11000,
-    "epic",
-    12,
-    P.bike1
-  ),
-
-  item(
-    "Dream Off-Road Setup",
-    32000,
-    "legendary",
-    4,
-    P.bike2
-  )
-
- ]
-},
-
-{
- id:"carmods",
- category:"rides",
- name:"Car Mods",
- desc:"Wheels and performance upgrades",
- price:1800,
- image:P.car2,
- badge:"MODS",
-
- items:[
-
-  item(
-    "Detail Package",
-    300,
-    "common",
-    25,
-    P.car1
-  ),
-
-  item(
-    "Wheel & Tire Package",
-    950,
-    "common",
-    22,
-    P.car2
-  ),
-
-  item(
-    "Suspension Upgrade",
-    2200,
-    "rare",
-    20,
-    P.car3
-  ),
-
-  item(
-    "Performance Exhaust",
-    4800,
-    "rare",
-    17,
-    P.car4
-  ),
-
-  item(
-    "Full Performance Build",
-    12000,
-    "epic",
-    12,
-    P.car5
-  ),
-
-  item(
-    "Ultimate Custom Build",
-    36000,
-    "legendary",
-    4,
-    P.car6
-  )
-
- ]
-},
-
-{
- id:"ride",
- category:"rides",
- name:"Ride Pack",
- desc:"Two wheels to complete garage",
- price:2200,
- image:P.bike1,
- badge:"HIGH ROLLER",
-
- items:[
-
-  item(
-    "Premium Riding Gear",
-    450,
-    "common",
-    25,
-    P.bike2
-  ),
-
-  item(
-    "Performance Helmet",
-    1100,
-    "common",
-    22,
-    P.bike3
-  ),
-
-  item(
-    "Electric Bike",
-    2800,
-    "rare",
-    20,
-    P.cycle1
-  ),
-
-  item(
-    "Street Motorcycle",
-    6200,
-    "rare",
-    17,
-    P.bike4
-  ),
-
-  item(
-    "Performance Motorcycle",
-    15500,
-    "epic",
-    12,
-    P.bike1
-  ),
-
-  item(
-    "Dream Ride Collection",
-    45000,
-    "legendary",
-    4,
-    P.car8
-  )
-
- ]
-},
-
-{
- id:"garage",
- category:"rides",
- name:"Dream Garage",
- desc:"Performance cars and dream rides",
- price:5000,
- image:P.car7,
- badge:"ELITE",
-
- items:[
-
-  item(
-    "Premium Wheel Package",
-    900,
-    "common",
-    25,
-    P.car7
-  ),
-
-  item(
-    "Performance Upgrade",
-    2500,
-    "common",
-    22,
-    P.car8
-  ),
-
-  item(
-    "Dream Motorcycle",
-    6500,
-    "rare",
-    20,
-    P.bike4
-  ),
-
-  item(
-    "Sports Car",
-    14000,
-    "rare",
-    17,
-    P.car9
-  ),
-
-  item(
-    "Performance Car",
-    38000,
-    "epic",
-    12,
-    P.car10
-  ),
-
-  item(
-    "Ultimate Dream Garage",
-    130000,
-    "legendary",
-    4,
-    P.car11
-  )
-
- ]
-},
-
-{
- id:"mystery100",
- category:"mystery",
- name:"Mystery $100",
- desc:"Small pack, completely mixed drops",
- price:100,
- image:P.bag3,
- badge:"MYSTERY",
-
- items:[
-
-  item(
-    "Premium Accessory",
-    20,
-    "common",
-    25,
-    P.sunglasses
-  ),
-
-  item(
-    "Portable Speaker",
-    55,
-    "common",
-    22,
-    P.speaker
-  ),
-
-  item(
-    "Streetwear Drop",
-    130,
-    "rare",
-    20,
-    P.street3
-  ),
-
-  item(
-    "Sneaker Drop",
-    300,
-    "rare",
-    17,
-    P.shoe3
-  ),
-
-  item(
-    "Tech Drop",
-    850,
-    "epic",
-    12,
-    P.phone2
-  ),
-
-  item(
-    "Mystery Grail",
-    2600,
-    "legendary",
-    4,
-    P.watch3
-  )
-
- ]
-},
-
-{
- id:"mystery500",
- category:"mystery",
- name:"Mystery $500",
- desc:"Premium mixed-category drops",
- price:500,
- image:P.luxury,
- badge:"MYSTERY",
-
- items:[
-
-  item(
-    "Premium Sunglasses",
-    90,
-    "common",
-    25,
-    P.sunglasses
-  ),
-
-  item(
-    "Wireless Headphones",
-    260,
-    "common",
-    22,
-    P.head1
-  ),
-
-  item(
-    "Premium Sneakers",
-    650,
-    "rare",
-    20,
-    P.shoe6
-  ),
-
-  item(
-    "Smartphone",
-    1500,
-    "rare",
-    17,
-    P.phone3
-  ),
-
-  item(
-    "Luxury Watch",
-    4500,
-    "epic",
-    12,
-    P.watch4
-  ),
-
-  item(
-    "Mystery Grail",
-    15000,
-    "legendary",
-    4,
-    P.car5
-  )
-
- ]
-},
-
-{
- id:"blackvault",
- category:"premium",
- name:"Black Vault",
- desc:"Premium items from every category",
- price:2500,
- image:P.luxury,
- badge:"BLACK VAULT",
-
- items:[
-
-  item(
-    "Luxury Accessory",
-    480,
-    "common",
-    25,
-    P.sunglasses
-  ),
-
-  item(
-    "Premium Travel Bag",
-    1200,
-    "common",
-    22,
-    P.bag2
-  ),
-
-  item(
-    "Flagship Smartphone",
-    3200,
-    "rare",
-    20,
-    P.phone4
-  ),
-
-  item(
-    "Luxury Watch",
-    7000,
-    "rare",
-    17,
-    P.watch5
-  ),
-
-  item(
-    "Ultimate Tech Setup",
-    18000,
-    "epic",
-    12,
-    P.desk1
-  ),
-
-  item(
-    "Black Vault Grail",
-    58000,
-    "legendary",
-    4,
-    P.car10
-  )
-
- ]
-},
-
-{
- id:"goldvault",
- category:"premium",
- name:"Gold Vault",
- desc:"High-value premium drops",
- price:7500,
- image:P.watch5,
- badge:"GOLD",
-
- items:[
-
-  item(
-    "Premium Luxury Bundle",
-    1600,
-    "common",
-    25,
-    P.bag2
-  ),
-
-  item(
-    "High-End Laptop",
-    4200,
-    "common",
-    22,
-    P.laptop3
-  ),
-
-  item(
-    "Collector Timepiece",
-    9500,
-    "rare",
-    20,
-    P.watch6
-  ),
-
-  item(
-    "Ultimate Gaming Setup",
-    20000,
-    "rare",
-    17,
-    P.gaming3
-  ),
-
-  item(
-    "Performance Ride",
-    52000,
-    "epic",
-    12,
-    P.car11
-  ),
-
-  item(
-    "Gold Vault Grail",
-    175000,
-    "legendary",
-    4,
-    P.car12
-  )
-
- ]
-},
-
-{
- id:"diamond",
- category:"premium",
- name:"Diamond Vault",
- desc:"PACKR's biggest pack",
- price:15000,
- image:P.car12,
- badge:"DIAMOND",
-
- items:[
-
-  item(
-    "Luxury Collection",
-    3200,
-    "common",
-    25,
-    P.luxury
-  ),
-
-  item(
-    "Collector Watch",
-    8500,
-    "common",
-    22,
-    P.watch5
-  ),
-
-  item(
-    "Ultimate Creator Studio",
-    19000,
-    "rare",
-    20,
-    P.camera3
-  ),
-
-  item(
-    "Dream Motorcycle",
-    42000,
-    "rare",
-    17,
-    P.bike1
-  ),
-
-  item(
-    "Performance Car",
-    105000,
-    "epic",
-    12,
-    P.car10
-  ),
-
-  item(
-    "Diamond Vault Grail",
-    350000,
-    "legendary",
-    4,
-    P.car12
-  )
-
- ]
+  id:"garage",
+  category:"rides",
+  name:"Dream Garage",
+  desc:"Cars and dream rides",
+  price:5000,
+  image:IMG.car,
+  badge:"ELITE",
+  items:[
+    item("Wheel Package",900,"common",25,IMG.car),
+    item("Performance Upgrade",2500,"common",22,IMG.car2),
+    item("Dream Motorcycle",6500,"rare",20,IMG.bike),
+    item("Sports Car",14000,"rare",17,IMG.car),
+    item("Performance Car",38000,"epic",12,IMG.car2),
+    item("Ultimate Dream Garage",130000,"legendary",4,IMG.car)
+  ]
 }
 
 ];
 
-
-/* STATE */
-
 const DEFAULT_STATE={
-
-  btc:0.250000,
-
+  cash:25000,
+  btc:.25,
+  apple:10000,
+  visa:10000,
+  amex:10000,
   inventory:[],
-
   opened:0,
-
   best:0,
-
   level:1,
-
   daily:null
-
 };
-
-
-let state=load();
-
-let activePack=null;
-
-let activePrize=null;
-
-let spinning=false;
-
-let currentFilter="all";
-
-let demoCardCallback=null;
-
-let selectedPaymentType="amex";
-
-
-const PAYMENT_META={
-
-  applepay:{
-
-    title:"Apple Pay",
-
-    brand:" Pay",
-
-    sub:"Wallet payment",
-
-    number:"•••• •••• •••• 8421",
-
-    name:"ISAIAH F",
-
-    exp:"09/29",
-
-    label:"Apple Pay •••• 8421",
-
-    theme:"cardTheme-wallet"
-
-  },
-
-  visa:{
-
-    title:"Visa Checkout",
-
-    brand:"VISA",
-
-    sub:"Visa payment",
-
-    number:"•••• •••• •••• 4821",
-
-    name:"ISAIAH F",
-
-    exp:"09/29",
-
-    label:"VISA •••• 4821",
-
-    theme:"cardTheme-visa"
-
-  },
-
-  amex:{
-
-    title:"American Express Checkout",
-
-    brand:"AMERICAN EXPRESS",
-
-    sub:"American Express",
-
-    number:"•••• •••••• •1005",
-
-    name:"ISAIAH F",
-
-    exp:"09/29",
-
-    label:"AMEX •••• 1005",
-
-    theme:"cardTheme-amex"
-
-  }
-
-};
-
-
-/* STORAGE */
 
 function load(){
-
   try{
-
-    const old=
-      JSON.parse(
-        localStorage.getItem("packrV4")||"{}"
-      );
-
     return {
-
       ...DEFAULT_STATE,
-
-      ...old,
-
-      btc:
-        typeof old.btc==="number"
-          ? old.btc
-          : DEFAULT_STATE.btc
-
+      ...JSON.parse(localStorage.getItem("packrWalletV1")||"{}")
     };
-
   }catch{
-
-    return {
-      ...DEFAULT_STATE
-    };
-
+    return {...DEFAULT_STATE};
   }
-
 }
 
+let state=load();
+let activePack=null;
+let activePrize=null;
+let currentFilter="all";
+let spinning=false;
+let pendingPayment=null;
 
 function save(){
-
-  localStorage.setItem(
-    "packrV4",
-    JSON.stringify(state)
-  );
-
-  updateAll();
-
+  localStorage.setItem("packrWalletV1",JSON.stringify(state));
+  updateUI();
 }
 
+function money(n){
+  return Number(n).toLocaleString(undefined,{
+    minimumFractionDigits:2,
+    maximumFractionDigits:2
+  });
+}
 
-/* NAVIGATION */
+function whole(n){
+  return Math.round(n).toLocaleString();
+}
 
-document.querySelectorAll(
-  "[data-page]"
-).forEach(button=>{
+function btc(n){
+  return Number(n).toFixed(6);
+}
 
-  button.onclick=()=>{
-
-    showPage(
-      button.dataset.page
-    );
-
-  };
-
-});
-
+function packBTC(pack){
+  return pack.price/BTC_RATE;
+}
 
 function showPage(id){
 
-  document.querySelectorAll(
-    ".page"
-  ).forEach(x=>{
+  document.querySelectorAll(".page")
+    .forEach(x=>x.classList.add("hidden"));
 
-    x.classList.add(
-      "hidden"
-    );
+  document.getElementById(id)
+    .classList.remove("hidden");
 
-  });
+  document.querySelectorAll("[data-page]")
+    .forEach(x=>x.classList.toggle("active",x.dataset.page===id));
 
-
-  document.getElementById(
-    id
-  ).classList.remove(
-    "hidden"
-  );
-
-
-  document.querySelectorAll(
-    "[data-page]"
-  ).forEach(x=>{
-
-    x.classList.toggle(
-      "active",
-      x.dataset.page===id
-    );
-
-  });
-
-
-  window.scrollTo({
-
-    top:0,
-
-    behavior:"smooth"
-
-  });
-
+  window.scrollTo({top:0,behavior:"smooth"});
 }
 
+document.querySelectorAll("[data-page]").forEach(b=>{
+  b.onclick=()=>showPage(b.dataset.page);
+});
 
 function scrollPacks(){
-
-  document.getElementById(
-    "packsAnchor"
-  ).scrollIntoView({
-
-    behavior:"smooth"
-
-  });
-
+  document.getElementById("packsAnchor")
+    .scrollIntoView({behavior:"smooth"});
 }
 
+function scrollWallet(){
+  document.getElementById("walletSection")
+    .scrollIntoView({behavior:"smooth"});
+}
 
-/* FILTERS */
+function filterPacks(category,button){
 
-function filterPacks(
-  category,
-  button
-){
+  currentFilter=category;
 
-  currentFilter=
-    category;
+  document.querySelectorAll(".filterBtn")
+    .forEach(x=>x.classList.remove("active"));
 
-
-  document.querySelectorAll(
-    ".filterBtn"
-  ).forEach(x=>{
-
-    x.classList.remove(
-      "active"
-    );
-
-  });
-
-
-  button.classList.add(
-    "active"
-  );
-
+  button.classList.add("active");
 
   renderPacks();
-
 }
-
-
-/* BTC PRICE */
-
-function packBTC(pack){
-
-  return (
-    pack.price
-    /
-    BTC_RATE
-  );
-
-}
-
-
-/* PACK GRID */
 
 function renderPacks(){
 
-  const grid=
-    document.getElementById(
-      "packGrid"
-    );
-
-
   const visible=
-
     currentFilter==="all"
+    ? PACKS
+    : PACKS.filter(x=>x.category===currentFilter);
 
-      ? PACKS
-
-      : PACKS.filter(
-          p=>
-            p.category===
-            currentFilter
-        );
-
-
-  grid.innerHTML=
-
+  document.getElementById("packGrid").innerHTML=
     visible.map(p=>`
 
       <article class="pack">
 
         <div class="packImage">
 
-          <img
-            src="${p.image}"
-            alt="${p.name}"
-            loading="lazy"
-            onerror="imgFallback(this)">
-
-          <div class="packShade">
-          </div>
+          <img src="${p.image}" alt="${p.name}">
 
           <div class="packBadge">
             ${p.badge}
           </div>
 
         </div>
-
 
         <div class="packBody">
 
@@ -3870,13 +1771,12 @@ function renderPacks(){
             ${p.desc}
           </div>
 
-
           <div class="packBottom">
 
             <div>
 
               <div class="packPrice">
-                $${money(p.price)}
+                $${whole(p.price)}
               </div>
 
               <div class="packBTC">
@@ -3885,13 +1785,8 @@ function renderPacks(){
 
             </div>
 
-
-            <button
-              class="openBtn"
-              onclick="openPack('${p.id}')">
-
+            <button class="openBtn" onclick="openPack('${p.id}')">
               OPEN
-
             </button>
 
           </div>
@@ -3901,932 +1796,290 @@ function renderPacks(){
       </article>
 
     `).join("");
-
 }
-
-
-/* BATTLE SELECT */
-
-function renderBattlePacks(){
-
-  document.getElementById(
-    "battlePack"
-  ).innerHTML=
-
-    PACKS.map(p=>`
-
-      <option value="${p.id}">
-
-        ${p.name}
-        —
-        $${money(p.price)}
-
-      </option>
-
-    `).join("");
-
-}
-
-
-/* OPEN PACK */
 
 function openPack(id){
 
-  activePack=
-    PACKS.find(
-      p=>p.id===id
-    );
+  activePack=PACKS.find(x=>x.id===id);
+  activePrize=null;
 
-
-  activePrize=
-    null;
-
-
-  document.getElementById(
-    "modalPackName"
-  ).textContent=
+  document.getElementById("modalPackName").textContent=
     activePack.name;
 
+  document.getElementById("modalPackPrice").textContent=
+    `$${whole(activePack.price)} · ₿${btc(packBTC(activePack))}`;
 
-  document.getElementById(
-    "modalPackPrice"
-  ).textContent=
-    `$${money(activePack.price)} · ₿${btc(packBTC(activePack))}`;
+  document.getElementById("reel").innerHTML="";
 
-
-  const reel=
-    document.getElementById(
-      "reel"
-    );
-
-
-  reel.innerHTML="";
-
-  reel.style.transition=
-    "none";
-
-  reel.style.transform=
-    "translate3d(0,0,0)";
-
-
-  document.getElementById(
-    "overlay"
-  ).classList.remove(
-    "hidden"
-  );
-
+  document.getElementById("overlay")
+    .classList.remove("hidden");
 
   showPaymentChoice();
-
 }
-
-
-/* PAYMENT OPTIONS */
 
 function showPaymentChoice(){
 
-  if(!activePack){
-    return;
-  }
+  document.getElementById("modalAction").innerHTML=`
 
-
-  document.getElementById(
-    "modalAction"
-  ).innerHTML=`
-
-    <div style="
-      font-size:18px;
-      font-weight:1000;
-      margin-bottom:4px">
-
+    <strong style="font-size:18px">
       SELECT PAYMENT METHOD
+    </strong>
 
+    <div style="color:#87909f;font-size:11px;margin-top:4px">
+      ${activePack.name} · $${whole(activePack.price)}
     </div>
-
-
-    <div style="
-      color:var(--muted);
-      font-size:11px">
-
-      ${activePack.name}
-      ·
-      $${money(activePack.price)}
-
-    </div>
-
 
     <div class="paymentChoices">
 
-
-      <button
-        class="btn appleBtn payChoice"
-        onclick="beginCheckout('applepay')">
-
+      <button class="btn apple payChoice" onclick="beginPayment('apple')">
          Pay
-
         <div class="paymentBalance">
-          Apple Pay
+          Available $${money(state.apple)}
         </div>
-
       </button>
 
-
-      <button
-        class="btn visaBtn payChoice"
-        onclick="beginCheckout('visa')">
-
+      <button class="btn visa payChoice" onclick="beginPayment('visa')">
         VISA •••• 4821
-
         <div class="paymentBalance">
-          Isaiah F
+          Available $${money(state.visa)}
         </div>
-
       </button>
 
-
-      <button
-        class="btn amexBtn payChoice"
-        onclick="beginCheckout('amex')">
-
+      <button class="btn amex payChoice" onclick="beginPayment('amex')">
         AMEX •••• 1005
-
         <div class="paymentBalance">
-          Isaiah F
+          Available $${money(state.amex)}
         </div>
-
       </button>
 
-
-      <button
-        class="btn btcBtn payChoice"
-        onclick="spinPack('btc')">
-
-        PAY ₿${btc(packBTC(activePack))}
-
+      <button class="btn orange payChoice" onclick="payBitcoin()">
+        ₿ BITCOIN
         <div class="paymentBalance">
-
-          Balance
-          ₿${btc(state.btc)}
-
+          Available ₿${btc(state.btc)}
         </div>
-
       </button>
-
 
     </div>
-  `;
 
+    <div style="font-size:9px;color:#667180;margin-top:12px">
+      Cash balance is displayed in your account but is not used to open packs.
+    </div>
+  `;
 }
 
+const PAYMENTS={
 
-/* CHECKOUT */
+  apple:{
+    title:"Apple Pay",
+    brand:" Pay",
+    number:"•••• •••• •••• 8421",
+    label:"Apple Pay •••• 8421",
+    cls:"demoApple"
+  },
 
-function beginCheckout(type){
+  visa:{
+    title:"Visa Checkout",
+    brand:"VISA",
+    number:"•••• •••• •••• 4821",
+    label:"VISA •••• 4821",
+    cls:"demoVisa"
+  },
 
-  if(!activePack){
+  amex:{
+    title:"American Express Checkout",
+    brand:"AMERICAN EXPRESS",
+    number:"•••• •••••• •1005",
+    label:"AMEX •••• 1005",
+    cls:"demoAmex"
+  }
+
+};
+
+function beginPayment(type){
+
+  const price=activePack.price;
+
+  if(state[type]<price){
+    toast("Not enough available balance.");
     return;
   }
 
+  pendingPayment=type;
 
-  selectedPaymentType=
-    type;
+  const meta=PAYMENTS[type];
 
-
-  document.getElementById(
-    "checkoutAmount"
-  ).textContent=
-
-    "$"+
-    Number(
-      activePack.price
-    ).toLocaleString(
-      undefined,
-      {
-        minimumFractionDigits:2,
-        maximumFractionDigits:2
-      }
-    );
-
-
-  document.getElementById(
-    "checkoutPackName"
-  ).textContent=
-    activePack.name;
-
-
-  applyPaymentVisuals(
-    type
-  );
-
-
-  document.getElementById(
-    "cardPaymentOverlay"
-  ).classList.remove(
-    "hidden"
-  );
-
-
-  demoCardCallback=()=>{
-
-    spinPack(
-      "card"
-    );
-
-  };
-
-}
-
-
-function applyPaymentVisuals(type){
-
-  const meta=
-    PAYMENT_META[type]
-    ||
-    PAYMENT_META.amex;
-
-
-  const card=
-    document.getElementById(
-      "demoPaymentCard"
-    );
-
-
-  card.className=
-    `demoPayCard ${meta.theme}`;
-
-
-  document.getElementById(
-    "checkoutTitle"
-  ).textContent=
+  document.getElementById("paymentTitle").textContent=
     meta.title;
 
+  document.getElementById("paymentAmount").textContent=
+    "$"+money(price);
 
-  document.getElementById(
-    "demoBrandLabel"
-  ).textContent=
+  document.getElementById("paymentBrand").textContent=
     meta.brand;
 
-
-  document.getElementById(
-    "demoSubBrand"
-  ).textContent=
-    meta.sub;
-
-
-  document.getElementById(
-    "demoCardNumber"
-  ).textContent=
+  document.getElementById("paymentNumber").textContent=
     meta.number;
 
-
-  document.getElementById(
-    "demoCardName"
-  ).textContent=
-    meta.name;
-
-
-  document.getElementById(
-    "demoCardExp"
-  ).textContent=
-    meta.exp;
-
-
-  document.getElementById(
-    "checkoutMethodLabel"
-  ).textContent=
+  document.getElementById("paymentMethod").textContent=
     meta.label;
 
+  document.getElementById("paymentPurchase").textContent=
+    activePack.name;
+
+  document.getElementById("paymentCard").className=
+    "demoCard "+meta.cls;
+
+  document.getElementById("paymentOverlay")
+    .classList.remove("hidden");
 }
 
+function closePayment(){
 
-function closeDemoCardPayment(){
+  pendingPayment=null;
 
-  document.getElementById(
-    "cardPaymentOverlay"
-  ).classList.add(
-    "hidden"
-  );
-
-
-  demoCardCallback=
-    null;
-
+  document.getElementById("paymentOverlay")
+    .classList.add("hidden");
 }
 
+function confirmPayment(){
 
-function finishDemoCardPayment(){
+  if(!pendingPayment)return;
 
-  const box=
-    document.getElementById(
-      "cardPaymentBox"
-    );
+  const type=pendingPayment;
 
+  state[type]-=activePack.price;
 
-  const paymentName=
-    PAYMENT_META[
-      selectedPaymentType
-    ]?.title
-    ||
-    "Payment";
+  pendingPayment=null;
 
-
-  box.innerHTML=`
-
-    <div class="payHeader">
-
-      <div class="payHeaderTitle">
-        ${paymentName}
-      </div>
-
-      <div class="demoBadge">
-        DEMO
-      </div>
-
-    </div>
-
-
-    <div class="paySuccess">
-
-      <div class="successCircle">
-        ✓
-      </div>
-
-      <div class="successTitle">
-        Payment Approved
-      </div>
-
-      <div class="successSub">
-        Transaction authorized
-      </div>
-
-    </div>
-  `;
-
-
-  setTimeout(()=>{
-
-    document.getElementById(
-      "cardPaymentOverlay"
-    ).classList.add(
-      "hidden"
-    );
-
-
-    if(
-      demoCardCallback
-    ){
-
-      const callback=
-        demoCardCallback;
-
-
-      demoCardCallback=
-        null;
-
-
-      restoreCardBox();
-
-
-      callback();
-
-    }else{
-
-      restoreCardBox();
-
-    }
-
-  },1250);
-
-}
-
-
-function restoreCardBox(){
-
-  document.getElementById(
-    "cardPaymentBox"
-  ).innerHTML=`
-
-    <div class="payHeader">
-
-      <div
-        class="payHeaderTitle"
-        id="checkoutTitle">
-
-        Secure Checkout
-
-      </div>
-
-      <div class="demoBadge">
-        DEMO
-      </div>
-
-    </div>
-
-
-    <div class="payBody">
-
-      <div class="checkoutTotal">
-
-        <div class="checkoutSmall">
-          Order Total
-        </div>
-
-        <div
-          class="checkoutAmount"
-          id="checkoutAmount">
-
-          $0.00
-
-        </div>
-
-      </div>
-
-
-      <div
-        class="demoPayCard cardTheme-amex"
-        id="demoPaymentCard">
-
-        <div class="cardTop">
-
-          <div>
-
-            <div
-              class="cardBrand"
-              id="demoBrandLabel">
-
-              AMERICAN EXPRESS
-
-            </div>
-
-            <div
-              class="cardSubBrand"
-              id="demoSubBrand">
-
-              Demo payment method
-
-            </div>
-
-          </div>
-
-          <div class="cardChip">
-          </div>
-
-        </div>
-
-
-        <div
-          class="cardNumber"
-          id="demoCardNumber">
-
-          •••• •••••• •1005
-
-        </div>
-
-
-        <div class="cardBottom">
-
-          <div>
-
-            <div class="cardLabel">
-              CARD MEMBER
-            </div>
-
-            <span id="demoCardName">
-              ISAIAH F
-            </span>
-
-          </div>
-
-
-          <div>
-
-            <div class="cardLabel">
-              EXPIRES
-            </div>
-
-            <span id="demoCardExp">
-              09/29
-            </span>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <div class="payLine">
-
-        <span class="payMuted">
-          Payment method
-        </span>
-
-        <strong id="checkoutMethodLabel">
-          AMEX •••• 1005
-        </strong>
-
-      </div>
-
-
-      <div class="payLine">
-
-        <span class="payMuted">
-          Purchase
-        </span>
-
-        <strong id="checkoutPackName">
-          PACKR Pack
-        </strong>
-
-      </div>
-
-    </div>
-
-
-    <div class="payActions">
-
-      <button
-        class="confirmPayment"
-        onclick="finishDemoCardPayment()">
-
-        CONFIRM PAYMENT
-
-      </button>
-
-      <button
-        class="cancelPayment"
-        onclick="closeDemoCardPayment()">
-
-        CANCEL
-
-      </button>
-
-    </div>
-  `;
-
-
-  if(activePack){
-
-    document.getElementById(
-      "checkoutAmount"
-    ).textContent=
-
-      "$"+
-      Number(
-        activePack.price
-      ).toLocaleString(
-        undefined,
-        {
-          minimumFractionDigits:2,
-          maximumFractionDigits:2
-        }
-      );
-
-
-    document.getElementById(
-      "checkoutPackName"
-    ).textContent=
-      activePack.name;
-
-  }
-
-
-  applyPaymentVisuals(
-    selectedPaymentType
-  );
-
-}
-
-
-/* CLOSE PACK */
-
-function closeModal(){
-
-  if(spinning){
-    return;
-  }
-
-
-  document.getElementById(
-    "overlay"
-  ).classList.add(
-    "hidden"
-  );
-
-}
-
-
-/* PRIZES */
-
-function choosePrize(pack){
-
-  let total=
-    pack.items.reduce(
-      (a,b)=>
-        a+b.weight,
-      0
-    );
-
-
-  let r=
-    Math.random()
-    *
-    total;
-
-
-  for(
-    const x
-    of pack.items
-  ){
-
-    r-=
-      x.weight;
-
-
-    if(
-      r<=0
-    ){
-
-      return {
-        ...x
-      };
-
-    }
-
-  }
-
-
-  return {
-    ...pack.items[0]
-  };
-
-}
-
-
-function randomItem(pack){
-
-  return pack.items[
-
-    Math.floor(
-
-      Math.random()
-      *
-      pack.items.length
-
-    )
-
-  ];
-
-}
-
-
-/* SPIN */
-
-function spinPack(payment){
-
-  if(spinning){
-    return;
-  }
-
-
-  const bitcoinPrice=
-    packBTC(
-      activePack
-    );
-
-
-  if(
-    payment==="btc"
-  ){
-
-    if(
-      state.btc
-      <
-      bitcoinPrice
-    ){
-
-      toast(
-        "Insufficient BTC balance."
-      );
-
-      return;
-
-    }
-
-
-    state.btc-=
-      bitcoinPrice;
-
-  }
-
-
-  state.opened++;
-
-
-  activePrize=
-    choosePrize(
-      activePack
-    );
-
-
-  if(
-    activePrize.value
-    >
-    state.best
-  ){
-
-    state.best=
-      activePrize.value;
-
-  }
-
-
-  state.level=
-    1+
-    Math.floor(
-      state.opened/8
-    );
-
+  document.getElementById("paymentOverlay")
+    .classList.add("hidden");
 
   save();
 
+  spinPack();
+}
 
-  spinning=
-    true;
+function payBitcoin(){
 
+  const cost=packBTC(activePack);
 
-  const reel=
-    document.getElementById(
-      "reel"
-    );
-
-
-  const windowEl=
-    document.getElementById(
-      "reelWindow"
-    );
-
-
-  reel.innerHTML=
-    "";
-
-
-  reel.style.transition=
-    "none";
-
-
-  reel.style.transform=
-    "translate3d(0,0,0)";
-
-
-  const display=
-    [];
-
-
-  for(
-    let i=0;
-    i<54;
-    i++
-  ){
-
-    display.push(
-      randomItem(
-        activePack
-      )
-    );
-
+  if(state.btc<cost){
+    toast("Not enough Bitcoin balance.");
+    return;
   }
 
+  state.btc-=cost;
 
-  const winnerIndex=
-    43;
+  save();
 
+  spinPack();
+}
 
-  display[
-    winnerIndex
-  ]=
-    activePrize;
+function choosePrize(pack){
 
+  const total=pack.items.reduce((a,b)=>a+b.weight,0);
 
-  display.forEach(
-    (x,index)=>{
+  let roll=Math.random()*total;
 
-      const div=
-        document.createElement(
-          "div"
-        );
+  for(const x of pack.items){
 
+    roll-=x.weight;
 
-      div.className=
-        `reelItem r-${x.rarity}`;
-
-
-      if(
-        index===
-        winnerIndex
-      ){
-
-        div.dataset.winner=
-          "true";
-
-      }
-
-
-      div.innerHTML=`
-
-        <img
-          src="${x.image}"
-          alt="${x.name}"
-          onerror="imgFallback(this)">
-
-        <div class="reelText">
-
-          <div class="reelName">
-            ${x.name}
-          </div>
-
-          <div class="reelPrice">
-            $${money(x.value)}
-          </div>
-
-        </div>
-      `;
-
-
-      reel.appendChild(
-        div
-      );
-
+    if(roll<=0){
+      return {...x};
     }
-  );
+  }
 
+  return {...pack.items[0]};
+}
 
-  document.getElementById(
-    "modalAction"
-  ).innerHTML=`
+function randomItem(pack){
+  return pack.items[Math.floor(Math.random()*pack.items.length)];
+}
 
-    <div style="
-      color:var(--muted);
-      font-weight:900">
+function spinPack(){
 
-      OPENING...
+  if(spinning)return;
 
-    </div>
-  `;
+  spinning=true;
 
+  state.opened++;
+
+  activePrize=choosePrize(activePack);
+
+  state.best=Math.max(state.best,activePrize.value);
+
+  state.level=1+Math.floor(state.opened/8);
+
+  save();
+
+  const reel=document.getElementById("reel");
+  const windowEl=document.getElementById("reelWindow");
+
+  reel.innerHTML="";
+  reel.style.transition="none";
+  reel.style.transform="translate3d(0,0,0)";
+
+  const display=[];
+
+  for(let i=0;i<50;i++){
+    display.push(randomItem(activePack));
+  }
+
+  const winnerIndex=40;
+
+  display[winnerIndex]=activePrize;
+
+  display.forEach((x,index)=>{
+
+    const card=document.createElement("div");
+
+    card.className="reelItem";
+
+    if(index===winnerIndex){
+      card.dataset.winner="yes";
+    }
+
+    card.innerHTML=`
+
+      <img src="${x.image}">
+
+      <div class="reelText">
+
+        <div class="reelName">
+          ${x.name}
+        </div>
+
+        <div class="reelPrice">
+          $${whole(x.value)}
+        </div>
+
+      </div>
+    `;
+
+    reel.appendChild(card);
+  });
+
+  document.getElementById("modalAction").innerHTML=
+    `<strong style="color:#87909f">OPENING...</strong>`;
 
   requestAnimationFrame(()=>{
 
     requestAnimationFrame(()=>{
 
-
-      const winningCard=
-        reel.querySelector(
-          '[data-winner="true"]'
-        );
-
-
-      const reelRect=
-        reel.getBoundingClientRect();
-
-
-      const cardRect=
-        winningCard.getBoundingClientRect();
-
-
-      const windowRect=
-        windowEl.getBoundingClientRect();
-
-
-      const cardCenter=
-        (
-          cardRect.left
-          -
-          reelRect.left
-        )
-        +
-        (
-          cardRect.width
-          /
-          2
-        );
-
-
-      const markerCenter=
-        windowRect.width
-        /
-        2;
-
+      const winner=reel.querySelector('[data-winner="yes"]');
 
       const target=
-        markerCenter
+        windowEl.clientWidth/2
         -
-        cardCenter;
-
+        (
+          winner.offsetLeft
+          +
+          winner.offsetWidth/2
+        );
 
       reel.style.transition=
         "transform 5s cubic-bezier(.08,.72,.05,1)";
-
 
       reel.style.transform=
         `translate3d(${target}px,0,0)`;
@@ -4835,798 +2088,282 @@ function spinPack(payment){
 
   });
 
-
   setTimeout(()=>{
 
-    spinning=
-      false;
-
+    spinning=false;
 
     showWinner();
 
   },5150);
-
 }
-
-
-/* WIN */
 
 function showWinner(){
 
-  const p=
-    activePrize;
+  const p=activePrize;
 
+  document.getElementById("modalAction").innerHTML=`
 
-  document.getElementById(
-    "modalAction"
-  ).innerHTML=`
-
-    <img
-      class="wonPhoto"
-      src="${p.image}"
-      alt="${p.name}"
-      onerror="imgFallback(this)">
-
+    <img class="wonPhoto" src="${p.image}">
 
     <div class="rarity ${p.rarity}">
       ${p.rarity.toUpperCase()} DROP
     </div>
 
-
     <div class="wonName">
       ${p.name}
     </div>
 
-
     <div class="wonValue">
-      $${money(p.value)}
+      $${whole(p.value)}
     </div>
 
-
-    <div class="wonBTC">
+    <div style="color:#f7931a;font-size:11px;font-weight:900">
       ₿${btc(p.value/BTC_RATE)}
     </div>
 
-
     <div class="actionRow">
 
-      <button
-        class="btn gold"
-        onclick="keepPrize()">
-
+      <button class="btn gold" onclick="keepPrize()">
         KEEP ITEM
-
       </button>
 
+      <button class="btn dark" onclick="sellPrizeCash()">
+        SELL FOR $${whole(p.value)}
+      </button>
 
-      <button
-        class="btn orange"
-        onclick="sellPrizeBTC()">
-
+      <button class="btn orange" onclick="sellPrizeBTC()">
         SELL FOR ₿${btc(p.value/BTC_RATE)}
-
       </button>
 
-
-      <button
-        class="btn dark"
-        onclick="showPaymentChoice()">
-
+      <button class="btn dark" onclick="showPaymentChoice()">
         OPEN AGAIN
-
       </button>
 
     </div>
   `;
-
 }
-
-
-/* KEEP */
 
 function keepPrize(){
 
-  if(
-    !activePrize
-  ){
-    return;
-  }
-
+  if(!activePrize)return;
 
   state.inventory.unshift({
-
     ...activePrize,
-
-    uid:
-      Date.now()
-      +
-      Math.random()
-
+    uid:Date.now()+Math.random()
   });
 
-
-  activePrize=
-    null;
-
+  activePrize=null;
 
   save();
 
+  document.getElementById("modalAction").innerHTML=`
 
-  toast(
-    "Added to collection."
-  );
+    <h2>✓ Added to Inventory</h2>
 
-
-  document.getElementById(
-    "modalAction"
-  ).innerHTML=`
-
-    <div style="
-      font-size:38px;
-      color:var(--green)">
-
-      ✓
-
-    </div>
-
-    <h2>
-      Added to Collection
-    </h2>
-
-    <div class="actionRow">
-
-      <button
-        class="btn gold"
-        onclick="showPaymentChoice()">
-
-        OPEN AGAIN
-
-      </button>
-
-      <button
-        class="btn dark"
-        onclick="closeModal()">
-
-        DONE
-
-      </button>
-
-    </div>
+    <button class="btn gold" onclick="showPaymentChoice()">
+      OPEN AGAIN
+    </button>
   `;
-
 }
 
+function sellPrizeCash(){
 
-/* SELL BTC */
+  if(!activePrize)return;
+
+  state.cash+=activePrize.value;
+
+  activePrize=null;
+
+  save();
+
+  soldScreen("Cash balance updated.");
+}
 
 function sellPrizeBTC(){
 
-  if(
-    !activePrize
-  ){
-    return;
-  }
+  if(!activePrize)return;
 
+  state.btc+=activePrize.value/BTC_RATE;
 
-  state.btc+=
-    activePrize.value
-    /
-    BTC_RATE;
-
-
-  activePrize=
-    null;
-
+  activePrize=null;
 
   save();
 
-
-  document.getElementById(
-    "modalAction"
-  ).innerHTML=`
-
-    <div style="
-      font-size:38px;
-      color:#f7931a">
-
-      ₿
-
-    </div>
-
-    <h2>
-      Added to Balance
-    </h2>
-
-    <div class="actionRow">
-
-      <button
-        class="btn gold"
-        onclick="showPaymentChoice()">
-
-        OPEN AGAIN
-
-      </button>
-
-      <button
-        class="btn dark"
-        onclick="closeModal()">
-
-        DONE
-
-      </button>
-
-    </div>
-  `;
-
+  soldScreen("Bitcoin balance updated.");
 }
 
+function soldScreen(message){
 
-/* INVENTORY */
+  document.getElementById("modalAction").innerHTML=`
+
+    <h2>✓ ${message}</h2>
+
+    <button class="btn gold" onclick="showPaymentChoice()">
+      OPEN AGAIN
+    </button>
+  `;
+}
+
+function closeModal(){
+
+  if(spinning)return;
+
+  document.getElementById("overlay")
+    .classList.add("hidden");
+}
 
 function renderInventory(){
 
-  const grid=
-    document.getElementById(
-      "inventoryGrid"
-    );
+  const grid=document.getElementById("inventoryGrid");
 
-
-  document.getElementById(
-    "inventoryCount"
-  ).textContent=
-    `${state.inventory.length} ITEMS`;
-
-
-  if(
-    !state.inventory.length
-  ){
+  if(!state.inventory.length){
 
     grid.innerHTML=`
 
-      <div
-        class="empty"
-        style="grid-column:1/-1">
+      <div style="
+        grid-column:1/-1;
+        padding:45px;
+        border:1px dashed #303a47;
+        border-radius:14px;
+        text-align:center;
+        color:#87909f">
 
-        <h3>
-          Your collection is empty.
-        </h3>
+        Your inventory is empty.
 
-        <p>
-          Open a pack and keep an item.
-        </p>
+      </div>
+    `;
 
-        <button
-          class="btn gold"
-          onclick="showPage('home')">
+    return;
+  }
 
-          OPEN PACKS
+  grid.innerHTML=state.inventory.map(x=>`
+
+    <div class="inventoryCard">
+
+      <img src="${x.image}">
+
+      <div class="inventoryBody">
+
+        <div class="rarity ${x.rarity}">
+          ${x.rarity.toUpperCase()}
+        </div>
+
+        <div class="inventoryName">
+          ${x.name}
+        </div>
+
+        <div class="inventoryValue">
+          $${whole(x.value)}
+        </div>
+
+        <button class="btn dark" style="width:100%"
+          onclick="sellInventory('${x.uid}')">
+
+          SELL TO CASH
 
         </button>
 
       </div>
-    `;
 
+    </div>
 
-    return;
-
-  }
-
-
-  grid.innerHTML=
-
-    state.inventory.map(x=>`
-
-      <article class="inventoryCard">
-
-        <img
-          class="inventoryPhoto"
-          src="${x.image}"
-          alt="${x.name}"
-          loading="lazy"
-          onerror="imgFallback(this)">
-
-
-        <div class="inventoryBody">
-
-          <div class="rarity ${x.rarity}">
-            ${x.rarity.toUpperCase()}
-          </div>
-
-          <div class="inventoryName">
-            ${x.name}
-          </div>
-
-          <div class="inventoryValue">
-            $${money(x.value)}
-          </div>
-
-          <button
-            class="btn orange"
-            style="width:100%"
-            onclick="sellInventoryBTC('${x.uid}')">
-
-            SELL FOR ₿${btc(x.value/BTC_RATE)}
-
-          </button>
-
-        </div>
-
-      </article>
-
-    `).join("");
-
+  `).join("");
 }
 
+function sellInventory(uid){
 
-/* INVENTORY SELL */
-
-function sellInventoryBTC(uid){
-
-  const index=
+  const i=
     state.inventory.findIndex(
-      x=>
-        String(x.uid)
-        ===
-        String(uid)
+      x=>String(x.uid)===String(uid)
     );
 
+  if(i<0)return;
 
-  if(
-    index<0
-  ){
-    return;
-  }
+  state.cash+=state.inventory[i].value;
 
-
-  const x=
-    state.inventory[
-      index
-    ];
-
-
-  const amount=
-    x.value
-    /
-    BTC_RATE;
-
-
-  state.btc+=
-    amount;
-
-
-  state.inventory.splice(
-    index,
-    1
-  );
-
+  state.inventory.splice(i,1);
 
   save();
 
-
-  toast(
-    `+₿${btc(amount)}`
-  );
-
+  toast("Added to cash balance.");
 }
 
+function addFunds(type,amount){
 
-/* BATTLE */
-
-function startBattle(){
-
-  const pack=
-    PACKS.find(
-      x=>
-        x.id===
-        document.getElementById(
-          "battlePack"
-        ).value
-    );
-
-
-  const rounds=
-    Number(
-      document.getElementById(
-        "battleRounds"
-      ).value
-    );
-
-
-  const mode=
-    document.getElementById(
-      "battleMode"
-    ).value;
-
-
-  const cost=
-    (
-      pack.price
-      *
-      rounds
-    )
-    /
-    BTC_RATE;
-
-
-  if(
-    state.btc
-    <
-    cost
-  ){
-
-    toast(
-      "Insufficient BTC balance."
-    );
-
-    return;
-
-  }
-
-
-  state.btc-=
-    cost;
-
-
-  let you=
-    [];
-
-
-  let bot=
-    [];
-
-
-  let youTotal=
-    0;
-
-
-  let botTotal=
-    0;
-
-
-  for(
-    let i=0;
-    i<rounds;
-    i++
-  ){
-
-    const a=
-      choosePrize(
-        pack
-      );
-
-
-    const b=
-      choosePrize(
-        pack
-      );
-
-
-    you.push(
-      a
-    );
-
-
-    bot.push(
-      b
-    );
-
-
-    youTotal+=
-      a.value;
-
-
-    botTotal+=
-      b.value;
-
-  }
-
-
-  let youWin;
-
-
-  if(
-    mode===
-    "Upside Down"
-  ){
-
-    youWin=
-      youTotal
-      <
-      botTotal;
-
-  }else{
-
-    youWin=
-      youTotal
-      >
-      botTotal;
-
-  }
-
-
-  let html=`
-
-    <div class="battleArena">
-
-      ${fighterHTML(
-        "YOU",
-        you,
-        youTotal
-      )}
-
-      ${fighterHTML(
-        "PACKR BOT",
-        bot,
-        botTotal
-      )}
-
-    </div>
-  `;
-
-
-  if(
-    youTotal===
-    botTotal
-  ){
-
-    state.btc+=
-      cost;
-
-
-    html+=`
-
-      <div class="result">
-
-        🤝 DRAW — ENTRY RETURNED
-
-      </div>
-    `;
-
-  }else if(
-    youWin
-  ){
-
-    [
-      ...you,
-      ...bot
-    ].forEach(x=>{
-
-      state.inventory.unshift({
-
-        ...x,
-
-        uid:
-          Date.now()
-          +
-          Math.random()
-
-      });
-
-    });
-
-
-    html+=`
-
-      <div
-        class="result"
-        style="border-color:#5e4b1d">
-
-        🏆 YOU WON THE BATTLE
-
-        <div style="
-          font-size:12px;
-          color:var(--muted);
-          margin-top:5px">
-
-          All
-          ${you.length+bot.length}
-          items were added
-          to your collection.
-
-        </div>
-
-      </div>
-    `;
-
-  }else{
-
-    html+=`
-
-      <div class="result">
-
-        PACKR BOT WON
-
-        <div style="
-          font-size:12px;
-          color:var(--muted);
-          margin-top:5px">
-
-          Try another battle.
-
-        </div>
-
-      </div>
-    `;
-
-  }
-
-
-  document.getElementById(
-    "battleOutput"
-  ).innerHTML=
-    html;
-
+  state[type]+=amount;
 
   save();
 
+  const names={
+    apple:"Apple Pay",
+    visa:"Visa",
+    amex:"American Express"
+  };
+
+  toast(`${names[type]} +$${whole(amount)}`);
 }
 
+function addBTC(amount){
 
-function fighterHTML(
-  name,
-  items,
-  total
-){
+  state.btc+=amount;
 
-  return `
+  save();
 
-    <div class="fighter">
-
-      <div class="fighterHeader">
-
-        <span>
-          ${name}
-        </span>
-
-        <span class="fighterScore">
-          $${money(total)}
-        </span>
-
-      </div>
-
-
-      ${items.map(x=>`
-
-        <div class="pull">
-
-          <img
-            src="${x.image}"
-            alt="${x.name}"
-            onerror="imgFallback(this)">
-
-          <div class="pullInfo">
-
-            <div class="rarity ${x.rarity}">
-              ${x.rarity.toUpperCase()}
-            </div>
-
-            <div class="pullName">
-              ${x.name}
-            </div>
-
-            <div class="pullValue">
-              $${money(x.value)}
-            </div>
-
-          </div>
-
-        </div>
-
-      `).join("")}
-
-    </div>
-  `;
-
+  toast(`Bitcoin +₿${btc(amount)}`);
 }
 
+function dailyBonus(){
 
-/* LIVE DROPS */
+  const today=new Date().toDateString();
 
-const liveUsers=[
+  if(state.daily===today){
+    toast("Daily bonus already claimed.");
+    return;
+  }
 
-  "NightWolf",
+  state.daily=today;
 
-  "MontanaX",
+  state.cash+=1000;
+  state.apple+=500;
+  state.btc+=.005;
 
-  "Nova",
+  save();
 
-  "DropKing",
-
-  "Racer",
-
-  "Vortex",
-
-  "Ace",
-
-  "Ghost",
-
-  "Turbo"
-
-];
-
+  toast("Daily wallet bonus added.");
+}
 
 function renderLive(){
 
-  const all=
-    [];
+  const all=PACKS.flatMap(p=>p.items);
 
+  const users=[
+    "NightWolf",
+    "Nova",
+    "DropKing",
+    "Vortex",
+    "Racer",
+    "Ace"
+  ];
 
-  PACKS.forEach(p=>{
+  const chosen=[];
 
-    p.items.forEach(x=>{
+  for(let i=0;i<5;i++){
 
-      all.push(
-        x
-      );
-
-    });
-
-  });
-
-
-  const chosen=
-    [];
-
-
-  for(
-    let i=0;
-    i<5;
-    i++
-  ){
-
-    const x=
-
-      all[
-
-        Math.floor(
-
-          Math.random()
-          *
-          all.length
-
-        )
-
-      ];
-
+    const item=
+      all[Math.floor(Math.random()*all.length)];
 
     chosen.push({
-
-      ...x,
-
-      user:
-
-        liveUsers[
-
-          Math.floor(
-
-            Math.random()
-            *
-            liveUsers.length
-
-          )
-
-        ]
-
+      ...item,
+      user:users[Math.floor(Math.random()*users.length)]
     });
-
   }
 
-
-  document.getElementById(
-    "liveDrops"
-  ).innerHTML=
-
-    chosen.map(
-      (x,i)=>`
+  document.getElementById("liveDrops").innerHTML=
+    chosen.map((x,i)=>`
 
       <div class="liveCard">
 
-        <img
-          class="liveImg"
-          src="${x.image}"
-          alt="${x.name}"
-          loading="lazy"
-          onerror="imgFallback(this)">
+        <img src="${x.image}">
 
         <div class="liveInfo">
 
@@ -5639,16 +2376,7 @@ function renderLive(){
           </div>
 
           <div class="liveTime">
-
-            ${i+1} min ago ·
-
-            <span style="
-              color:var(--gold)">
-
-              $${money(x.value)}
-
-            </span>
-
+            ${i+1} min ago · $${whole(x.value)}
           </div>
 
         </div>
@@ -5656,337 +2384,73 @@ function renderLive(){
       </div>
 
     `).join("");
-
 }
 
+function updateUI(){
 
-/* LEADERBOARD */
+  document.getElementById("cashBalance").textContent=
+    money(state.cash);
 
-function renderLeaderboard(){
+  document.getElementById("btcBalance").textContent=
+    btc(state.btc);
 
-  const people=[
+  document.getElementById("walletCash").textContent=
+    "$"+money(state.cash);
 
-    {
-      name:"Nova",
-      money:185400,
-      wins:328
-    },
+  document.getElementById("walletApple").textContent=
+    "$"+money(state.apple);
 
-    {
-      name:"DropKing",
-      money:121800,
-      wins:242
-    },
+  document.getElementById("walletVisa").textContent=
+    "$"+money(state.visa);
 
-    {
-      name:"NightWolf",
-      money:89500,
-      wins:193
-    },
+  document.getElementById("walletAmex").textContent=
+    "$"+money(state.amex);
 
-    {
-      name:"Vortex",
-      money:62200,
-      wins:141
-    },
+  document.getElementById("walletBTC").textContent=
+    "₿"+btc(state.btc);
 
-    {
-      name:"ISAIAH F",
-      money:
-        state.btc
-        *
-        BTC_RATE,
-      wins:
-        state.opened
-    },
+  document.getElementById("statOpened").textContent=
+    whole(state.opened);
 
-    {
-      name:"Ace",
-      money:31500,
-      wins:83
-    },
+  document.getElementById("statInventory").textContent=
+    whole(state.inventory.length);
 
-    {
-      name:"Racer",
-      money:19200,
-      wins:51
-    }
+  document.getElementById("statBest").textContent=
+    "$"+whole(state.best);
 
-  ];
-
-
-  people.sort(
-    (a,b)=>
-      b.money
-      -
-      a.money
-  );
-
-
-  document.getElementById(
-    "leaderboardList"
-  ).innerHTML=`
-
-    <div class="leader head">
-
-      <div>
-        RANK
-      </div>
-
-      <div>
-        PLAYER
-      </div>
-
-      <div>
-        VALUE
-      </div>
-
-      <div class="leaderWins">
-        PACKS
-      </div>
-
-    </div>
-
-
-    ${people.map(
-      (x,i)=>`
-
-      <div class="leader">
-
-        <div>
-
-          ${
-            i===0
-              ?"🥇"
-              :i===1
-              ?"🥈"
-              :i===2
-              ?"🥉"
-              :"#"+(i+1)
-          }
-
-        </div>
-
-
-        <div style="
-          font-weight:900">
-
-          ${x.name}
-
-        </div>
-
-
-        <div style="
-          color:var(--gold);
-          font-weight:900">
-
-          $${money(x.money)}
-
-        </div>
-
-
-        <div
-          class="leaderWins"
-          style="
-            color:var(--muted)">
-
-          ${x.wins}
-
-        </div>
-
-      </div>
-
-    `).join("")}
-  `;
-
-}
-
-
-/* DAILY BONUS */
-
-function dailyMoney(){
-
-  const today=
-    new Date()
-    .toDateString();
-
-
-  if(
-    state.daily===
-    today
-  ){
-
-    toast(
-      "Daily bonus already claimed."
-    );
-
-    return;
-
-  }
-
-
-  state.daily=
-    today;
-
-
-  state.btc+=
-    0.025000;
-
-
-  save();
-
-
-  toast(
-    "+₿0.025000"
-  );
-
-}
-
-
-/* UI */
-
-function updateAll(){
-
-  document.getElementById(
-    "btcBalance"
-  ).textContent=
-    btc(
-      state.btc
-    );
-
-
-  document.getElementById(
-    "statOpened"
-  ).textContent=
-    money(
-      state.opened
-    );
-
-
-  document.getElementById(
-    "statInventory"
-  ).textContent=
-    money(
-      state.inventory.length
-    );
-
-
-  document.getElementById(
-    "statBest"
-  ).textContent=
-    "$"+
-    money(
-      state.best
-    );
-
-
-  document.getElementById(
-    "statLevel"
-  ).textContent=
+  document.getElementById("statLevel").textContent=
     state.level;
 
-
   renderInventory();
-
-  renderLeaderboard();
-
 }
-
-
-/* FORMATTING */
-
-function money(n){
-
-  return Math.round(
-    n
-  ).toLocaleString();
-
-}
-
-
-function btc(n){
-
-  return Number(
-    n
-  ).toFixed(
-    6
-  );
-
-}
-
-
-/* TOAST */
 
 function toast(message){
 
-  const t=
-    document.getElementById(
-      "toast"
-    );
+  const t=document.getElementById("toast");
 
+  t.textContent=message;
 
-  t.textContent=
-    message;
+  t.classList.add("show");
 
+  clearTimeout(window.toastTimer);
 
-  t.classList.add(
-    "show"
-  );
-
-
-  clearTimeout(
-    window.toastTimer
-  );
-
-
-  window.toastTimer=
-    setTimeout(()=>{
-
-      t.classList.remove(
-        "show"
-      );
-
-    },2200);
-
+  window.toastTimer=setTimeout(()=>{
+    t.classList.remove("show");
+  },2000);
 }
 
+document.getElementById("overlay").onclick=e=>{
 
-/* CLOSE MODAL */
-
-document.getElementById(
-  "overlay"
-).addEventListener(
-  "click",
-  function(e){
-
-    if(
-      e.target===
-      this
-    ){
-
-      closeModal();
-
-    }
-
+  if(e.target.id==="overlay"){
+    closeModal();
   }
-);
-
-
-/* START */
+};
 
 renderPacks();
-
-renderBattlePacks();
-
 renderLive();
+updateUI();
 
-updateAll();
-
-
-setInterval(
-  renderLive,
-  30000
-);
+setInterval(renderLive,30000);
 
 </script>
 
