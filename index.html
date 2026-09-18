@@ -25,7 +25,6 @@
 }
 
 *{box-sizing:border-box}
-
 html{scroll-behavior:smooth}
 
 body{
@@ -39,17 +38,9 @@ body{
 }
 
 button,input,select{font:inherit}
-
 button{cursor:pointer}
-
-img{
-  display:block;
-  width:100%;
-}
-
+img{display:block;width:100%}
 .hidden{display:none!important}
-
-/* HEADER */
 
 header{
   height:var(--nav);
@@ -74,10 +65,7 @@ header{
   gap:8px;
 }
 
-.logoMark{
-  color:var(--gold);
-  font-size:21px;
-}
+.logoMark{color:var(--gold);font-size:21px}
 
 .desktopNav{
   display:flex;
@@ -132,7 +120,8 @@ header{
   border-radius:50%;
   background:linear-gradient(135deg,#ffe59a,#d99418);
   color:#5a3800;
-  font-size:11px;
+  font-size:12px;
+  font-weight:1000;
   box-shadow:0 0 14px rgba(246,198,91,.2);
 }
 
@@ -140,16 +129,13 @@ header{
   width:38px;
   height:38px;
   border-radius:50%;
-  background:
-    linear-gradient(135deg,#27364d,#0e1218);
+  background:linear-gradient(135deg,#27364d,#0e1218);
   border:1px solid #394657;
   display:grid;
   place-items:center;
   font-weight:1000;
   font-size:12px;
 }
-
-/* MAIN */
 
 main{
   width:min(1480px,94%);
@@ -158,8 +144,6 @@ main{
 }
 
 .page{padding-top:24px}
-
-/* HERO */
 
 .hero{
   min-height:390px;
@@ -237,14 +221,6 @@ main{
   border:1px solid #303a49;
 }
 
-.red{
-  color:white;
-  background:#451a21;
-  border:1px solid #73303a;
-}
-
-/* STATS */
-
 .stats{
   display:grid;
   grid-template-columns:repeat(4,1fr);
@@ -259,18 +235,8 @@ main{
   padding:17px;
 }
 
-.statValue{
-  font-size:22px;
-  font-weight:1000;
-}
-
-.statLabel{
-  margin-top:4px;
-  font-size:12px;
-  color:var(--muted);
-}
-
-/* TITLES */
+.statValue{font-size:22px;font-weight:1000}
+.statLabel{margin-top:4px;font-size:12px;color:var(--muted)}
 
 .titleRow{
   display:flex;
@@ -297,7 +263,34 @@ main{
   font-weight:800;
 }
 
-/* PACKS */
+/* PACK FILTERS */
+
+.filters{
+  display:flex;
+  gap:8px;
+  overflow-x:auto;
+  padding:2px 0 14px;
+  scrollbar-width:none;
+}
+
+.filters::-webkit-scrollbar{display:none}
+
+.filterBtn{
+  flex:none;
+  border:1px solid #2b3542;
+  background:#121820;
+  color:#aab2be;
+  padding:9px 13px;
+  border-radius:9px;
+  font-size:12px;
+  font-weight:900;
+}
+
+.filterBtn.active{
+  background:#2b2413;
+  border-color:#725b25;
+  color:var(--gold);
+}
 
 .packGrid{
   display:grid;
@@ -355,17 +348,8 @@ main{
 }
 
 .packBody{padding:14px}
-
-.packName{
-  font-weight:1000;
-  font-size:17px;
-}
-
-.packDesc{
-  color:var(--muted);
-  font-size:12px;
-  margin:5px 0 13px;
-}
+.packName{font-weight:1000;font-size:17px}
+.packDesc{color:var(--muted);font-size:12px;margin:5px 0 13px}
 
 .packBottom{
   display:flex;
@@ -373,10 +357,7 @@ main{
   align-items:center;
 }
 
-.packPrice{
-  color:var(--gold);
-  font-weight:1000;
-}
+.packPrice{color:var(--gold);font-weight:1000}
 
 .openBtn{
   border:1px solid #344052;
@@ -388,7 +369,7 @@ main{
   font-weight:900;
 }
 
-/* LIVE DROPS */
+/* LIVE */
 
 .liveGrid{
   display:grid;
@@ -403,30 +384,11 @@ main{
   overflow:hidden;
 }
 
-.liveImg{
-  height:130px;
-  object-fit:cover;
-}
-
+.liveImg{height:130px;object-fit:cover}
 .liveInfo{padding:10px}
-
-.liveUser{
-  color:var(--blue);
-  font-size:11px;
-  font-weight:900;
-}
-
-.liveName{
-  font-size:12px;
-  font-weight:900;
-  margin-top:4px;
-}
-
-.liveTime{
-  color:#626c7b;
-  font-size:10px;
-  margin-top:5px;
-}
+.liveUser{color:var(--blue);font-size:11px;font-weight:900}
+.liveName{font-size:12px;font-weight:900;margin-top:4px}
+.liveTime{color:#626c7b;font-size:10px;margin-top:5px}
 
 /* INVENTORY */
 
@@ -443,11 +405,7 @@ main{
   overflow:hidden;
 }
 
-.inventoryPhoto{
-  height:170px;
-  object-fit:cover;
-}
-
+.inventoryPhoto{height:170px;object-fit:cover}
 .inventoryBody{padding:12px}
 
 .rarity{
@@ -462,17 +420,8 @@ main{
 .epic{color:var(--purple)}
 .legendary{color:var(--gold)}
 
-.inventoryName{
-  font-weight:900;
-  min-height:40px;
-}
-
-.inventoryValue{
-  color:var(--gold);
-  font-weight:900;
-  margin:7px 0 10px;
-}
-
+.inventoryName{font-weight:900;min-height:40px}
+.inventoryValue{color:var(--gold);font-weight:900;margin:7px 0 10px}
 .full{width:100%}
 
 /* BATTLE */
@@ -528,22 +477,10 @@ select,input{
   border-bottom:1px solid #1e2630;
 }
 
-.pull:last-child{border-bottom:0}
-
-.pull img{
-  height:75px;
-  object-fit:cover;
-}
-
+.pull img{height:75px;object-fit:cover}
 .pullInfo{padding:10px}
-
 .pullName{font-weight:900}
-
-.pullValue{
-  color:var(--gold);
-  font-size:12px;
-  margin-top:4px;
-}
+.pullValue{color:var(--gold);font-size:12px;margin-top:4px}
 
 .result{
   margin-top:14px;
@@ -637,8 +574,9 @@ select,input{
   top:0;
   bottom:0;
   left:50%;
+  transform:translateX(-50%);
   width:3px;
-  z-index:5;
+  z-index:20;
   background:var(--gold);
   box-shadow:0 0 22px var(--gold);
 }
@@ -654,17 +592,29 @@ select,input{
   border-top:14px solid var(--gold);
 }
 
+.marker:after{
+  content:"";
+  position:absolute;
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+  border-left:10px solid transparent;
+  border-right:10px solid transparent;
+  border-bottom:14px solid var(--gold);
+}
+
 .reel{
   height:100%;
   display:flex;
   align-items:center;
   gap:10px;
-  padding-left:50%;
+  padding-left:0;
   will-change:transform;
 }
 
 .reelItem{
-  min-width:180px;
+  flex:0 0 180px;
+  width:180px;
   height:195px;
   border:1px solid #313a47;
   border-radius:12px;
@@ -672,11 +622,7 @@ select,input{
   background:#121820;
 }
 
-.reelItem img{
-  height:135px;
-  object-fit:cover;
-}
-
+.reelItem img{height:135px;object-fit:cover}
 .reelText{padding:8px}
 
 .reelName{
@@ -697,6 +643,7 @@ select,input{
 .reelItem.r-common{border-bottom:4px solid #7e8794}
 .reelItem.r-rare{border-bottom:4px solid var(--blue)}
 .reelItem.r-epic{border-bottom:4px solid var(--purple)}
+
 .reelItem.r-legendary{
   border-bottom:4px solid var(--gold);
   box-shadow:0 0 20px rgba(246,198,91,.15);
@@ -716,10 +663,7 @@ select,input{
   border:1px solid #394454;
 }
 
-.wonName{
-  font-size:25px;
-  font-weight:1000;
-}
+.wonName{font-size:25px;font-weight:1000}
 
 .wonValue{
   color:var(--gold);
@@ -736,8 +680,6 @@ select,input{
   margin-top:14px;
 }
 
-/* EMPTY */
-
 .empty{
   border:1px dashed #303a48;
   color:var(--muted);
@@ -745,8 +687,6 @@ select,input{
   border-radius:14px;
   text-align:center;
 }
-
-/* TOAST */
 
 .toast{
   position:fixed;
@@ -763,16 +703,8 @@ select,input{
   pointer-events:none;
 }
 
-.toast.show{
-  transform:none;
-  opacity:1;
-}
-
-/* MOBILE NAV */
-
+.toast.show{transform:none;opacity:1}
 .mobileNav{display:none}
-
-/* RESPONSIVE */
 
 @media(max-width:1000px){
   .desktopNav{display:none}
@@ -787,9 +719,7 @@ select,input{
   :root{--nav:62px}
 
   header{padding:0 14px}
-
   .logo{font-size:22px}
-
   .account .avatar{display:none}
 
   main{
@@ -819,11 +749,8 @@ select,input{
   }
 
   .packImage{height:150px}
-
   .packBody{padding:10px}
-
   .packName{font-size:14px}
-
   .packDesc{display:none}
 
   .packBottom{
@@ -848,11 +775,7 @@ select,input{
   }
 
   .inventoryPhoto{height:135px}
-
-  .battleSetup{
-    grid-template-columns:1fr;
-  }
-
+  .battleSetup{grid-template-columns:1fr}
   .battleArena{grid-template-columns:1fr}
 
   .leader{
@@ -896,7 +819,8 @@ select,input{
   .reelWindow{height:210px}
 
   .reelItem{
-    min-width:145px;
+    flex-basis:145px;
+    width:145px;
     height:165px;
   }
 
@@ -922,7 +846,7 @@ select,input{
 
   <div class="account">
     <div class="balance">
-      <span class="coin">P</span>
+      <span class="coin">$</span>
       <span id="balance">25,000</span>
     </div>
     <div class="avatar">YOU</div>
@@ -945,8 +869,8 @@ select,input{
 
       <p>
         Open premium virtual packs, collect rare items
-        and compete in battles. Pack Coins and prizes
-        have no real-world monetary value.
+        and compete in battles. All balances, BTC items
+        and prizes are simulated and have no real-world monetary value.
       </p>
 
       <button class="btn gold" onclick="scrollPacks()">
@@ -967,7 +891,7 @@ select,input{
     </div>
 
     <div class="stat">
-      <div class="statValue" id="statBest">0</div>
+      <div class="statValue" id="statBest">$0</div>
       <div class="statLabel">BEST DROP VALUE</div>
     </div>
 
@@ -983,6 +907,16 @@ select,input{
       <p>Choose a pack and test your luck.</p>
     </div>
     <span class="smallGold">VIRTUAL ITEMS</span>
+  </div>
+
+  <div class="filters" id="filters">
+    <button class="filterBtn active" onclick="filterPacks('all',this)">ALL</button>
+    <button class="filterBtn" onclick="filterPacks('tech',this)">TECH</button>
+    <button class="filterBtn" onclick="filterPacks('gaming',this)">GAMING</button>
+    <button class="filterBtn" onclick="filterPacks('style',this)">STYLE</button>
+    <button class="filterBtn" onclick="filterPacks('outdoors',this)">OUTDOORS</button>
+    <button class="filterBtn" onclick="filterPacks('premium',this)">PREMIUM</button>
+    <button class="filterBtn" onclick="filterPacks('crypto',this)">BITCOIN</button>
   </div>
 
   <div class="packGrid" id="packGrid"></div>
@@ -1035,7 +969,7 @@ select,input{
   <div class="titleRow">
     <div>
       <h2>🎒 My Collection</h2>
-      <p>Keep your drops or exchange them for Pack Coins.</p>
+      <p>Keep your drops or exchange them for virtual dollars.</p>
     </div>
     <span class="smallGold" id="inventoryCount">0 ITEMS</span>
   </div>
@@ -1078,8 +1012,8 @@ select,input{
     <span class="mnavIcon">♜</span>Ranks
   </button>
 
-  <button class="mnav" onclick="dailyCoins()">
-    <span class="mnavIcon">＋</span>Coins
+  <button class="mnav" onclick="dailyMoney()">
+    <span class="mnavIcon">＋</span>Money
   </button>
 </div>
 
@@ -1096,7 +1030,7 @@ select,input{
       <button class="close" onclick="closeModal()">✕</button>
     </div>
 
-    <div class="reelWindow">
+    <div class="reelWindow" id="reelWindow">
       <div class="marker"></div>
       <div class="reel" id="reel"></div>
     </div>
@@ -1111,111 +1045,156 @@ select,input{
 
 <script>
 
-/* =======================================================
-   PACKR — SINGLE FILE DEMO
-   Fake currency only.
-   ======================================================= */
+/* =========================================================
+   PACKR
+   VIRTUAL / SIMULATED CURRENCY ONLY
+   No deposits, withdrawals, wallets or real-world redemption.
+   ========================================================= */
 
 const IMAGE = {
-  phone:
-  "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=700&q=85",
-
-  laptop:
-  "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=700&q=85",
-
-  watch:
-  "https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=700&q=85",
-
-  shoes:
-  "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=85",
-
-  headphones:
-  "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=700&q=85",
-
-  camera:
-  "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=700&q=85",
-
-  gaming:
-  "https://images.unsplash.com/photo-1598550476439-6847785fcea6?auto=format&fit=crop&w=700&q=85",
-
-  keyboard:
-  "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=700&q=85",
-
-  bike:
-  "https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=700&q=85",
-
-  bag:
-  "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=700&q=85",
-
-  sunglasses:
-  "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=700&q=85",
-
-  car:
-  "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=85",
-
-  speaker:
-  "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=700&q=85",
-
-  desk:
-  "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?auto=format&fit=crop&w=700&q=85"
+  phone:"https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=900&q=85",
+  laptop:"https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=85",
+  watch:"https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=900&q=85",
+  shoes:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85",
+  headphones:"https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=85",
+  camera:"https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=900&q=85",
+  gaming:"https://images.unsplash.com/photo-1598550476439-6847785fcea6?auto=format&fit=crop&w=900&q=85",
+  keyboard:"https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=900&q=85",
+  bike:"https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=900&q=85",
+  bag:"https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=900&q=85",
+  sunglasses:"https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=900&q=85",
+  car:"https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=85",
+  speaker:"https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=900&q=85",
+  desk:"https://images.unsplash.com/photo-1593640408182-31c70c8268f5?auto=format&fit=crop&w=900&q=85",
+  golf:"https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=900&q=85",
+  fishing:"https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=900&q=85",
+  outdoors:"https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=85",
+  money:"https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=900&q=85",
+  bitcoin:"https://images.unsplash.com/photo-1518546305927-5a555bb7020d?auto=format&fit=crop&w=900&q=85",
+  luxury:"https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?auto=format&fit=crop&w=900&q=85",
+  street:"https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=900&q=85",
+  travel:"https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=85"
 };
+
+
+function item(name,value,rarity,weight,image,subtitle=""){
+  return {name,value,rarity,weight,image,subtitle};
+}
 
 
 const PACKS = [
 
 {
+ id:"starter",
+ category:"tech",
+ name:"Starter Drop",
+ desc:"Low-cost everyday tech",
+ price:100,
+ image:IMAGE.headphones,
+ badge:"START HERE",
+ items:[
+  item("Charging Cable",20,"common",30,IMAGE.phone),
+  item("Phone Stand",35,"common",25,IMAGE.phone),
+  item("Portable Charger",75,"common",20,IMAGE.phone),
+  item("Wireless Earbuds",150,"rare",15,IMAGE.headphones),
+  item("Premium Headphones",400,"epic",8,IMAGE.headphones),
+  item("Tech Bundle",1200,"legendary",2,IMAGE.laptop)
+ ]
+},
+
+{
+ id:"budgettech",
+ category:"tech",
+ name:"Budget Tech",
+ desc:"Affordable tech drops",
+ price:250,
+ image:IMAGE.keyboard,
+ badge:"VALUE",
+ items:[
+  item("Wireless Mouse",50,"common",30,IMAGE.keyboard),
+  item("Portable Speaker",120,"common",25,IMAGE.speaker),
+  item("Mechanical Keyboard",300,"rare",20,IMAGE.keyboard),
+  item("Premium Headset",650,"rare",15,IMAGE.headphones),
+  item("Tablet Setup",1400,"epic",8,IMAGE.phone),
+  item("Laptop Drop",3500,"legendary",2,IMAGE.laptop)
+ ]
+},
+
+{
  id:"tech",
+ category:"tech",
  name:"Tech Vault",
  desc:"Premium technology drops",
  price:600,
  image:IMAGE.phone,
  badge:"POPULAR",
  items:[
-  item("Wireless Charger",90,"common",32,IMAGE.phone),
+  item("Wireless Charger",90,"common",30,IMAGE.phone),
   item("Premium Headphones",320,"common",25,IMAGE.headphones),
   item("Mechanical Keyboard",650,"rare",20,IMAGE.keyboard),
-  item("Flagship Phone",1600,"rare",14,IMAGE.phone),
-  item("Creator Laptop",4200,"epic",7,IMAGE.laptop),
+  item("Flagship Phone",1600,"rare",15,IMAGE.phone),
+  item("Creator Laptop",4200,"epic",8,IMAGE.laptop),
   item("Ultimate Tech Setup",12500,"legendary",2,IMAGE.desk)
  ]
 },
 
 {
- id:"sneaker",
- name:"Sneaker Vault",
- desc:"Rare streetwear-inspired drops",
- price:750,
- image:IMAGE.shoes,
- badge:"HOT",
+ id:"phonevault",
+ category:"tech",
+ name:"Phone Vault",
+ desc:"Mobile tech and flagship drops",
+ price:900,
+ image:IMAGE.phone,
+ badge:"NEW",
  items:[
-  item("Everyday Trainers",140,"common",31,IMAGE.shoes),
-  item("Premium Sneakers",430,"common",25,IMAGE.shoes),
-  item("Limited High Tops",850,"rare",21,IMAGE.shoes),
-  item("Collector Sneakers",1800,"rare",14,IMAGE.shoes),
-  item("Rare Signature Pair",4800,"epic",7,IMAGE.shoes),
-  item("Golden Grail Pair",15000,"legendary",2,IMAGE.shoes)
+  item("Premium Case Bundle",150,"common",30,IMAGE.phone),
+  item("Wireless Earbuds",450,"common",25,IMAGE.headphones),
+  item("Smart Watch",900,"rare",20,IMAGE.watch),
+  item("Flagship Smartphone",2200,"rare",15,IMAGE.phone),
+  item("Phone + Watch Bundle",5500,"epic",8,IMAGE.phone),
+  item("Ultimate Mobile Collection",16000,"legendary",2,IMAGE.phone)
  ]
 },
 
 {
- id:"luxury",
- name:"Luxury Collection",
- desc:"Watches, accessories and more",
- price:1400,
- image:IMAGE.watch,
- badge:"PREMIUM",
+ id:"creator",
+ category:"tech",
+ name:"Creator Pack",
+ desc:"Camera and creator technology",
+ price:1100,
+ image:IMAGE.camera,
+ badge:"CREATOR",
  items:[
-  item("Premium Sunglasses",260,"common",30,IMAGE.sunglasses),
-  item("Leather Travel Bag",700,"common",25,IMAGE.bag),
-  item("Automatic Watch",1500,"rare",21,IMAGE.watch),
-  item("Luxury Timepiece",3500,"rare",14,IMAGE.watch),
-  item("Collector Watch",9000,"epic",8,IMAGE.watch),
-  item("Vault Timepiece",30000,"legendary",2,IMAGE.watch)
+  item("Creator Microphone",220,"common",30,IMAGE.camera),
+  item("Studio Headphones",550,"common",25,IMAGE.headphones),
+  item("Mirrorless Camera",1400,"rare",20,IMAGE.camera),
+  item("Creator Laptop",3000,"rare",15,IMAGE.laptop),
+  item("Studio Bundle",6500,"epic",8,IMAGE.camera),
+  item("Ultimate Creator Studio",20000,"legendary",2,IMAGE.desk)
+ ]
+},
+
+{
+ id:"pcbuilder",
+ category:"gaming",
+ name:"PC Builder",
+ desc:"Build the dream setup",
+ price:1300,
+ image:IMAGE.desk,
+ badge:"PC",
+ items:[
+  item("Gaming Mouse",180,"common",30,IMAGE.gaming),
+  item("RGB Keyboard",500,"common",25,IMAGE.keyboard),
+  item("Gaming Monitor",1300,"rare",20,IMAGE.desk),
+  item("Graphics Upgrade",3200,"rare",15,IMAGE.desk),
+  item("Gaming PC",7500,"epic",8,IMAGE.desk),
+  item("Ultimate Battle Station",24000,"legendary",2,IMAGE.desk)
  ]
 },
 
 {
  id:"gaming",
+ category:"gaming",
  name:"Gaming Drop",
  desc:"Gear for the ultimate setup",
  price:950,
@@ -1224,32 +1203,160 @@ const PACKS = [
  items:[
   item("Gaming Mouse",160,"common",30,IMAGE.gaming),
   item("Mechanical Keyboard",490,"common",25,IMAGE.keyboard),
-  item("Gaming Headset",850,"rare",21,IMAGE.headphones),
+  item("Gaming Headset",850,"rare",20,IMAGE.headphones),
   item("Console Bundle",1900,"rare",15,IMAGE.gaming),
-  item("Gaming PC",5200,"epic",7,IMAGE.desk),
+  item("Gaming PC",5200,"epic",8,IMAGE.desk),
   item("Dream Gaming Room",17000,"legendary",2,IMAGE.desk)
  ]
 },
 
 {
- id:"creator",
- name:"Creator Pack",
- desc:"Camera and creator technology",
- price:1100,
- image:IMAGE.camera,
- badge:"NEW",
+ id:"console",
+ category:"gaming",
+ name:"Console Wars",
+ desc:"Controllers, consoles and setups",
+ price:700,
+ image:IMAGE.gaming,
+ badge:"PLAY",
  items:[
-  item("Creator Microphone",220,"common",30,IMAGE.camera),
-  item("Studio Headphones",550,"common",25,IMAGE.headphones),
-  item("Mirrorless Camera",1400,"rare",21,IMAGE.camera),
-  item("Creator Laptop",3000,"rare",15,IMAGE.laptop),
-  item("Studio Bundle",6500,"epic",7,IMAGE.camera),
-  item("Ultimate Creator Studio",20000,"legendary",2,IMAGE.desk)
+  item("Controller",120,"common",30,IMAGE.gaming),
+  item("Gaming Headset",300,"common",25,IMAGE.headphones),
+  item("Premium Controller",700,"rare",20,IMAGE.gaming),
+  item("Console",1500,"rare",15,IMAGE.gaming),
+  item("Console + TV Setup",4000,"epic",8,IMAGE.gaming),
+  item("Ultimate Game Room",14000,"legendary",2,IMAGE.desk)
+ ]
+},
+
+{
+ id:"sneaker",
+ category:"style",
+ name:"Sneaker Vault",
+ desc:"Rare streetwear-inspired drops",
+ price:750,
+ image:IMAGE.shoes,
+ badge:"HOT",
+ items:[
+  item("Everyday Trainers",140,"common",30,IMAGE.shoes),
+  item("Premium Sneakers",430,"common",25,IMAGE.shoes),
+  item("Limited High Tops",850,"rare",20,IMAGE.shoes),
+  item("Collector Sneakers",1800,"rare",15,IMAGE.shoes),
+  item("Rare Signature Pair",4800,"epic",8,IMAGE.shoes),
+  item("Golden Grail Pair",15000,"legendary",2,IMAGE.shoes)
+ ]
+},
+
+{
+ id:"streetwear",
+ category:"style",
+ name:"Streetwear Drop",
+ desc:"Fresh fits and accessories",
+ price:450,
+ image:IMAGE.street,
+ badge:"STYLE",
+ items:[
+  item("Premium Tee",80,"common",30,IMAGE.street),
+  item("Streetwear Hoodie",240,"common",25,IMAGE.street),
+  item("Sneaker Drop",550,"rare",20,IMAGE.shoes),
+  item("Full Outfit",1100,"rare",15,IMAGE.street),
+  item("Collector Fit",3000,"epic",8,IMAGE.street),
+  item("Ultimate Wardrobe",9000,"legendary",2,IMAGE.street)
+ ]
+},
+
+{
+ id:"watch",
+ category:"premium",
+ name:"Watch Box",
+ desc:"Timepieces from everyday to elite",
+ price:1000,
+ image:IMAGE.watch,
+ badge:"WATCHES",
+ items:[
+  item("Sport Watch",180,"common",30,IMAGE.watch),
+  item("Classic Watch",500,"common",25,IMAGE.watch),
+  item("Automatic Watch",1200,"rare",20,IMAGE.watch),
+  item("Luxury Timepiece",3000,"rare",15,IMAGE.watch),
+  item("Collector Timepiece",8000,"epic",8,IMAGE.watch),
+  item("Grail Watch",25000,"legendary",2,IMAGE.watch)
+ ]
+},
+
+{
+ id:"luxury",
+ category:"premium",
+ name:"Luxury Collection",
+ desc:"Watches, accessories and more",
+ price:1400,
+ image:IMAGE.luxury,
+ badge:"PREMIUM",
+ items:[
+  item("Premium Sunglasses",260,"common",30,IMAGE.sunglasses),
+  item("Leather Travel Bag",700,"common",25,IMAGE.bag),
+  item("Automatic Watch",1500,"rare",20,IMAGE.watch),
+  item("Luxury Timepiece",3500,"rare",15,IMAGE.watch),
+  item("Collector Watch",9000,"epic",8,IMAGE.watch),
+  item("Vault Timepiece",30000,"legendary",2,IMAGE.luxury)
+ ]
+},
+
+{
+ id:"golf",
+ category:"outdoors",
+ name:"Golf Drop",
+ desc:"From the range to the clubhouse",
+ price:550,
+ image:IMAGE.golf,
+ badge:"GOLF",
+ items:[
+  item("Golf Balls Bundle",80,"common",30,IMAGE.golf),
+  item("Premium Putter",280,"common",25,IMAGE.golf),
+  item("Wedge Set",700,"rare",20,IMAGE.golf),
+  item("Premium Driver",1500,"rare",15,IMAGE.golf),
+  item("Full Club Set",4200,"epic",8,IMAGE.golf),
+  item("Dream Golf Setup",12000,"legendary",2,IMAGE.golf)
+ ]
+},
+
+{
+ id:"fishing",
+ category:"outdoors",
+ name:"Fishing Pack",
+ desc:"Gear for the next big catch",
+ price:400,
+ image:IMAGE.fishing,
+ badge:"OUTDOORS",
+ items:[
+  item("Tackle Bundle",70,"common",30,IMAGE.fishing),
+  item("Premium Rod",220,"common",25,IMAGE.fishing),
+  item("Rod + Reel Combo",500,"rare",20,IMAGE.fishing),
+  item("Premium Fishing Setup",1100,"rare",15,IMAGE.fishing),
+  item("Tournament Gear",3000,"epic",8,IMAGE.fishing),
+  item("Ultimate Fishing Setup",10000,"legendary",2,IMAGE.fishing)
+ ]
+},
+
+{
+ id:"adventure",
+ category:"outdoors",
+ name:"Adventure Pack",
+ desc:"Premium outdoor gear",
+ price:650,
+ image:IMAGE.outdoors,
+ badge:"ADVENTURE",
+ items:[
+  item("Outdoor Gear Bundle",120,"common",30,IMAGE.outdoors),
+  item("Premium Backpack",350,"common",25,IMAGE.bag),
+  item("Camping Setup",800,"rare",20,IMAGE.outdoors),
+  item("Adventure Tech",1700,"rare",15,IMAGE.camera),
+  item("Ultimate Camp Setup",4800,"epic",8,IMAGE.outdoors),
+  item("Dream Adventure Package",15000,"legendary",2,IMAGE.travel)
  ]
 },
 
 {
  id:"ride",
+ category:"premium",
  name:"Ride Pack",
  desc:"Two wheels to dream garage",
  price:1800,
@@ -1258,53 +1365,176 @@ const PACKS = [
  items:[
   item("Riding Gear",350,"common",30,IMAGE.bike),
   item("Premium Helmet",900,"common",25,IMAGE.bike),
-  item("Electric Bike",2200,"rare",21,IMAGE.bike),
+  item("Electric Bike",2200,"rare",20,IMAGE.bike),
   item("Performance Bike",4800,"rare",15,IMAGE.bike),
-  item("Dream Motorcycle",12000,"epic",7,IMAGE.bike),
+  item("Dream Motorcycle",12000,"epic",8,IMAGE.bike),
   item("Dream Garage",40000,"legendary",2,IMAGE.car)
  ]
 },
 
 {
- id:"mystery",
- name:"Mystery Black",
+ id:"garage",
+ category:"premium",
+ name:"Dream Garage",
+ desc:"The biggest automotive drops",
+ price:5000,
+ image:IMAGE.car,
+ badge:"ELITE",
+ items:[
+  item("Car Detail Package",900,"common",30,IMAGE.car),
+  item("Wheel Package",2500,"common",25,IMAGE.car),
+  item("Performance Upgrade",6000,"rare",20,IMAGE.car),
+  item("Dream Bike",13000,"rare",15,IMAGE.bike),
+  item("Performance Car",35000,"epic",8,IMAGE.car),
+  item("Ultimate Dream Garage",125000,"legendary",2,IMAGE.car)
+ ]
+},
+
+{
+ id:"mystery100",
+ category:"premium",
+ name:"Mystery $100",
+ desc:"Small price, mystery drop",
+ price:100,
+ image:IMAGE.bag,
+ badge:"MYSTERY",
+ items:[
+  item("Mystery Item",20,"common",30,IMAGE.bag),
+  item("Accessory Drop",55,"common",25,IMAGE.sunglasses),
+  item("Tech Drop",130,"rare",20,IMAGE.phone),
+  item("Sneaker Drop",300,"rare",15,IMAGE.shoes),
+  item("Mystery Epic",800,"epic",8,IMAGE.watch),
+  item("Mystery Grail",2500,"legendary",2,IMAGE.luxury)
+ ]
+},
+
+{
+ id:"mystery500",
+ category:"premium",
+ name:"Mystery $500",
  desc:"You never know what's inside",
  price:500,
  image:IMAGE.bag,
  badge:"MYSTERY",
  items:[
-  item("Mystery Accessory",70,"common",32,IMAGE.sunglasses),
+  item("Mystery Accessory",70,"common",30,IMAGE.sunglasses),
   item("Portable Speaker",260,"common",25,IMAGE.speaker),
   item("Premium Sneakers",600,"rare",20,IMAGE.shoes),
-  item("Smart Device",1400,"rare",14,IMAGE.phone),
-  item("Mystery Epic",4500,"epic",7,IMAGE.watch),
+  item("Smart Device",1400,"rare",15,IMAGE.phone),
+  item("Mystery Epic",4500,"epic",8,IMAGE.watch),
   item("Mystery Grail",14000,"legendary",2,IMAGE.car)
  ]
 },
 
 {
- id:"elite",
- name:"Elite Vault",
- desc:"The biggest Packr drops",
- price:4000,
- image:IMAGE.car,
- badge:"ELITE",
+ id:"blackvault",
+ category:"premium",
+ name:"Black Vault",
+ desc:"High stakes virtual drops",
+ price:2500,
+ image:IMAGE.luxury,
+ badge:"BLACK VAULT",
  items:[
-  item("Premium Bundle",850,"common",30,IMAGE.bag),
-  item("Luxury Watch",2400,"common",25,IMAGE.watch),
-  item("Creator Setup",5200,"rare",21,IMAGE.camera),
-  item("Performance Ride",10500,"rare",15,IMAGE.bike),
-  item("Dream Garage",28000,"epic",7,IMAGE.car),
-  item("Ultimate Vault",100000,"legendary",2,IMAGE.car)
+  item("Premium Accessory",450,"common",30,IMAGE.sunglasses),
+  item("Luxury Bag",1200,"common",25,IMAGE.bag),
+  item("Premium Tech",3000,"rare",20,IMAGE.phone),
+  item("Luxury Watch",6500,"rare",15,IMAGE.watch),
+  item("Dream Setup",17000,"epic",8,IMAGE.desk),
+  item("Black Vault Grail",55000,"legendary",2,IMAGE.car)
+ ]
+},
+
+{
+ id:"goldvault",
+ category:"premium",
+ name:"Gold Vault",
+ desc:"Big virtual prizes",
+ price:7500,
+ image:IMAGE.watch,
+ badge:"GOLD",
+ items:[
+  item("Premium Bundle",1500,"common",30,IMAGE.bag),
+  item("Luxury Tech",4000,"common",25,IMAGE.phone),
+  item("Collector Watch",9000,"rare",20,IMAGE.watch),
+  item("Dream Setup",18000,"rare",15,IMAGE.desk),
+  item("Performance Ride",50000,"epic",8,IMAGE.car),
+  item("Gold Vault Grail",175000,"legendary",2,IMAGE.luxury)
+ ]
+},
+
+{
+ id:"diamond",
+ category:"premium",
+ name:"Diamond Vault",
+ desc:"Packr's ultra-premium vault",
+ price:15000,
+ image:IMAGE.car,
+ badge:"DIAMOND",
+ items:[
+  item("Luxury Bundle",3000,"common",30,IMAGE.bag),
+  item("Collector Timepiece",8000,"common",25,IMAGE.watch),
+  item("Ultimate Tech Setup",18000,"rare",20,IMAGE.desk),
+  item("Dream Motorcycle",40000,"rare",15,IMAGE.bike),
+  item("Performance Car",100000,"epic",8,IMAGE.car),
+  item("Diamond Grail",350000,"legendary",2,IMAGE.luxury)
+ ]
+},
+
+{
+ id:"bitcoin100",
+ category:"crypto",
+ name:"Bitcoin Starter",
+ desc:"Simulated BTC collectibles",
+ price:300,
+ image:IMAGE.bitcoin,
+ badge:"₿ VIRTUAL",
+ items:[
+  item("0.00001 BTC",60,"common",30,IMAGE.bitcoin,"Virtual BTC collectible"),
+  item("0.000025 BTC",150,"common",25,IMAGE.bitcoin,"Virtual BTC collectible"),
+  item("0.0001 BTC",450,"rare",20,IMAGE.bitcoin,"Virtual BTC collectible"),
+  item("0.00025 BTC",1100,"rare",15,IMAGE.bitcoin,"Virtual BTC collectible"),
+  item("0.001 BTC",3500,"epic",8,IMAGE.bitcoin,"Virtual BTC collectible"),
+  item("0.005 BTC",12000,"legendary",2,IMAGE.bitcoin,"Virtual BTC collectible")
+ ]
+},
+
+{
+ id:"bitcoin",
+ category:"crypto",
+ name:"Bitcoin Vault",
+ desc:"Virtual Bitcoin-themed drops",
+ price:2000,
+ image:IMAGE.bitcoin,
+ badge:"₿ BTC",
+ items:[
+  item("0.0001 BTC",350,"common",30,IMAGE.bitcoin,"Simulated only"),
+  item("0.0005 BTC",1000,"common",25,IMAGE.bitcoin,"Simulated only"),
+  item("0.001 BTC",2400,"rare",20,IMAGE.bitcoin,"Simulated only"),
+  item("0.005 BTC",6000,"rare",15,IMAGE.bitcoin,"Simulated only"),
+  item("0.01 BTC",18000,"epic",8,IMAGE.bitcoin,"Simulated only"),
+  item("0.05 BTC",60000,"legendary",2,IMAGE.bitcoin,"Simulated only")
+ ]
+},
+
+{
+ id:"cryptowhale",
+ category:"crypto",
+ name:"Crypto Whale",
+ desc:"The biggest simulated BTC vault",
+ price:10000,
+ image:IMAGE.bitcoin,
+ badge:"₿ WHALE",
+ items:[
+  item("0.001 BTC",2000,"common",30,IMAGE.bitcoin,"Simulated only"),
+  item("0.005 BTC",5000,"common",25,IMAGE.bitcoin,"Simulated only"),
+  item("0.01 BTC",12000,"rare",20,IMAGE.bitcoin,"Simulated only"),
+  item("0.025 BTC",30000,"rare",15,IMAGE.bitcoin,"Simulated only"),
+  item("0.10 BTC",85000,"epic",8,IMAGE.bitcoin,"Simulated only"),
+  item("1.0 BTC",300000,"legendary",2,IMAGE.bitcoin,"Virtual collectible — not real BTC")
  ]
 }
 
 ];
-
-
-function item(name,value,rarity,weight,image){
- return {name,value,rarity,weight,image};
-}
 
 
 /* STATE */
@@ -1322,337 +1552,439 @@ let state=load();
 let activePack=null;
 let activePrize=null;
 let spinning=false;
+let currentFilter="all";
 
 function load(){
- try{
-  return {
-   ...DEFAULT_STATE,
-   ...JSON.parse(localStorage.getItem("packrV2")||"{}")
-  };
- }catch{
-  return {...DEFAULT_STATE};
- }
+  try{
+    return {
+      ...DEFAULT_STATE,
+      ...JSON.parse(localStorage.getItem("packrV3")||"{}")
+    };
+  }catch{
+    return {...DEFAULT_STATE};
+  }
 }
 
 function save(){
- localStorage.setItem("packrV2",JSON.stringify(state));
- updateAll();
+  localStorage.setItem("packrV3",JSON.stringify(state));
+  updateAll();
 }
 
 
-/* NAVIGATION */
+/* NAV */
 
 document.querySelectorAll("[data-page]").forEach(button=>{
- button.onclick=()=>showPage(button.dataset.page);
+  button.onclick=()=>showPage(button.dataset.page);
 });
 
 function showPage(id){
 
- document.querySelectorAll(".page").forEach(x=>x.classList.add("hidden"));
- document.getElementById(id).classList.remove("hidden");
+  document.querySelectorAll(".page").forEach(x=>x.classList.add("hidden"));
+  document.getElementById(id).classList.remove("hidden");
 
- document.querySelectorAll("[data-page]").forEach(x=>{
-  x.classList.toggle("active",x.dataset.page===id);
- });
+  document.querySelectorAll("[data-page]").forEach(x=>{
+    x.classList.toggle("active",x.dataset.page===id);
+  });
 
- window.scrollTo({top:0,behavior:"smooth"});
+  window.scrollTo({top:0,behavior:"smooth"});
 }
 
 function scrollPacks(){
- document.getElementById("packsAnchor").scrollIntoView({
-  behavior:"smooth"
- });
+  document.getElementById("packsAnchor").scrollIntoView({
+    behavior:"smooth"
+  });
 }
 
 
-/* PACK RENDER */
+/* FILTER */
+
+function filterPacks(category,button){
+
+  currentFilter=category;
+
+  document.querySelectorAll(".filterBtn").forEach(x=>{
+    x.classList.remove("active");
+  });
+
+  button.classList.add("active");
+
+  renderPacks();
+}
+
+
+/* PACKS */
 
 function renderPacks(){
 
- const grid=document.getElementById("packGrid");
+  const grid=document.getElementById("packGrid");
 
- grid.innerHTML=PACKS.map(p=>`
-  <article class="pack">
+  const visible=currentFilter==="all"
+    ? PACKS
+    : PACKS.filter(p=>p.category===currentFilter);
 
-   <div class="packImage">
-    <img src="${p.image}" alt="${p.name}">
-    <div class="packShade"></div>
-    <div class="packBadge">${p.badge}</div>
-   </div>
+  grid.innerHTML=visible.map(p=>`
+    <article class="pack">
 
-   <div class="packBody">
-    <div class="packName">${p.name}</div>
-    <div class="packDesc">${p.desc}</div>
+      <div class="packImage">
+        <img src="${p.image}" alt="${p.name}">
+        <div class="packShade"></div>
+        <div class="packBadge">${p.badge}</div>
+      </div>
 
-    <div class="packBottom">
-     <div class="packPrice">
-      ◉ ${coins(p.price)}
-     </div>
+      <div class="packBody">
 
-     <button class="openBtn"
-      onclick="openPack('${p.id}')">
-      OPEN
-     </button>
-    </div>
-   </div>
+        <div class="packName">${p.name}</div>
+        <div class="packDesc">${p.desc}</div>
 
-  </article>
- `).join("");
+        <div class="packBottom">
 
- document.getElementById("battlePack").innerHTML=
- PACKS.map(p=>`
-  <option value="${p.id}">
-   ${p.name} — ${coins(p.price)} Coins
-  </option>
- `).join("");
+          <div class="packPrice">
+            $${money(p.price)}
+          </div>
+
+          <button class="openBtn"
+            onclick="openPack('${p.id}')">
+            OPEN
+          </button>
+
+        </div>
+
+      </div>
+
+    </article>
+  `).join("");
+
+  document.getElementById("battlePack").innerHTML=
+    PACKS.map(p=>`
+      <option value="${p.id}">
+        ${p.name} — $${money(p.price)}
+      </option>
+    `).join("");
 }
 
 
-/* PACK OPENING */
+/* OPEN PACK */
 
 function openPack(id){
 
- activePack=PACKS.find(p=>p.id===id);
- activePrize=null;
+  activePack=PACKS.find(p=>p.id===id);
+  activePrize=null;
 
- document.getElementById("modalPackName").textContent=activePack.name;
- document.getElementById("modalPackPrice").textContent=
- `${coins(activePack.price)} PACK COINS`;
+  document.getElementById("modalPackName").textContent=
+    activePack.name;
 
- document.getElementById("reel").innerHTML="";
- document.getElementById("reel").style.transition="none";
- document.getElementById("reel").style.transform="translateX(0)";
+  document.getElementById("modalPackPrice").textContent=
+    `$${money(activePack.price)} VIRTUAL BALANCE`;
 
- document.getElementById("modalAction").innerHTML=`
-  <div style="color:var(--muted);margin-bottom:13px">
-   Open this pack for
-   <b style="color:var(--gold)">
-   ${coins(activePack.price)} Coins
-   </b>
-  </div>
+  const reel=document.getElementById("reel");
 
-  <button class="btn gold" onclick="spinPack()">
-   OPEN PACK
-  </button>
- `;
+  reel.innerHTML="";
+  reel.style.transition="none";
+  reel.style.transform="translateX(0px)";
 
- document.getElementById("overlay").classList.remove("hidden");
+  document.getElementById("modalAction").innerHTML=`
+    <div style="color:var(--muted);margin-bottom:13px">
+      Open this pack for
+      <b style="color:var(--gold)">
+        $${money(activePack.price)}
+      </b>
+    </div>
+
+    <button class="btn gold" onclick="spinPack()">
+      OPEN PACK
+    </button>
+  `;
+
+  document.getElementById("overlay").classList.remove("hidden");
 }
 
-
 function closeModal(){
- if(spinning)return;
- document.getElementById("overlay").classList.add("hidden");
+  if(spinning)return;
+  document.getElementById("overlay").classList.add("hidden");
 }
 
 
 function choosePrize(pack){
 
- let total=pack.items.reduce((a,b)=>a+b.weight,0);
- let r=Math.random()*total;
+  let total=pack.items.reduce((a,b)=>a+b.weight,0);
+  let r=Math.random()*total;
 
- for(const x of pack.items){
-  r-=x.weight;
-  if(r<=0)return {...x};
- }
+  for(const x of pack.items){
+    r-=x.weight;
+    if(r<=0)return {...x};
+  }
 
- return {...pack.items[0]};
+  return {...pack.items[0]};
 }
-
 
 function randomItem(pack){
- return pack.items[
-  Math.floor(Math.random()*pack.items.length)
- ];
+  return pack.items[
+    Math.floor(Math.random()*pack.items.length)
+  ];
 }
 
+
+/* ======================================================
+   FIXED REEL
+
+   The winning card's REAL browser position is measured.
+   We then calculate exactly how far its center must move
+   to line up with the center marker.
+
+   No hard-coded iPhone offset.
+   ====================================================== */
 
 function spinPack(){
 
- if(spinning)return;
+  if(spinning)return;
 
- if(state.balance<activePack.price){
-  toast("Not enough Pack Coins.");
-  return;
- }
+  if(state.balance<activePack.price){
+    toast("Not enough virtual money.");
+    return;
+  }
 
- state.balance-=activePack.price;
- state.opened++;
+  state.balance-=activePack.price;
+  state.opened++;
 
- activePrize=choosePrize(activePack);
+  activePrize=choosePrize(activePack);
 
- if(activePrize.value>state.best)
-  state.best=activePrize.value;
+  if(activePrize.value>state.best){
+    state.best=activePrize.value;
+  }
 
- state.level=1+Math.floor(state.opened/8);
+  state.level=1+Math.floor(state.opened/8);
 
- save();
+  save();
 
- spinning=true;
+  spinning=true;
 
- const reel=document.getElementById("reel");
+  const reel=document.getElementById("reel");
+  const windowEl=document.getElementById("reelWindow");
 
- reel.innerHTML="";
- reel.style.transition="none";
- reel.style.transform="translateX(0px)";
+  reel.innerHTML="";
+  reel.style.transition="none";
+  reel.style.transform="translateX(0px)";
 
- const display=[];
+  const display=[];
 
- for(let i=0;i<45;i++)
-  display.push(randomItem(activePack));
+  for(let i=0;i<50;i++){
+    display.push(randomItem(activePack));
+  }
 
- const winnerIndex=37;
- display[winnerIndex]=activePrize;
+  const winnerIndex=40;
 
- display.forEach(x=>{
+  display[winnerIndex]=activePrize;
 
-  const div=document.createElement("div");
+  display.forEach((x,index)=>{
 
-  div.className=`reelItem r-${x.rarity}`;
+    const div=document.createElement("div");
 
-  div.innerHTML=`
-   <img src="${x.image}" alt="${x.name}">
-   <div class="reelText">
-    <div class="reelName">${x.name}</div>
-    <div class="reelPrice">◉ ${coins(x.value)}</div>
-   </div>
+    div.className=`reelItem r-${x.rarity}`;
+
+    if(index===winnerIndex){
+      div.dataset.winner="true";
+    }
+
+    div.innerHTML=`
+      <img src="${x.image}" alt="${x.name}">
+
+      <div class="reelText">
+
+        <div class="reelName">
+          ${x.name}
+        </div>
+
+        <div class="reelPrice">
+          $${money(x.value)}
+        </div>
+
+      </div>
+    `;
+
+    reel.appendChild(div);
+  });
+
+
+  document.getElementById("modalAction").innerHTML=`
+    <div style="color:var(--muted);font-weight:800">
+      OPENING...
+    </div>
   `;
 
-  reel.appendChild(div);
- });
 
- document.getElementById("modalAction").innerHTML=`
-  <div style="color:var(--muted);font-weight:800">
-   OPENING...
-  </div>
- `;
+  requestAnimationFrame(()=>{
 
- requestAnimationFrame(()=>{
+    requestAnimationFrame(()=>{
 
-  const mobile=innerWidth<650;
-  const card=mobile?155:190;
-  const offset=mobile?75:310;
+      const winningCard=
+        reel.querySelector('[data-winner="true"]');
 
-  const target=-(winnerIndex*card)+offset;
+      /*
+       Measure actual positions before moving anything.
+      */
 
-  reel.style.transition=
-   "transform 5s cubic-bezier(.08,.72,.05,1)";
+      const reelRect=reel.getBoundingClientRect();
+      const cardRect=winningCard.getBoundingClientRect();
+      const windowRect=windowEl.getBoundingClientRect();
 
-  reel.style.transform=`translateX(${target}px)`;
+      /*
+       Card center relative to the reel's starting point.
+      */
 
- });
+      const cardCenter=
+        (cardRect.left-reelRect.left)+(cardRect.width/2);
 
- setTimeout(()=>{
-  spinning=false;
-  showWinner();
- },5100);
+      /*
+       Exact marker center inside the visible window.
+      */
+
+      const markerCenter=
+        windowRect.width/2;
+
+      /*
+       Move reel until card center equals marker center.
+      */
+
+      const target=
+        markerCenter-cardCenter;
+
+      reel.style.transition=
+        "transform 5s cubic-bezier(.08,.72,.05,1)";
+
+      reel.style.transform=
+        `translate3d(${target}px,0,0)`;
+
+    });
+
+  });
+
+
+  setTimeout(()=>{
+    spinning=false;
+    showWinner();
+  },5150);
 }
 
 
 function showWinner(){
 
- const p=activePrize;
+  const p=activePrize;
 
- document.getElementById("modalAction").innerHTML=`
+  document.getElementById("modalAction").innerHTML=`
 
-  <img class="wonPhoto"
-   src="${p.image}"
-   alt="${p.name}">
+    <img class="wonPhoto"
+      src="${p.image}"
+      alt="${p.name}">
 
-  <div class="rarity ${p.rarity}">
-   ${p.rarity.toUpperCase()} DROP
-  </div>
+    <div class="rarity ${p.rarity}">
+      ${p.rarity.toUpperCase()} DROP
+    </div>
 
-  <div class="wonName">${p.name}</div>
+    <div class="wonName">
+      ${p.name}
+    </div>
 
-  <div class="wonValue">
-   ◉ ${coins(p.value)}
-  </div>
+    ${
+      p.subtitle
+      ? `<div style="color:var(--muted);font-size:12px;margin-top:6px">
+           ${p.subtitle}
+         </div>`
+      : ""
+    }
 
-  <div class="actionRow">
+    <div class="wonValue">
+      $${money(p.value)}
+    </div>
 
-   <button class="btn gold"
-    onclick="keepPrize()">
-    KEEP ITEM
-   </button>
+    <div class="actionRow">
 
-   <button class="btn dark"
-    onclick="sellPrize()">
-    EXCHANGE FOR ${coins(p.value)} COINS
-   </button>
+      <button class="btn gold"
+        onclick="keepPrize()">
+        KEEP ITEM
+      </button>
 
-   <button class="btn dark"
-    onclick="spinPack()">
-    OPEN AGAIN
-   </button>
+      <button class="btn dark"
+        onclick="sellPrize()">
+        EXCHANGE FOR $${money(p.value)}
+      </button>
 
-  </div>
- `;
+      <button class="btn dark"
+        onclick="spinPack()">
+        OPEN AGAIN
+      </button>
+
+    </div>
+  `;
 }
 
 
 function keepPrize(){
 
- if(!activePrize)return;
+  if(!activePrize)return;
 
- state.inventory.unshift({
-  ...activePrize,
-  uid:Date.now()+Math.random()
- });
+  state.inventory.unshift({
+    ...activePrize,
+    uid:Date.now()+Math.random()
+  });
 
- activePrize=null;
+  activePrize=null;
 
- save();
+  save();
 
- toast("Added to your collection.");
+  toast("Added to your collection.");
 
- document.getElementById("modalAction").innerHTML=`
-  <div style="font-size:38px;color:var(--green)">✓</div>
-  <h2>Added to Collection</h2>
+  document.getElementById("modalAction").innerHTML=`
+    <div style="font-size:38px;color:var(--green)">✓</div>
 
-  <div class="actionRow">
-   <button class="btn gold"
-    onclick="spinPack()">
-    OPEN AGAIN
-   </button>
+    <h2>Added to Collection</h2>
 
-   <button class="btn dark"
-    onclick="closeModal()">
-    DONE
-   </button>
-  </div>
- `;
+    <div class="actionRow">
+
+      <button class="btn gold"
+        onclick="spinPack()">
+        OPEN AGAIN
+      </button>
+
+      <button class="btn dark"
+        onclick="closeModal()">
+        DONE
+      </button>
+
+    </div>
+  `;
 }
 
 
 function sellPrize(){
 
- if(!activePrize)return;
+  if(!activePrize)return;
 
- state.balance+=activePrize.value;
+  state.balance+=activePrize.value;
+  activePrize=null;
 
- activePrize=null;
+  save();
 
- save();
+  toast("Converted to virtual balance.");
 
- toast("Converted to Pack Coins.");
+  document.getElementById("modalAction").innerHTML=`
+    <div style="font-size:38px;color:var(--gold)">$</div>
 
- document.getElementById("modalAction").innerHTML=`
-  <div style="font-size:38px;color:var(--gold)">◉</div>
-  <h2>Converted to Coins</h2>
+    <h2>Added to Balance</h2>
 
-  <div class="actionRow">
-   <button class="btn gold"
-    onclick="spinPack()">
-    OPEN AGAIN
-   </button>
+    <div class="actionRow">
 
-   <button class="btn dark"
-    onclick="closeModal()">
-    DONE
-   </button>
-  </div>
- `;
+      <button class="btn gold"
+        onclick="spinPack()">
+        OPEN AGAIN
+      </button>
+
+      <button class="btn dark"
+        onclick="closeModal()">
+        DONE
+      </button>
+
+    </div>
+  `;
 }
 
 
@@ -1660,80 +1992,96 @@ function sellPrize(){
 
 function renderInventory(){
 
- const grid=document.getElementById("inventoryGrid");
+  const grid=document.getElementById("inventoryGrid");
 
- document.getElementById("inventoryCount").textContent=
- `${state.inventory.length} ITEMS`;
+  document.getElementById("inventoryCount").textContent=
+    `${state.inventory.length} ITEMS`;
 
- if(!state.inventory.length){
+  if(!state.inventory.length){
 
-  grid.innerHTML=`
-   <div class="empty" style="grid-column:1/-1">
-    <h3>Your collection is empty.</h3>
-    <p>Open a pack and keep a prize to see it here.</p>
-    <button class="btn gold"
-     onclick="showPage('home')">
-     OPEN PACKS
-    </button>
-   </div>
-  `;
+    grid.innerHTML=`
+      <div class="empty" style="grid-column:1/-1">
 
-  return;
- }
+        <h3>Your collection is empty.</h3>
 
- grid.innerHTML=state.inventory.map(x=>`
+        <p>
+          Open a pack and keep a prize to see it here.
+        </p>
 
-  <article class="inventoryCard">
+        <button class="btn gold"
+          onclick="showPage('home')">
+          OPEN PACKS
+        </button>
 
-   <img
-    class="inventoryPhoto"
-    src="${x.image}"
-    alt="${x.name}">
+      </div>
+    `;
 
-   <div class="inventoryBody">
+    return;
+  }
 
-    <div class="rarity ${x.rarity}">
-     ${x.rarity.toUpperCase()}
-    </div>
+  grid.innerHTML=state.inventory.map(x=>`
 
-    <div class="inventoryName">
-     ${x.name}
-    </div>
+    <article class="inventoryCard">
 
-    <div class="inventoryValue">
-     ◉ ${coins(x.value)}
-    </div>
+      <img
+        class="inventoryPhoto"
+        src="${x.image}"
+        alt="${x.name}">
 
-    <button
-     class="btn dark full"
-     onclick="sellInventory('${x.uid}')">
-     EXCHANGE FOR COINS
-    </button>
+      <div class="inventoryBody">
 
-   </div>
+        <div class="rarity ${x.rarity}">
+          ${x.rarity.toUpperCase()}
+        </div>
 
-  </article>
+        <div class="inventoryName">
+          ${x.name}
+        </div>
 
- `).join("");
+        ${
+          x.subtitle
+          ? `<div style="color:var(--muted);font-size:10px;margin-top:4px">
+               ${x.subtitle}
+             </div>`
+          : ""
+        }
+
+        <div class="inventoryValue">
+          $${money(x.value)}
+        </div>
+
+        <button
+          class="btn dark full"
+          onclick="sellInventory('${x.uid}')">
+          EXCHANGE FOR $
+        </button>
+
+      </div>
+
+    </article>
+
+  `).join("");
 }
 
 
 function sellInventory(uid){
 
- const index=state.inventory.findIndex(
-  x=>String(x.uid)===String(uid)
- );
+  const index=state.inventory.findIndex(
+    x=>String(x.uid)===String(uid)
+  );
 
- if(index<0)return;
+  if(index<0)return;
 
- const x=state.inventory[index];
+  const x=state.inventory[index];
 
- state.balance+=x.value;
- state.inventory.splice(index,1);
+  state.balance+=x.value;
+  state.inventory.splice(index,1);
 
- save();
+  save();
 
- toast(`${x.name} exchanged for ${coins(x.value)} Coins.`);
+  toast(
+    `${x.name} exchanged for $${money(x.value)}.`
+  );
 }
 
 
@@ -1741,219 +2089,228 @@ function sellInventory(uid){
 
 function startBattle(){
 
- const pack=PACKS.find(
-  x=>x.id===document.getElementById("battlePack").value
- );
+  const pack=PACKS.find(
+    x=>x.id===document.getElementById("battlePack").value
+  );
 
- const rounds=
- Number(document.getElementById("battleRounds").value);
+  const rounds=
+    Number(document.getElementById("battleRounds").value);
 
- const mode=
- document.getElementById("battleMode").value;
+  const mode=
+    document.getElementById("battleMode").value;
 
- const cost=pack.price*rounds;
+  const cost=pack.price*rounds;
 
- if(state.balance<cost){
-  toast("Not enough Pack Coins.");
-  return;
- }
+  if(state.balance<cost){
+    toast("Not enough virtual money.");
+    return;
+  }
 
- state.balance-=cost;
+  state.balance-=cost;
 
- let you=[];
- let bot=[];
- let youTotal=0;
- let botTotal=0;
+  let you=[];
+  let bot=[];
+  let youTotal=0;
+  let botTotal=0;
 
- for(let i=0;i<rounds;i++){
+  for(let i=0;i<rounds;i++){
 
-  const a=choosePrize(pack);
-  const b=choosePrize(pack);
+    const a=choosePrize(pack);
+    const b=choosePrize(pack);
 
-  you.push(a);
-  bot.push(b);
+    you.push(a);
+    bot.push(b);
 
-  youTotal+=a.value;
-  botTotal+=b.value;
- }
+    youTotal+=a.value;
+    botTotal+=b.value;
+  }
 
- let youWin;
+  let youWin;
 
- if(mode==="Upside Down")
-  youWin=youTotal<botTotal;
- else
-  youWin=youTotal>botTotal;
+  if(mode==="Upside Down"){
+    youWin=youTotal<botTotal;
+  }else{
+    youWin=youTotal>botTotal;
+  }
 
+  let html=`
 
- let html=`
+    <div class="battleArena">
 
- <div class="battleArena">
+      ${fighterHTML("YOU",you,youTotal)}
 
-  ${fighterHTML("YOU",you,youTotal)}
+      ${fighterHTML("PACKR BOT",bot,botTotal)}
 
-  ${fighterHTML("PACKR BOT",bot,botTotal)}
-
- </div>
- `;
-
-
- if(youTotal===botTotal){
-
-  state.balance+=cost;
-
-  html+=`
-   <div class="result">
-    🤝 DRAW — ENTRY RETURNED
-   </div>
-  `;
-
- }else if(youWin){
-
-  [...you,...bot].forEach(x=>{
-
-   state.inventory.unshift({
-    ...x,
-    uid:Date.now()+Math.random()
-   });
-
-  });
-
-  html+=`
-   <div class="result"
-    style="border-color:#5e4b1d">
-    🏆 YOU WON THE BATTLE
-    <div style="font-size:12px;color:var(--muted);margin-top:5px">
-     All ${you.length+bot.length} items were added to your collection.
     </div>
-   </div>
   `;
 
- }else{
 
-  html+=`
-   <div class="result">
-    PACKR BOT WON
-    <div style="font-size:12px;color:var(--muted);margin-top:5px">
-     Try another battle.
-    </div>
-   </div>
-  `;
- }
+  if(youTotal===botTotal){
 
- document.getElementById("battleOutput").innerHTML=html;
+    state.balance+=cost;
 
- save();
+    html+=`
+      <div class="result">
+        🤝 DRAW — ENTRY RETURNED
+      </div>
+    `;
+
+  }else if(youWin){
+
+    [...you,...bot].forEach(x=>{
+
+      state.inventory.unshift({
+        ...x,
+        uid:Date.now()+Math.random()
+      });
+
+    });
+
+    html+=`
+      <div class="result"
+        style="border-color:#5e4b1d">
+
+        🏆 YOU WON THE BATTLE
+
+        <div style="font-size:12px;color:var(--muted);margin-top:5px">
+          All ${you.length+bot.length} virtual items were added to your collection.
+        </div>
+
+      </div>
+    `;
+
+  }else{
+
+    html+=`
+      <div class="result">
+
+        PACKR BOT WON
+
+        <div style="font-size:12px;color:var(--muted);margin-top:5px">
+          Try another battle.
+        </div>
+
+      </div>
+    `;
+  }
+
+  document.getElementById("battleOutput").innerHTML=html;
+
+  save();
 }
 
 
 function fighterHTML(name,items,total){
 
- return `
- <div class="fighter">
+  return `
+    <div class="fighter">
 
-  <div class="fighterHeader">
-   <span>${name}</span>
-   <span class="fighterScore">
-    ◉ ${coins(total)}
-   </span>
-  </div>
+      <div class="fighterHeader">
+        <span>${name}</span>
 
-  ${items.map(x=>`
+        <span class="fighterScore">
+          $${money(total)}
+        </span>
+      </div>
 
-   <div class="pull">
+      ${items.map(x=>`
 
-    <img src="${x.image}" alt="${x.name}">
+        <div class="pull">
 
-    <div class="pullInfo">
-     <div class="rarity ${x.rarity}">
-      ${x.rarity.toUpperCase()}
-     </div>
+          <img src="${x.image}" alt="${x.name}">
 
-     <div class="pullName">
-      ${x.name}
-     </div>
+          <div class="pullInfo">
 
-     <div class="pullValue">
-      ◉ ${coins(x.value)}
-     </div>
+            <div class="rarity ${x.rarity}">
+              ${x.rarity.toUpperCase()}
+            </div>
+
+            <div class="pullName">
+              ${x.name}
+            </div>
+
+            <div class="pullValue">
+              $${money(x.value)}
+            </div>
+
+          </div>
+
+        </div>
+
+      `).join("")}
+
     </div>
-
-   </div>
-
-  `).join("")}
-
- </div>
- `;
+  `;
 }
 
 
 /* LIVE DROPS */
 
 const liveUsers=[
- "NightWolf",
- "MontanaX",
- "Nova",
- "DropKing",
- "Racer",
- "Vortex",
- "Ace"
+  "NightWolf",
+  "MontanaX",
+  "Nova",
+  "DropKing",
+  "Racer",
+  "Vortex",
+  "Ace"
 ];
 
 function renderLive(){
 
- const all=[];
+  const all=[];
 
- PACKS.forEach(p=>
-  p.items.forEach(x=>all.push(x))
- );
-
- const chosen=[];
-
- for(let i=0;i<5;i++){
-
-  const x=all[
-   Math.floor(Math.random()*all.length)
-  ];
-
-  chosen.push({
-   ...x,
-   user:liveUsers[
-    Math.floor(Math.random()*liveUsers.length)
-   ]
+  PACKS.forEach(p=>{
+    p.items.forEach(x=>all.push(x));
   });
- }
 
- document.getElementById("liveDrops").innerHTML=
- chosen.map((x,i)=>`
+  const chosen=[];
 
-  <div class="liveCard">
+  for(let i=0;i<5;i++){
 
-   <img class="liveImg"
-    src="${x.image}"
-    alt="${x.name}">
+    const x=
+      all[Math.floor(Math.random()*all.length)];
 
-   <div class="liveInfo">
+    chosen.push({
+      ...x,
+      user:
+        liveUsers[
+          Math.floor(Math.random()*liveUsers.length)
+        ]
+    });
+  }
 
-    <div class="liveUser">
-     @${x.user}
-    </div>
+  document.getElementById("liveDrops").innerHTML=
+    chosen.map((x,i)=>`
 
-    <div class="liveName">
-     ${x.name}
-    </div>
+      <div class="liveCard">
 
-    <div class="liveTime">
-     ${i+1} min ago ·
-     <span style="color:var(--gold)">
-      ${coins(x.value)} Coins
-     </span>
-    </div>
+        <img class="liveImg"
+          src="${x.image}"
+          alt="${x.name}">
 
-   </div>
+        <div class="liveInfo">
 
-  </div>
+          <div class="liveUser">
+            @${x.user}
+          </div>
 
- `).join("");
+          <div class="liveName">
+            ${x.name}
+          </div>
+
+          <div class="liveTime">
+            ${i+1} min ago ·
+            <span style="color:var(--gold)">
+              $${money(x.value)}
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+    `).join("");
 }
 
 
@@ -1961,74 +2318,74 @@ function renderLive(){
 
 function renderLeaderboard(){
 
- const people=[
-  {name:"Nova",coins:185400,wins:328},
-  {name:"DropKing",coins:121800,wins:242},
-  {name:"NightWolf",coins:89500,wins:193},
-  {name:"Vortex",coins:62200,wins:141},
-  {name:"YOU",coins:state.balance,wins:state.opened},
-  {name:"Ace",coins:31500,wins:83},
-  {name:"Racer",coins:19200,wins:51}
- ];
+  const people=[
+    {name:"Nova",money:185400,wins:328},
+    {name:"DropKing",money:121800,wins:242},
+    {name:"NightWolf",money:89500,wins:193},
+    {name:"Vortex",money:62200,wins:141},
+    {name:"YOU",money:state.balance,wins:state.opened},
+    {name:"Ace",money:31500,wins:83},
+    {name:"Racer",money:19200,wins:51}
+  ];
 
- people.sort((a,b)=>b.coins-a.coins);
+  people.sort((a,b)=>b.money-a.money);
 
- document.getElementById("leaderboardList").innerHTML=`
+  document.getElementById("leaderboardList").innerHTML=`
 
-  <div class="leader head">
-   <div>RANK</div>
-   <div>PLAYER</div>
-   <div>COINS</div>
-   <div class="leaderWins">PACKS</div>
-  </div>
-
-  ${people.map((x,i)=>`
-
-   <div class="leader">
-
-    <div>
-     ${i===0?"🥇":i===1?"🥈":i===2?"🥉":"#"+(i+1)}
+    <div class="leader head">
+      <div>RANK</div>
+      <div>PLAYER</div>
+      <div>BALANCE</div>
+      <div class="leaderWins">PACKS</div>
     </div>
 
-    <div style="font-weight:900">
-     ${x.name}
-    </div>
+    ${people.map((x,i)=>`
 
-    <div style="color:var(--gold);font-weight:900">
-     ${coins(x.coins)}
-    </div>
+      <div class="leader">
 
-    <div class="leaderWins"
-     style="color:var(--muted)">
-     ${x.wins}
-    </div>
+        <div>
+          ${i===0?"🥇":i===1?"🥈":i===2?"🥉":"#"+(i+1)}
+        </div>
 
-   </div>
+        <div style="font-weight:900">
+          ${x.name}
+        </div>
 
-  `).join("")}
- `;
+        <div style="color:var(--gold);font-weight:900">
+          $${money(x.money)}
+        </div>
+
+        <div class="leaderWins"
+          style="color:var(--muted)">
+          ${x.wins}
+        </div>
+
+      </div>
+
+    `).join("")}
+  `;
 }
 
 
-/* DAILY COINS */
+/* DAILY */
 
-function dailyCoins(){
+function dailyMoney(){
 
- const today=new Date().toDateString();
+  const today=new Date().toDateString();
 
- if(state.daily===today){
+  if(state.daily===today){
 
-  toast("You already claimed today's free Coins.");
+    toast("You already claimed today's virtual money.");
 
-  return;
- }
+    return;
+  }
 
- state.daily=today;
- state.balance+=2500;
+  state.daily=today;
+  state.balance+=2500;
 
- save();
+  save();
 
- toast("+2,500 daily Pack Coins!");
+  toast("+$2,500 virtual balance!");
 }
 
 
@@ -2036,57 +2393,54 @@ function dailyCoins(){
 
 function updateAll(){
 
- document.getElementById("balance").textContent=
- coins(state.balance);
+  document.getElementById("balance").textContent=
+    money(state.balance);
 
- document.getElementById("statOpened").textContent=
- coins(state.opened);
+  document.getElementById("statOpened").textContent=
+    money(state.opened);
 
- document.getElementById("statInventory").textContent=
- coins(state.inventory.length);
+  document.getElementById("statInventory").textContent=
+    money(state.inventory.length);
 
- document.getElementById("statBest").textContent=
- coins(state.best);
+  document.getElementById("statBest").textContent=
+    "$"+money(state.best);
 
- document.getElementById("statLevel").textContent=
- state.level;
+  document.getElementById("statLevel").textContent=
+    state.level;
 
- renderInventory();
- renderLeaderboard();
+  renderInventory();
+  renderLeaderboard();
 }
 
-
-function coins(n){
- return Math.round(n).toLocaleString();
+function money(n){
+  return Math.round(n).toLocaleString();
 }
-
 
 function toast(message){
 
- const t=document.getElementById("toast");
+  const t=document.getElementById("toast");
 
- t.textContent=message;
- t.classList.add("show");
+  t.textContent=message;
+  t.classList.add("show");
 
- clearTimeout(window.toastTimer);
+  clearTimeout(window.toastTimer);
 
- window.toastTimer=setTimeout(()=>{
-  t.classList.remove("show");
- },2200);
+  window.toastTimer=setTimeout(()=>{
+    t.classList.remove("show");
+  },2200);
 }
 
 
-/* CLOSE MODAL WHEN CLICKING OUTSIDE */
+/* CLOSE MODAL */
 
-document.getElementById("overlay").addEventListener(
- "click",
- function(e){
+document.getElementById("overlay")
+.addEventListener("click",function(e){
 
-  if(e.target===this)
-   closeModal();
+  if(e.target===this){
+    closeModal();
+  }
 
- }
-);
+});
 
 
 /* START */
