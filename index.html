@@ -24,7 +24,10 @@
 }
 
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+
+html{
+  scroll-behavior:smooth;
+}
 
 body{
   margin:0;
@@ -36,10 +39,24 @@ body{
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Arial,sans-serif;
 }
 
-button,input,select{font:inherit}
-button{cursor:pointer}
-img{display:block;width:100%}
-.hidden{display:none!important}
+button,input,select{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+img{
+  display:block;
+  width:100%;
+}
+
+.hidden{
+  display:none!important;
+}
+
+/* HEADER */
 
 header{
   height:var(--nav);
@@ -85,7 +102,10 @@ header{
   position:relative;
 }
 
-.nav:hover,.nav.active{color:white}
+.nav:hover,
+.nav.active{
+  color:white;
+}
 
 .nav.active:after{
   content:"";
@@ -115,18 +135,6 @@ header{
   white-space:nowrap;
 }
 
-.coin{
-  width:20px;
-  height:20px;
-  display:inline-grid;
-  place-items:center;
-  border-radius:50%;
-  background:linear-gradient(135deg,#ffe59a,#d99418);
-  color:#5a3800;
-  font-size:12px;
-  font-weight:1000;
-}
-
 .btcCoin{
   width:20px;
   height:20px;
@@ -151,13 +159,19 @@ header{
   font-size:12px;
 }
 
+/* LAYOUT */
+
 main{
   width:min(1480px,94%);
   margin:auto;
   padding-bottom:100px;
 }
 
-.page{padding-top:24px}
+.page{
+  padding-top:24px;
+}
+
+/* HERO */
 
 .hero{
   min-height:390px;
@@ -203,7 +217,9 @@ main{
   letter-spacing:-4px;
 }
 
-.hero h1 span{color:var(--gold)}
+.hero h1 span{
+  color:var(--gold);
+}
 
 .hero p{
   color:#bbc0c8;
@@ -213,6 +229,8 @@ main{
   margin:20px 0;
 }
 
+/* BUTTONS */
+
 .btn{
   border:0;
   padding:12px 18px;
@@ -221,7 +239,9 @@ main{
   transition:.17s;
 }
 
-.btn:hover{transform:translateY(-1px)}
+.btn:hover{
+  transform:translateY(-1px);
+}
 
 .gold{
   background:linear-gradient(135deg,#ffe18c,#dca237);
@@ -239,10 +259,27 @@ main{
   color:white;
 }
 
-.blue{
-  background:#165f9b;
+.appleBtn{
+  background:linear-gradient(135deg,#070707,#24272c);
   color:white;
 }
+
+.visaBtn{
+  background:linear-gradient(135deg,#2046d8,#142b8d);
+  color:white;
+}
+
+.amexBtn{
+  background:linear-gradient(135deg,#1c79cc,#0b497e);
+  color:white;
+}
+
+.btcBtn{
+  background:linear-gradient(135deg,#f7a224,#d87900);
+  color:white;
+}
+
+/* STATS */
 
 .stats{
   display:grid;
@@ -269,6 +306,8 @@ main{
   color:var(--muted);
 }
 
+/* TITLES */
+
 .titleRow{
   display:flex;
   justify-content:space-between;
@@ -294,6 +333,8 @@ main{
   font-weight:800;
 }
 
+/* FILTERS */
+
 .filters{
   display:flex;
   gap:8px;
@@ -302,7 +343,9 @@ main{
   scrollbar-width:none;
 }
 
-.filters::-webkit-scrollbar{display:none}
+.filters::-webkit-scrollbar{
+  display:none;
+}
 
 .filterBtn{
   flex:none;
@@ -320,6 +363,8 @@ main{
   border-color:#725b25;
   color:var(--gold);
 }
+
+/* PACKS */
 
 .packGrid{
   display:grid;
@@ -353,7 +398,9 @@ main{
   transition:.35s;
 }
 
-.pack:hover img{transform:scale(1.035)}
+.pack:hover img{
+  transform:scale(1.035);
+}
 
 .packShade{
   position:absolute;
@@ -374,8 +421,14 @@ main{
   backdrop-filter:blur(8px);
 }
 
-.packBody{padding:14px}
-.packName{font-weight:1000;font-size:17px}
+.packBody{
+  padding:14px;
+}
+
+.packName{
+  font-weight:1000;
+  font-size:17px;
+}
 
 .packDesc{
   color:var(--muted);
@@ -411,6 +464,8 @@ main{
   font-weight:900;
 }
 
+/* LIVE */
+
 .liveGrid{
   display:grid;
   grid-template-columns:repeat(5,1fr);
@@ -429,10 +484,29 @@ main{
   object-fit:cover;
 }
 
-.liveInfo{padding:10px}
-.liveUser{color:var(--blue);font-size:11px;font-weight:900}
-.liveName{font-size:12px;font-weight:900;margin-top:4px}
-.liveTime{color:#626c7b;font-size:10px;margin-top:5px}
+.liveInfo{
+  padding:10px;
+}
+
+.liveUser{
+  color:var(--blue);
+  font-size:11px;
+  font-weight:900;
+}
+
+.liveName{
+  font-size:12px;
+  font-weight:900;
+  margin-top:4px;
+}
+
+.liveTime{
+  color:#626c7b;
+  font-size:10px;
+  margin-top:5px;
+}
+
+/* INVENTORY */
 
 .inventoryGrid{
   display:grid;
@@ -452,7 +526,9 @@ main{
   object-fit:cover;
 }
 
-.inventoryBody{padding:12px}
+.inventoryBody{
+  padding:12px;
+}
 
 .rarity{
   font-size:9px;
@@ -487,6 +563,8 @@ main{
   padding:9px 5px;
   font-size:10px;
 }
+
+/* BATTLES */
 
 .battleSetup{
   display:grid;
@@ -530,7 +608,9 @@ select,input{
   font-weight:1000;
 }
 
-.fighterScore{color:var(--gold)}
+.fighterScore{
+  color:var(--gold);
+}
 
 .pull{
   display:grid;
@@ -544,9 +624,19 @@ select,input{
   object-fit:cover;
 }
 
-.pullInfo{padding:10px}
-.pullName{font-weight:900}
-.pullValue{color:var(--gold);font-size:12px;margin-top:4px}
+.pullInfo{
+  padding:10px;
+}
+
+.pullName{
+  font-weight:900;
+}
+
+.pullValue{
+  color:var(--gold);
+  font-size:12px;
+  margin-top:4px;
+}
 
 .result{
   margin-top:14px;
@@ -558,6 +648,8 @@ select,input{
   font-size:17px;
   font-weight:1000;
 }
+
+/* LEADERBOARD */
 
 .leaderboard{
   border:1px solid #252e3a;
@@ -573,7 +665,9 @@ select,input{
   background:#0f141a;
 }
 
-.leader:last-child{border:0}
+.leader:last-child{
+  border:0;
+}
 
 .leader.head{
   color:var(--muted);
@@ -581,6 +675,8 @@ select,input{
   font-size:11px;
   font-weight:900;
 }
+
+/* PACK OPENING */
 
 .overlay{
   position:fixed;
@@ -611,7 +707,9 @@ select,input{
   border-bottom:1px solid #242c37;
 }
 
-.modalTitle{font-weight:1000}
+.modalTitle{
+  font-weight:1000;
+}
 
 .close{
   border:1px solid #313b49;
@@ -689,7 +787,9 @@ select,input{
   object-fit:cover;
 }
 
-.reelText{padding:8px}
+.reelText{
+  padding:8px;
+}
 
 .reelName{
   font-size:11px;
@@ -722,18 +822,18 @@ select,input{
 
 .paymentChoices{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:repeat(2,1fr);
   gap:10px;
-  max-width:720px;
+  max-width:760px;
   margin:16px auto 0;
 }
 
 .payChoice{
-  min-height:94px;
+  min-height:96px;
 }
 
 .paymentBalance{
-  color:rgba(255,255,255,.7);
+  color:rgba(255,255,255,.68);
   font-size:10px;
   margin-top:7px;
 }
@@ -772,6 +872,8 @@ select,input{
   flex-wrap:wrap;
   margin-top:14px;
 }
+
+/* PAYMENT CHECKOUT */
 
 .payOverlay{
   position:fixed;
@@ -817,7 +919,9 @@ select,input{
   background:#211b0e;
 }
 
-.payBody{padding:20px}
+.payBody{
+  padding:20px;
+}
 
 .checkoutTotal{
   text-align:center;
@@ -839,20 +943,17 @@ select,input{
   letter-spacing:-1.5px;
 }
 
-.amexCard{
+.demoPayCard{
   position:relative;
   min-height:215px;
   border-radius:17px;
   padding:22px;
   overflow:hidden;
-  background:
-    radial-gradient(circle at 80% 10%,rgba(255,255,255,.15),transparent 28%),
-    linear-gradient(135deg,#1769aa,#0c3f72 54%,#082d50);
   border:1px solid rgba(255,255,255,.18);
   box-shadow:0 20px 45px rgba(0,0,0,.4);
 }
 
-.amexCard:after{
+.demoPayCard:after{
   content:"";
   position:absolute;
   width:180px;
@@ -863,16 +964,43 @@ select,input{
   border-radius:50%;
 }
 
+.cardTheme-wallet{
+  background:
+    radial-gradient(circle at 80% 10%,rgba(255,255,255,.13),transparent 28%),
+    linear-gradient(135deg,#0d0f12,#30343a 54%,#15181d);
+}
+
+.cardTheme-visa{
+  background:
+    radial-gradient(circle at 80% 10%,rgba(255,255,255,.14),transparent 28%),
+    linear-gradient(135deg,#2448d9,#182f9a 54%,#101f65);
+}
+
+.cardTheme-amex{
+  background:
+    radial-gradient(circle at 80% 10%,rgba(255,255,255,.15),transparent 28%),
+    linear-gradient(135deg,#1769aa,#0c3f72 54%,#082d50);
+}
+
 .cardTop{
   display:flex;
   justify-content:space-between;
   align-items:center;
 }
 
-.amexLogo{
+.cardBrand{
   font-size:17px;
   font-weight:1000;
   letter-spacing:-.5px;
+}
+
+.cardSubBrand{
+  font-size:9px;
+  color:rgba(255,255,255,.7);
+  margin-top:4px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  font-weight:800;
 }
 
 .cardChip{
@@ -932,7 +1060,9 @@ select,input{
   font-size:13px;
 }
 
-.payMuted{color:#838d9c}
+.payMuted{
+  color:#838d9c;
+}
 
 .payActions{
   padding:0 20px 20px;
@@ -1028,7 +1158,11 @@ select,input{
   text-align:center;
 }
 
-.mobileNav{display:none}
+.mobileNav{
+  display:none;
+}
+
+/* MOBILE */
 
 @media(max-width:1000px){
   .desktopNav{display:none}
@@ -1040,15 +1174,25 @@ select,input{
 
 @media(max-width:650px){
 
-  :root{--nav:62px}
+  :root{
+    --nav:62px;
+  }
 
   header{
     padding:0 7px 0 11px;
   }
 
-  .logo{font-size:20px}
-  .account{gap:3px}
-  .account .avatar{display:none}
+  .logo{
+    font-size:20px;
+  }
+
+  .account{
+    gap:3px;
+  }
+
+  .account .avatar{
+    display:none;
+  }
 
   .balance{
     padding:7px 6px;
@@ -1056,7 +1200,7 @@ select,input{
     gap:3px;
   }
 
-  .coin,.btcCoin{
+  .btcCoin{
     width:16px;
     height:16px;
     font-size:9px;
@@ -1067,7 +1211,9 @@ select,input{
     padding:0 12px 100px;
   }
 
-  .page{padding-top:14px}
+  .page{
+    padding-top:14px;
+  }
 
   .hero{
     min-height:430px;
@@ -1088,10 +1234,21 @@ select,input{
     gap:9px;
   }
 
-  .packImage{height:150px}
-  .packBody{padding:10px}
-  .packName{font-size:14px}
-  .packDesc{display:none}
+  .packImage{
+    height:150px;
+  }
+
+  .packBody{
+    padding:10px;
+  }
+
+  .packName{
+    font-size:14px;
+  }
+
+  .packDesc{
+    display:none;
+  }
 
   .packBottom{
     align-items:flex-start;
@@ -1099,7 +1256,9 @@ select,input{
     gap:8px;
   }
 
-  .openBtn{width:100%}
+  .openBtn{
+    width:100%;
+  }
 
   .liveGrid{
     display:flex;
@@ -1107,24 +1266,35 @@ select,input{
     padding-bottom:5px;
   }
 
-  .liveCard{min-width:160px}
+  .liveCard{
+    min-width:160px;
+  }
 
   .inventoryGrid{
     grid-template-columns:repeat(2,1fr);
     gap:9px;
   }
 
-  .inventoryPhoto{height:135px}
+  .inventoryPhoto{
+    height:135px;
+  }
 
-  .battleSetup{grid-template-columns:1fr}
-  .battleArena{grid-template-columns:1fr}
+  .battleSetup{
+    grid-template-columns:1fr;
+  }
+
+  .battleArena{
+    grid-template-columns:1fr;
+  }
 
   .leader{
     grid-template-columns:45px 1fr 90px;
     font-size:12px;
   }
 
-  .leaderWins{display:none}
+  .leaderWins{
+    display:none;
+  }
 
   .mobileNav{
     display:grid;
@@ -1155,9 +1325,13 @@ select,input{
     margin-bottom:2px;
   }
 
-  .mnav.active{color:var(--gold)}
+  .mnav.active{
+    color:var(--gold);
+  }
 
-  .reelWindow{height:210px}
+  .reelWindow{
+    height:210px;
+  }
 
   .reelItem{
     flex-basis:145px;
@@ -1165,13 +1339,15 @@ select,input{
     height:165px;
   }
 
-  .reelItem img{height:110px}
+  .reelItem img{
+    height:110px;
+  }
 
   .paymentChoices{
     grid-template-columns:1fr;
   }
 
-  .amexCard{
+  .demoPayCard{
     min-height:195px;
   }
 
@@ -1201,16 +1377,11 @@ select,input{
   <div class="account">
 
     <div class="balance">
-      <span class="coin">$</span>
-      <span id="balance">25,000.00</span>
-    </div>
-
-    <div class="balance">
       <span class="btcCoin">₿</span>
       <span id="btcBalance">0.250000</span>
     </div>
 
-    <div class="avatar">YOU</div>
+    <div class="avatar">IF</div>
 
   </div>
 
@@ -1225,7 +1396,9 @@ select,input{
 
     <div class="heroContent">
 
-      <div class="eyebrow">THE DROP EXPERIENCE</div>
+      <div class="eyebrow">
+        THE DROP EXPERIENCE
+      </div>
 
       <h1>
         OPEN.<br>
@@ -1358,10 +1531,12 @@ select,input{
 
     <div>
       <h2>🎒 My Collection</h2>
-      <p>Keep drops or convert them back to your balance.</p>
+      <p>Keep drops or convert them to Bitcoin balance.</p>
     </div>
 
-    <span class="smallGold" id="inventoryCount">0 ITEMS</span>
+    <span class="smallGold" id="inventoryCount">
+      0 ITEMS
+    </span>
 
   </div>
 
@@ -1389,7 +1564,7 @@ select,input{
 
 
 <footer class="siteFooter">
-  PACKR is a demo game experience. Balances, Bitcoin, cards, transactions and prizes shown here are fictional and have no real-world monetary value. Product imagery is illustrative.
+  PACKR is a demo game experience. Payment methods, balances, Bitcoin, cards, transactions and prizes shown here are fictional and have no real-world monetary value. Product imagery is illustrative.
 </footer>
 
 
@@ -1422,6 +1597,8 @@ select,input{
 
 </div>
 
+
+<!-- PACK OPENING MODAL -->
 
 <div class="overlay hidden" id="overlay">
 
@@ -1464,14 +1641,24 @@ select,input{
 </div>
 
 
+<!-- PAYMENT CHECKOUT -->
+
 <div class="payOverlay hidden" id="cardPaymentOverlay">
 
   <div class="payBox" id="cardPaymentBox">
 
     <div class="payHeader">
-      <div class="payHeaderTitle">Secure Checkout</div>
-      <div class="demoBadge">DEMO</div>
+
+      <div class="payHeaderTitle" id="checkoutTitle">
+        Secure Checkout
+      </div>
+
+      <div class="demoBadge">
+        DEMO
+      </div>
+
     </div>
+
 
     <div class="payBody">
 
@@ -1482,18 +1669,26 @@ select,input{
         </div>
 
         <div class="checkoutAmount" id="checkoutAmount">
-          $750.00
+          $0.00
         </div>
 
       </div>
 
 
-      <div class="amexCard">
+      <div class="demoPayCard cardTheme-amex" id="demoPaymentCard">
 
         <div class="cardTop">
 
-          <div class="amexLogo">
-            AMERICAN EXPRESS
+          <div>
+
+            <div class="cardBrand" id="demoBrandLabel">
+              AMERICAN EXPRESS
+            </div>
+
+            <div class="cardSubBrand" id="demoSubBrand">
+              Demo payment method
+            </div>
+
           </div>
 
           <div class="cardChip"></div>
@@ -1501,7 +1696,7 @@ select,input{
         </div>
 
 
-        <div class="cardNumber">
+        <div class="cardNumber" id="demoCardNumber">
           •••• •••••• •1005
         </div>
 
@@ -1514,9 +1709,12 @@ select,input{
               CARD MEMBER
             </div>
 
-            PACKR PLAYER
+            <span id="demoCardName">
+              ISAIAH F
+            </span>
 
           </div>
+
 
           <div>
 
@@ -1524,7 +1722,9 @@ select,input{
               EXPIRES
             </div>
 
-            09/29
+            <span id="demoCardExp">
+              09/29
+            </span>
 
           </div>
 
@@ -1539,7 +1739,7 @@ select,input{
           Payment method
         </span>
 
-        <strong>
+        <strong id="checkoutMethodLabel">
           AMEX •••• 1005
         </strong>
 
@@ -1563,14 +1763,20 @@ select,input{
 
     <div class="payActions">
 
-      <button class="confirmPayment"
-              onclick="finishDemoCardPayment()">
+      <button
+        class="confirmPayment"
+        onclick="finishDemoCardPayment()">
+
         CONFIRM PAYMENT
+
       </button>
 
-      <button class="cancelPayment"
-              onclick="closeDemoCardPayment()">
+      <button
+        class="cancelPayment"
+        onclick="closeDemoCardPayment()">
+
         CANCEL
+
       </button>
 
     </div>
@@ -1585,19 +1791,35 @@ select,input{
 
 <script>
 
-const BTC_RATE = 100000;
+/* =========================================================
+   PACKR DEMO
 
-const FALLBACK =
+   All cards, payment approvals, BTC and prizes are simulated.
+   No real payment, account, wallet or card connection occurs.
+   ========================================================= */
+
+const BTC_RATE=100000;
+
+const FALLBACK=
 "https://images.unsplash.com/photo-1491933382434-500287f9b54b?auto=format&fit=crop&w=900&q=80";
 
+
 function imgFallback(img){
+
   img.onerror=null;
   img.src=FALLBACK;
+
 }
 
+
 function U(id){
+
   return `https://images.unsplash.com/${id}?auto=format&fit=crop&w=900&q=85`;
+
 }
+
+
+/* PRODUCT IMAGES */
 
 const P={
 
@@ -1627,6 +1849,7 @@ head1:U("photo-1505740420928-5e560c06d30e"),
 head2:U("photo-1484704849700-f032a568e944"),
 
 speaker:U("photo-1608043152269-423dbba4e7e1"),
+
 keyboard:U("photo-1587829741301-dc798b83add3"),
 
 desk1:U("photo-1593640408182-31c70c8268f5"),
@@ -1687,9 +1910,27 @@ travel:U("photo-1476514525535-07fb3b4ae5f1")
 
 };
 
-function item(name,value,rarity,weight,image){
-  return {name,value,rarity,weight,image};
+
+function item(
+  name,
+  value,
+  rarity,
+  weight,
+  image
+){
+
+  return {
+    name,
+    value,
+    rarity,
+    weight,
+    image
+  };
+
 }
+
+
+/* PACK DATABASE */
 
 const PACKS=[
 
@@ -1701,13 +1942,57 @@ const PACKS=[
  price:100,
  image:P.head1,
  badge:"START HERE",
+
  items:[
-  item("Wireless Charger",25,"common",30,P.phone1),
-  item("Mini Bluetooth Speaker",55,"common",25,P.speaker),
-  item("Wireless Earbuds",120,"rare",20,P.head1),
-  item("Mechanical Keyboard",240,"rare",15,P.keyboard),
-  item("Premium Headphones",650,"epic",8,P.head2),
-  item("Laptop Bundle",1800,"legendary",2,P.laptop1)
+
+  item(
+    "Wireless Charger",
+    25,
+    "common",
+    30,
+    P.phone1
+  ),
+
+  item(
+    "Mini Bluetooth Speaker",
+    55,
+    "common",
+    25,
+    P.speaker
+  ),
+
+  item(
+    "Wireless Earbuds",
+    120,
+    "rare",
+    20,
+    P.head1
+  ),
+
+  item(
+    "Mechanical Keyboard",
+    240,
+    "rare",
+    15,
+    P.keyboard
+  ),
+
+  item(
+    "Premium Headphones",
+    650,
+    "epic",
+    8,
+    P.head2
+  ),
+
+  item(
+    "Laptop Bundle",
+    1800,
+    "legendary",
+    2,
+    P.laptop1
+  )
+
  ]
 },
 
@@ -1719,13 +2004,57 @@ const PACKS=[
  price:250,
  image:P.phone2,
  badge:"VALUE",
+
  items:[
-  item("Portable Charger",60,"common",30,P.phone2),
-  item("Bluetooth Speaker",125,"common",25,P.speaker),
-  item("Wireless Earbuds",280,"rare",20,P.head1),
-  item("Smart Watch",650,"rare",15,P.watch6),
-  item("Premium Smartphone",1600,"epic",8,P.phone3),
-  item("Mobile Tech Bundle",4500,"legendary",2,P.phone4)
+
+  item(
+    "Portable Charger",
+    60,
+    "common",
+    30,
+    P.phone2
+  ),
+
+  item(
+    "Bluetooth Speaker",
+    125,
+    "common",
+    25,
+    P.speaker
+  ),
+
+  item(
+    "Wireless Earbuds",
+    280,
+    "rare",
+    20,
+    P.head1
+  ),
+
+  item(
+    "Smart Watch",
+    650,
+    "rare",
+    15,
+    P.watch6
+  ),
+
+  item(
+    "Premium Smartphone",
+    1600,
+    "epic",
+    8,
+    P.phone3
+  ),
+
+  item(
+    "Mobile Tech Bundle",
+    4500,
+    "legendary",
+    2,
+    P.phone4
+  )
+
  ]
 },
 
@@ -1737,13 +2066,57 @@ const PACKS=[
  price:600,
  image:P.laptop1,
  badge:"POPULAR",
+
  items:[
-  item("Premium Headphones",180,"common",30,P.head2),
-  item("Mechanical Keyboard",420,"common",25,P.keyboard),
-  item("Smart Watch",850,"rare",20,P.watch1),
-  item("Flagship Phone",1800,"rare",15,P.phone1),
-  item("Creator Laptop",4800,"epic",8,P.laptop2),
-  item("Ultimate Desk Setup",14000,"legendary",2,P.desk1)
+
+  item(
+    "Premium Headphones",
+    180,
+    "common",
+    30,
+    P.head2
+  ),
+
+  item(
+    "Mechanical Keyboard",
+    420,
+    "common",
+    25,
+    P.keyboard
+  ),
+
+  item(
+    "Smart Watch",
+    850,
+    "rare",
+    20,
+    P.watch1
+  ),
+
+  item(
+    "Flagship Phone",
+    1800,
+    "rare",
+    15,
+    P.phone1
+  ),
+
+  item(
+    "Creator Laptop",
+    4800,
+    "epic",
+    8,
+    P.laptop2
+  ),
+
+  item(
+    "Ultimate Desk Setup",
+    14000,
+    "legendary",
+    2,
+    P.desk1
+  )
+
  ]
 },
 
@@ -1755,13 +2128,57 @@ const PACKS=[
  price:950,
  image:P.phone1,
  badge:"MOBILE",
+
  items:[
-  item("Premium Earbuds",220,"common",30,P.head1),
-  item("Smart Watch",550,"common",25,P.watch6),
-  item("Premium Smartphone",1200,"rare",20,P.phone2),
-  item("Flagship Pro Phone",2600,"rare",15,P.phone3),
-  item("Phone + Watch Bundle",6200,"epic",8,P.phone4),
-  item("Ultimate Mobile Collection",18000,"legendary",2,P.phone1)
+
+  item(
+    "Premium Earbuds",
+    220,
+    "common",
+    30,
+    P.head1
+  ),
+
+  item(
+    "Smart Watch",
+    550,
+    "common",
+    25,
+    P.watch6
+  ),
+
+  item(
+    "Premium Smartphone",
+    1200,
+    "rare",
+    20,
+    P.phone2
+  ),
+
+  item(
+    "Flagship Pro Phone",
+    2600,
+    "rare",
+    15,
+    P.phone3
+  ),
+
+  item(
+    "Phone + Watch Bundle",
+    6200,
+    "epic",
+    8,
+    P.phone4
+  ),
+
+  item(
+    "Ultimate Mobile Collection",
+    18000,
+    "legendary",
+    2,
+    P.phone1
+  )
+
  ]
 },
 
@@ -1773,13 +2190,57 @@ const PACKS=[
  price:700,
  image:P.head2,
  badge:"AUDIO",
+
  items:[
-  item("Portable Speaker",140,"common",30,P.speaker),
-  item("Wireless Headphones",380,"common",25,P.head1),
-  item("Premium Headphones",850,"rare",20,P.head2),
-  item("Studio Audio Setup",1800,"rare",15,P.desk2),
-  item("Premium Speaker System",5000,"epic",8,P.speaker),
-  item("Ultimate Audio Room",15000,"legendary",2,P.desk1)
+
+  item(
+    "Portable Speaker",
+    140,
+    "common",
+    30,
+    P.speaker
+  ),
+
+  item(
+    "Wireless Headphones",
+    380,
+    "common",
+    25,
+    P.head1
+  ),
+
+  item(
+    "Premium Headphones",
+    850,
+    "rare",
+    20,
+    P.head2
+  ),
+
+  item(
+    "Studio Audio Setup",
+    1800,
+    "rare",
+    15,
+    P.desk2
+  ),
+
+  item(
+    "Premium Speaker System",
+    5000,
+    "epic",
+    8,
+    P.speaker
+  ),
+
+  item(
+    "Ultimate Audio Room",
+    15000,
+    "legendary",
+    2,
+    P.desk1
+  )
+
  ]
 },
 
@@ -1791,13 +2252,57 @@ const PACKS=[
  price:1100,
  image:P.camera1,
  badge:"CREATOR",
+
  items:[
-  item("Creator Microphone",250,"common",30,P.desk2),
-  item("Studio Headphones",600,"common",25,P.head2),
-  item("Mirrorless Camera",1400,"rare",20,P.camera2),
-  item("Pro Camera Kit",3200,"rare",15,P.camera1),
-  item("Creator Laptop",7500,"epic",8,P.laptop2),
-  item("Ultimate Creator Studio",22000,"legendary",2,P.camera3)
+
+  item(
+    "Creator Microphone",
+    250,
+    "common",
+    30,
+    P.desk2
+  ),
+
+  item(
+    "Studio Headphones",
+    600,
+    "common",
+    25,
+    P.head2
+  ),
+
+  item(
+    "Mirrorless Camera",
+    1400,
+    "rare",
+    20,
+    P.camera2
+  ),
+
+  item(
+    "Pro Camera Kit",
+    3200,
+    "rare",
+    15,
+    P.camera1
+  ),
+
+  item(
+    "Creator Laptop",
+    7500,
+    "epic",
+    8,
+    P.laptop2
+  ),
+
+  item(
+    "Ultimate Creator Studio",
+    22000,
+    "legendary",
+    2,
+    P.camera3
+  )
+
  ]
 },
 
@@ -1809,13 +2314,57 @@ const PACKS=[
  price:950,
  image:P.gaming1,
  badge:"GAMING",
+
  items:[
-  item("Gaming Controller",180,"common",30,P.gaming2),
-  item("Gaming Headset",450,"common",25,P.head1),
-  item("Mechanical Gaming Keyboard",900,"rare",20,P.keyboard),
-  item("Console Bundle",2200,"rare",15,P.gaming4),
-  item("Gaming PC",5800,"epic",8,P.gaming1),
-  item("Dream Gaming Room",18000,"legendary",2,P.gaming3)
+
+  item(
+    "Gaming Controller",
+    180,
+    "common",
+    30,
+    P.gaming2
+  ),
+
+  item(
+    "Gaming Headset",
+    450,
+    "common",
+    25,
+    P.head1
+  ),
+
+  item(
+    "Mechanical Gaming Keyboard",
+    900,
+    "rare",
+    20,
+    P.keyboard
+  ),
+
+  item(
+    "Console Bundle",
+    2200,
+    "rare",
+    15,
+    P.gaming4
+  ),
+
+  item(
+    "Gaming PC",
+    5800,
+    "epic",
+    8,
+    P.gaming1
+  ),
+
+  item(
+    "Dream Gaming Room",
+    18000,
+    "legendary",
+    2,
+    P.gaming3
+  )
+
  ]
 },
 
@@ -1827,13 +2376,57 @@ const PACKS=[
  price:1300,
  image:P.desk1,
  badge:"PC",
+
  items:[
-  item("Gaming Mouse",220,"common",30,P.gaming2),
-  item("RGB Keyboard",520,"common",25,P.keyboard),
-  item("Gaming Monitor",1400,"rare",20,P.desk2),
-  item("PC Upgrade Bundle",3400,"rare",15,P.desk1),
-  item("Gaming PC",7800,"epic",8,P.gaming1),
-  item("Ultimate Battle Station",26000,"legendary",2,P.desk1)
+
+  item(
+    "Gaming Mouse",
+    220,
+    "common",
+    30,
+    P.gaming2
+  ),
+
+  item(
+    "RGB Keyboard",
+    520,
+    "common",
+    25,
+    P.keyboard
+  ),
+
+  item(
+    "Gaming Monitor",
+    1400,
+    "rare",
+    20,
+    P.desk2
+  ),
+
+  item(
+    "PC Upgrade Bundle",
+    3400,
+    "rare",
+    15,
+    P.desk1
+  ),
+
+  item(
+    "Gaming PC",
+    7800,
+    "epic",
+    8,
+    P.gaming1
+  ),
+
+  item(
+    "Ultimate Battle Station",
+    26000,
+    "legendary",
+    2,
+    P.desk1
+  )
+
  ]
 },
 
@@ -1845,13 +2438,57 @@ const PACKS=[
  price:750,
  image:P.gaming4,
  badge:"PLAY",
+
  items:[
-  item("Wireless Controller",140,"common",30,P.gaming2),
-  item("Gaming Headset",350,"common",25,P.head2),
-  item("Elite Controller",750,"rare",20,P.gaming4),
-  item("Game Console",1700,"rare",15,P.gaming1),
-  item("Console + Display Setup",4200,"epic",8,P.desk2),
-  item("Ultimate Game Room",13500,"legendary",2,P.gaming3)
+
+  item(
+    "Wireless Controller",
+    140,
+    "common",
+    30,
+    P.gaming2
+  ),
+
+  item(
+    "Gaming Headset",
+    350,
+    "common",
+    25,
+    P.head2
+  ),
+
+  item(
+    "Elite Controller",
+    750,
+    "rare",
+    20,
+    P.gaming4
+  ),
+
+  item(
+    "Game Console",
+    1700,
+    "rare",
+    15,
+    P.gaming1
+  ),
+
+  item(
+    "Console + Display Setup",
+    4200,
+    "epic",
+    8,
+    P.desk2
+  ),
+
+  item(
+    "Ultimate Game Room",
+    13500,
+    "legendary",
+    2,
+    P.gaming3
+  )
+
  ]
 },
 
@@ -1863,13 +2500,57 @@ const PACKS=[
  price:750,
  image:P.shoe1,
  badge:"HOT",
+
  items:[
-  item("Nike Air Force 1",140,"common",25,P.shoe1),
-  item("Adidas Campus",280,"common",22,P.shoe2),
-  item("New Balance 550",550,"rare",20,P.shoe3),
-  item("Nike Dunk Low",950,"rare",17,P.shoe4),
-  item("Yeezy 350 V2",2400,"epic",12,P.shoe5),
-  item("Collector Sneaker Grail",8000,"legendary",4,P.shoe6)
+
+  item(
+    "Nike Air Force 1",
+    140,
+    "common",
+    25,
+    P.shoe1
+  ),
+
+  item(
+    "Adidas Campus",
+    280,
+    "common",
+    22,
+    P.shoe2
+  ),
+
+  item(
+    "New Balance 550",
+    550,
+    "rare",
+    20,
+    P.shoe3
+  ),
+
+  item(
+    "Nike Dunk Low",
+    950,
+    "rare",
+    17,
+    P.shoe4
+  ),
+
+  item(
+    "Yeezy 350 V2",
+    2400,
+    "epic",
+    12,
+    P.shoe5
+  ),
+
+  item(
+    "Collector Sneaker Grail",
+    8000,
+    "legendary",
+    4,
+    P.shoe6
+  )
+
  ]
 },
 
@@ -1881,13 +2562,57 @@ const PACKS=[
  price:1200,
  image:P.shoe7,
  badge:"JORDAN",
+
  items:[
-  item("Air Jordan 1 High",220,"common",25,P.shoe7),
-  item("Air Jordan 3 Retro",550,"common",22,P.shoe8),
-  item("Air Jordan 4 Retro",1100,"rare",20,P.shoe9),
-  item("Air Jordan 5 Retro",2100,"rare",17,P.shoe10),
-  item("Air Jordan 11",5200,"epic",12,P.shoe11),
-  item("Rare Jordan Grail",16000,"legendary",4,P.shoe12)
+
+  item(
+    "Air Jordan 1 High",
+    220,
+    "common",
+    25,
+    P.shoe7
+  ),
+
+  item(
+    "Air Jordan 3 Retro",
+    550,
+    "common",
+    22,
+    P.shoe8
+  ),
+
+  item(
+    "Air Jordan 4 Retro",
+    1100,
+    "rare",
+    20,
+    P.shoe9
+  ),
+
+  item(
+    "Air Jordan 5 Retro",
+    2100,
+    "rare",
+    17,
+    P.shoe10
+  ),
+
+  item(
+    "Air Jordan 11",
+    5200,
+    "epic",
+    12,
+    P.shoe11
+  ),
+
+  item(
+    "Rare Jordan Grail",
+    16000,
+    "legendary",
+    4,
+    P.shoe12
+  )
+
  ]
 },
 
@@ -1899,13 +2624,57 @@ const PACKS=[
  price:1000,
  image:P.shoe4,
  badge:"DUNKS",
+
  items:[
-  item("Black & White Dunk Low",180,"common",25,P.shoe4),
-  item("University Blue Dunk",420,"common",22,P.shoe6),
-  item("SB Dunk Low",900,"rare",20,P.shoe2),
-  item("Orange SB Dunk",1800,"rare",17,P.shoe8),
-  item("Collector SB Pair",4500,"epic",12,P.shoe10),
-  item("Rare Dunk Grail",14000,"legendary",4,P.shoe11)
+
+  item(
+    "Black & White Dunk Low",
+    180,
+    "common",
+    25,
+    P.shoe4
+  ),
+
+  item(
+    "University Blue Dunk",
+    420,
+    "common",
+    22,
+    P.shoe6
+  ),
+
+  item(
+    "SB Dunk Low",
+    900,
+    "rare",
+    20,
+    P.shoe2
+  ),
+
+  item(
+    "Orange SB Dunk",
+    1800,
+    "rare",
+    17,
+    P.shoe8
+  ),
+
+  item(
+    "Collector SB Pair",
+    4500,
+    "epic",
+    12,
+    P.shoe10
+  ),
+
+  item(
+    "Rare Dunk Grail",
+    14000,
+    "legendary",
+    4,
+    P.shoe11
+  )
+
  ]
 },
 
@@ -1917,13 +2686,57 @@ const PACKS=[
  price:500,
  image:P.street1,
  badge:"STYLE",
+
  items:[
-  item("Premium Graphic Tee",85,"common",25,P.street1),
-  item("Streetwear Hoodie",240,"common",22,P.street2),
-  item("Premium Jacket",550,"rare",20,P.street3),
-  item("Sneaker + Hoodie Fit",1100,"rare",17,P.street4),
-  item("Collector Streetwear Fit",3000,"epic",12,P.street5),
-  item("Ultimate Wardrobe",9500,"legendary",4,P.street6)
+
+  item(
+    "Premium Graphic Tee",
+    85,
+    "common",
+    25,
+    P.street1
+  ),
+
+  item(
+    "Streetwear Hoodie",
+    240,
+    "common",
+    22,
+    P.street2
+  ),
+
+  item(
+    "Premium Jacket",
+    550,
+    "rare",
+    20,
+    P.street3
+  ),
+
+  item(
+    "Sneaker + Hoodie Fit",
+    1100,
+    "rare",
+    17,
+    P.street4
+  ),
+
+  item(
+    "Collector Streetwear Fit",
+    3000,
+    "epic",
+    12,
+    P.street5
+  ),
+
+  item(
+    "Ultimate Wardrobe",
+    9500,
+    "legendary",
+    4,
+    P.street6
+  )
+
  ]
 },
 
@@ -1935,13 +2748,57 @@ const PACKS=[
  price:1000,
  image:P.watch1,
  badge:"WATCHES",
+
  items:[
-  item("Sport Watch",180,"common",25,P.watch1),
-  item("Classic Steel Watch",480,"common",22,P.watch2),
-  item("Automatic Watch",1100,"rare",20,P.watch3),
-  item("Luxury Chronograph",2800,"rare",17,P.watch4),
-  item("Collector Timepiece",7500,"epic",12,P.watch5),
-  item("Vault Grail Watch",24000,"legendary",4,P.watch6)
+
+  item(
+    "Sport Watch",
+    180,
+    "common",
+    25,
+    P.watch1
+  ),
+
+  item(
+    "Classic Steel Watch",
+    480,
+    "common",
+    22,
+    P.watch2
+  ),
+
+  item(
+    "Automatic Watch",
+    1100,
+    "rare",
+    20,
+    P.watch3
+  ),
+
+  item(
+    "Luxury Chronograph",
+    2800,
+    "rare",
+    17,
+    P.watch4
+  ),
+
+  item(
+    "Collector Timepiece",
+    7500,
+    "epic",
+    12,
+    P.watch5
+  ),
+
+  item(
+    "Vault Grail Watch",
+    24000,
+    "legendary",
+    4,
+    P.watch6
+  )
+
  ]
 },
 
@@ -1953,13 +2810,57 @@ const PACKS=[
  price:1500,
  image:P.luxury,
  badge:"PREMIUM",
+
  items:[
-  item("Premium Sunglasses",280,"common",25,P.sunglasses),
-  item("Leather Travel Bag",750,"common",22,P.bag1),
-  item("Luxury Handbag",1600,"rare",20,P.bag2),
-  item("Luxury Timepiece",3600,"rare",17,P.watch4),
-  item("Collector Watch",9000,"epic",12,P.watch5),
-  item("Ultimate Luxury Collection",28000,"legendary",4,P.luxury)
+
+  item(
+    "Premium Sunglasses",
+    280,
+    "common",
+    25,
+    P.sunglasses
+  ),
+
+  item(
+    "Leather Travel Bag",
+    750,
+    "common",
+    22,
+    P.bag1
+  ),
+
+  item(
+    "Luxury Handbag",
+    1600,
+    "rare",
+    20,
+    P.bag2
+  ),
+
+  item(
+    "Luxury Timepiece",
+    3600,
+    "rare",
+    17,
+    P.watch4
+  ),
+
+  item(
+    "Collector Watch",
+    9000,
+    "epic",
+    12,
+    P.watch5
+  ),
+
+  item(
+    "Ultimate Luxury Collection",
+    28000,
+    "legendary",
+    4,
+    P.luxury
+  )
+
  ]
 },
 
@@ -1971,13 +2872,57 @@ const PACKS=[
  price:650,
  image:P.travel,
  badge:"TRAVEL",
+
  items:[
-  item("Premium Backpack",140,"common",25,P.bag1),
-  item("Carry-On Bag",320,"common",22,P.bag3),
-  item("Travel Luggage Set",750,"rare",20,P.travel),
-  item("Premium Travel Kit",1600,"rare",17,P.bag2),
-  item("Luxury Travel Collection",4200,"epic",12,P.luxury),
-  item("Ultimate Travel Setup",12000,"legendary",4,P.travel)
+
+  item(
+    "Premium Backpack",
+    140,
+    "common",
+    25,
+    P.bag1
+  ),
+
+  item(
+    "Carry-On Bag",
+    320,
+    "common",
+    22,
+    P.bag3
+  ),
+
+  item(
+    "Travel Luggage Set",
+    750,
+    "rare",
+    20,
+    P.travel
+  ),
+
+  item(
+    "Premium Travel Kit",
+    1600,
+    "rare",
+    17,
+    P.bag2
+  ),
+
+  item(
+    "Luxury Travel Collection",
+    4200,
+    "epic",
+    12,
+    P.luxury
+  ),
+
+  item(
+    "Ultimate Travel Setup",
+    12000,
+    "legendary",
+    4,
+    P.travel
+  )
+
  ]
 },
 
@@ -1989,13 +2934,57 @@ const PACKS=[
  price:1200,
  image:P.cycle1,
  badge:"E-RIDE",
+
  items:[
-  item("Riding Gear",220,"common",25,P.cycle1),
-  item("Premium Helmet",520,"common",22,P.cycle2),
-  item("Commuter E-Bike",1400,"rare",20,P.cycle1),
-  item("Performance E-Bike",3200,"rare",17,P.cycle2),
-  item("Premium Electric Ride",8000,"epic",12,P.bike1),
-  item("Ultimate E-Ride Setup",22000,"legendary",4,P.bike2)
+
+  item(
+    "Riding Gear",
+    220,
+    "common",
+    25,
+    P.cycle1
+  ),
+
+  item(
+    "Premium Helmet",
+    520,
+    "common",
+    22,
+    P.cycle2
+  ),
+
+  item(
+    "Commuter E-Bike",
+    1400,
+    "rare",
+    20,
+    P.cycle1
+  ),
+
+  item(
+    "Performance E-Bike",
+    3200,
+    "rare",
+    17,
+    P.cycle2
+  ),
+
+  item(
+    "Premium Electric Ride",
+    8000,
+    "epic",
+    12,
+    P.bike1
+  ),
+
+  item(
+    "Ultimate E-Ride Setup",
+    22000,
+    "legendary",
+    4,
+    P.bike2
+  )
+
  ]
 },
 
@@ -2007,13 +2996,57 @@ const PACKS=[
  price:1600,
  image:P.bike3,
  badge:"OFF ROAD",
+
  items:[
-  item("Riding Gear Set",300,"common",25,P.bike1),
-  item("Premium Moto Helmet",750,"common",22,P.bike2),
-  item("Pit Bike",1900,"rare",20,P.bike3),
-  item("Electric Dirt Bike",4200,"rare",17,P.bike4),
-  item("Performance Dirt Bike",11000,"epic",12,P.bike1),
-  item("Dream Off-Road Setup",32000,"legendary",4,P.bike2)
+
+  item(
+    "Riding Gear Set",
+    300,
+    "common",
+    25,
+    P.bike1
+  ),
+
+  item(
+    "Premium Moto Helmet",
+    750,
+    "common",
+    22,
+    P.bike2
+  ),
+
+  item(
+    "Pit Bike",
+    1900,
+    "rare",
+    20,
+    P.bike3
+  ),
+
+  item(
+    "Electric Dirt Bike",
+    4200,
+    "rare",
+    17,
+    P.bike4
+  ),
+
+  item(
+    "Performance Dirt Bike",
+    11000,
+    "epic",
+    12,
+    P.bike1
+  ),
+
+  item(
+    "Dream Off-Road Setup",
+    32000,
+    "legendary",
+    4,
+    P.bike2
+  )
+
  ]
 },
 
@@ -2025,13 +3058,57 @@ const PACKS=[
  price:1800,
  image:P.car2,
  badge:"MODS",
+
  items:[
-  item("Detail Package",300,"common",25,P.car1),
-  item("Wheel & Tire Package",950,"common",22,P.car2),
-  item("Suspension Upgrade",2200,"rare",20,P.car3),
-  item("Performance Exhaust",4800,"rare",17,P.car4),
-  item("Full Performance Build",12000,"epic",12,P.car5),
-  item("Ultimate Custom Build",36000,"legendary",4,P.car6)
+
+  item(
+    "Detail Package",
+    300,
+    "common",
+    25,
+    P.car1
+  ),
+
+  item(
+    "Wheel & Tire Package",
+    950,
+    "common",
+    22,
+    P.car2
+  ),
+
+  item(
+    "Suspension Upgrade",
+    2200,
+    "rare",
+    20,
+    P.car3
+  ),
+
+  item(
+    "Performance Exhaust",
+    4800,
+    "rare",
+    17,
+    P.car4
+  ),
+
+  item(
+    "Full Performance Build",
+    12000,
+    "epic",
+    12,
+    P.car5
+  ),
+
+  item(
+    "Ultimate Custom Build",
+    36000,
+    "legendary",
+    4,
+    P.car6
+  )
+
  ]
 },
 
@@ -2043,13 +3120,57 @@ const PACKS=[
  price:2200,
  image:P.bike1,
  badge:"HIGH ROLLER",
+
  items:[
-  item("Premium Riding Gear",450,"common",25,P.bike2),
-  item("Performance Helmet",1100,"common",22,P.bike3),
-  item("Electric Bike",2800,"rare",20,P.cycle1),
-  item("Street Motorcycle",6200,"rare",17,P.bike4),
-  item("Performance Motorcycle",15500,"epic",12,P.bike1),
-  item("Dream Ride Collection",45000,"legendary",4,P.car8)
+
+  item(
+    "Premium Riding Gear",
+    450,
+    "common",
+    25,
+    P.bike2
+  ),
+
+  item(
+    "Performance Helmet",
+    1100,
+    "common",
+    22,
+    P.bike3
+  ),
+
+  item(
+    "Electric Bike",
+    2800,
+    "rare",
+    20,
+    P.cycle1
+  ),
+
+  item(
+    "Street Motorcycle",
+    6200,
+    "rare",
+    17,
+    P.bike4
+  ),
+
+  item(
+    "Performance Motorcycle",
+    15500,
+    "epic",
+    12,
+    P.bike1
+  ),
+
+  item(
+    "Dream Ride Collection",
+    45000,
+    "legendary",
+    4,
+    P.car8
+  )
+
  ]
 },
 
@@ -2061,13 +3182,57 @@ const PACKS=[
  price:5000,
  image:P.car7,
  badge:"ELITE",
+
  items:[
-  item("Premium Wheel Package",900,"common",25,P.car7),
-  item("Performance Upgrade",2500,"common",22,P.car8),
-  item("Dream Motorcycle",6500,"rare",20,P.bike4),
-  item("Sports Car",14000,"rare",17,P.car9),
-  item("Performance Car",38000,"epic",12,P.car10),
-  item("Ultimate Dream Garage",130000,"legendary",4,P.car11)
+
+  item(
+    "Premium Wheel Package",
+    900,
+    "common",
+    25,
+    P.car7
+  ),
+
+  item(
+    "Performance Upgrade",
+    2500,
+    "common",
+    22,
+    P.car8
+  ),
+
+  item(
+    "Dream Motorcycle",
+    6500,
+    "rare",
+    20,
+    P.bike4
+  ),
+
+  item(
+    "Sports Car",
+    14000,
+    "rare",
+    17,
+    P.car9
+  ),
+
+  item(
+    "Performance Car",
+    38000,
+    "epic",
+    12,
+    P.car10
+  ),
+
+  item(
+    "Ultimate Dream Garage",
+    130000,
+    "legendary",
+    4,
+    P.car11
+  )
+
  ]
 },
 
@@ -2079,13 +3244,57 @@ const PACKS=[
  price:100,
  image:P.bag3,
  badge:"MYSTERY",
+
  items:[
-  item("Premium Accessory",20,"common",25,P.sunglasses),
-  item("Portable Speaker",55,"common",22,P.speaker),
-  item("Streetwear Drop",130,"rare",20,P.street3),
-  item("Sneaker Drop",300,"rare",17,P.shoe3),
-  item("Tech Drop",850,"epic",12,P.phone2),
-  item("Mystery Grail",2600,"legendary",4,P.watch3)
+
+  item(
+    "Premium Accessory",
+    20,
+    "common",
+    25,
+    P.sunglasses
+  ),
+
+  item(
+    "Portable Speaker",
+    55,
+    "common",
+    22,
+    P.speaker
+  ),
+
+  item(
+    "Streetwear Drop",
+    130,
+    "rare",
+    20,
+    P.street3
+  ),
+
+  item(
+    "Sneaker Drop",
+    300,
+    "rare",
+    17,
+    P.shoe3
+  ),
+
+  item(
+    "Tech Drop",
+    850,
+    "epic",
+    12,
+    P.phone2
+  ),
+
+  item(
+    "Mystery Grail",
+    2600,
+    "legendary",
+    4,
+    P.watch3
+  )
+
  ]
 },
 
@@ -2097,13 +3306,57 @@ const PACKS=[
  price:500,
  image:P.luxury,
  badge:"MYSTERY",
+
  items:[
-  item("Premium Sunglasses",90,"common",25,P.sunglasses),
-  item("Wireless Headphones",260,"common",22,P.head1),
-  item("Premium Sneakers",650,"rare",20,P.shoe6),
-  item("Smartphone",1500,"rare",17,P.phone3),
-  item("Luxury Watch",4500,"epic",12,P.watch4),
-  item("Mystery Grail",15000,"legendary",4,P.car5)
+
+  item(
+    "Premium Sunglasses",
+    90,
+    "common",
+    25,
+    P.sunglasses
+  ),
+
+  item(
+    "Wireless Headphones",
+    260,
+    "common",
+    22,
+    P.head1
+  ),
+
+  item(
+    "Premium Sneakers",
+    650,
+    "rare",
+    20,
+    P.shoe6
+  ),
+
+  item(
+    "Smartphone",
+    1500,
+    "rare",
+    17,
+    P.phone3
+  ),
+
+  item(
+    "Luxury Watch",
+    4500,
+    "epic",
+    12,
+    P.watch4
+  ),
+
+  item(
+    "Mystery Grail",
+    15000,
+    "legendary",
+    4,
+    P.car5
+  )
+
  ]
 },
 
@@ -2115,13 +3368,57 @@ const PACKS=[
  price:2500,
  image:P.luxury,
  badge:"BLACK VAULT",
+
  items:[
-  item("Luxury Accessory",480,"common",25,P.sunglasses),
-  item("Premium Travel Bag",1200,"common",22,P.bag2),
-  item("Flagship Smartphone",3200,"rare",20,P.phone4),
-  item("Luxury Watch",7000,"rare",17,P.watch5),
-  item("Ultimate Tech Setup",18000,"epic",12,P.desk1),
-  item("Black Vault Grail",58000,"legendary",4,P.car10)
+
+  item(
+    "Luxury Accessory",
+    480,
+    "common",
+    25,
+    P.sunglasses
+  ),
+
+  item(
+    "Premium Travel Bag",
+    1200,
+    "common",
+    22,
+    P.bag2
+  ),
+
+  item(
+    "Flagship Smartphone",
+    3200,
+    "rare",
+    20,
+    P.phone4
+  ),
+
+  item(
+    "Luxury Watch",
+    7000,
+    "rare",
+    17,
+    P.watch5
+  ),
+
+  item(
+    "Ultimate Tech Setup",
+    18000,
+    "epic",
+    12,
+    P.desk1
+  ),
+
+  item(
+    "Black Vault Grail",
+    58000,
+    "legendary",
+    4,
+    P.car10
+  )
+
  ]
 },
 
@@ -2133,13 +3430,57 @@ const PACKS=[
  price:7500,
  image:P.watch5,
  badge:"GOLD",
+
  items:[
-  item("Premium Luxury Bundle",1600,"common",25,P.bag2),
-  item("High-End Laptop",4200,"common",22,P.laptop3),
-  item("Collector Timepiece",9500,"rare",20,P.watch6),
-  item("Ultimate Gaming Setup",20000,"rare",17,P.gaming3),
-  item("Performance Ride",52000,"epic",12,P.car11),
-  item("Gold Vault Grail",175000,"legendary",4,P.car12)
+
+  item(
+    "Premium Luxury Bundle",
+    1600,
+    "common",
+    25,
+    P.bag2
+  ),
+
+  item(
+    "High-End Laptop",
+    4200,
+    "common",
+    22,
+    P.laptop3
+  ),
+
+  item(
+    "Collector Timepiece",
+    9500,
+    "rare",
+    20,
+    P.watch6
+  ),
+
+  item(
+    "Ultimate Gaming Setup",
+    20000,
+    "rare",
+    17,
+    P.gaming3
+  ),
+
+  item(
+    "Performance Ride",
+    52000,
+    "epic",
+    12,
+    P.car11
+  ),
+
+  item(
+    "Gold Vault Grail",
+    175000,
+    "legendary",
+    4,
+    P.car12
+  )
+
  ]
 },
 
@@ -2151,109 +3492,352 @@ const PACKS=[
  price:15000,
  image:P.car12,
  badge:"DIAMOND",
+
  items:[
-  item("Luxury Collection",3200,"common",25,P.luxury),
-  item("Collector Watch",8500,"common",22,P.watch5),
-  item("Ultimate Creator Studio",19000,"rare",20,P.camera3),
-  item("Dream Motorcycle",42000,"rare",17,P.bike1),
-  item("Performance Car",105000,"epic",12,P.car10),
-  item("Diamond Vault Grail",350000,"legendary",4,P.car12)
+
+  item(
+    "Luxury Collection",
+    3200,
+    "common",
+    25,
+    P.luxury
+  ),
+
+  item(
+    "Collector Watch",
+    8500,
+    "common",
+    22,
+    P.watch5
+  ),
+
+  item(
+    "Ultimate Creator Studio",
+    19000,
+    "rare",
+    20,
+    P.camera3
+  ),
+
+  item(
+    "Dream Motorcycle",
+    42000,
+    "rare",
+    17,
+    P.bike1
+  ),
+
+  item(
+    "Performance Car",
+    105000,
+    "epic",
+    12,
+    P.car10
+  ),
+
+  item(
+    "Diamond Vault Grail",
+    350000,
+    "legendary",
+    4,
+    P.car12
+  )
+
  ]
 }
 
 ];
 
+
+/* STATE */
+
 const DEFAULT_STATE={
-  balance:25000,
+
   btc:0.250000,
+
   inventory:[],
+
   opened:0,
+
   best:0,
+
   level:1,
+
   daily:null
+
 };
 
+
 let state=load();
+
 let activePack=null;
+
 let activePrize=null;
+
 let spinning=false;
+
 let currentFilter="all";
+
 let demoCardCallback=null;
 
+let selectedPaymentType="amex";
+
+
+const PAYMENT_META={
+
+  applepay:{
+
+    title:"Apple Pay",
+
+    brand:" Pay",
+
+    sub:"Wallet payment",
+
+    number:"•••• •••• •••• 8421",
+
+    name:"ISAIAH F",
+
+    exp:"09/29",
+
+    label:"Apple Pay •••• 8421",
+
+    theme:"cardTheme-wallet"
+
+  },
+
+  visa:{
+
+    title:"Visa Checkout",
+
+    brand:"VISA",
+
+    sub:"Visa payment",
+
+    number:"•••• •••• •••• 4821",
+
+    name:"ISAIAH F",
+
+    exp:"09/29",
+
+    label:"VISA •••• 4821",
+
+    theme:"cardTheme-visa"
+
+  },
+
+  amex:{
+
+    title:"American Express Checkout",
+
+    brand:"AMERICAN EXPRESS",
+
+    sub:"American Express",
+
+    number:"•••• •••••• •1005",
+
+    name:"ISAIAH F",
+
+    exp:"09/29",
+
+    label:"AMEX •••• 1005",
+
+    theme:"cardTheme-amex"
+
+  }
+
+};
+
+
+/* STORAGE */
+
 function load(){
+
   try{
-    const old=JSON.parse(localStorage.getItem("packrV3")||"{}");
+
+    const old=
+      JSON.parse(
+        localStorage.getItem("packrV4")||"{}"
+      );
 
     return {
+
       ...DEFAULT_STATE,
+
       ...old,
+
       btc:
         typeof old.btc==="number"
-        ? old.btc
-        : DEFAULT_STATE.btc
+          ? old.btc
+          : DEFAULT_STATE.btc
+
     };
+
   }catch{
-    return {...DEFAULT_STATE};
+
+    return {
+      ...DEFAULT_STATE
+    };
+
   }
+
 }
+
 
 function save(){
-  localStorage.setItem("packrV3",JSON.stringify(state));
+
+  localStorage.setItem(
+    "packrV4",
+    JSON.stringify(state)
+  );
+
   updateAll();
+
 }
 
-document.querySelectorAll("[data-page]").forEach(button=>{
+
+/* NAVIGATION */
+
+document.querySelectorAll(
+  "[data-page]"
+).forEach(button=>{
+
   button.onclick=()=>{
-    showPage(button.dataset.page);
+
+    showPage(
+      button.dataset.page
+    );
+
   };
+
 });
 
+
 function showPage(id){
-  document.querySelectorAll(".page").forEach(x=>x.classList.add("hidden"));
 
-  document.getElementById(id).classList.remove("hidden");
+  document.querySelectorAll(
+    ".page"
+  ).forEach(x=>{
 
-  document.querySelectorAll("[data-page]").forEach(x=>{
-    x.classList.toggle("active",x.dataset.page===id);
+    x.classList.add(
+      "hidden"
+    );
+
   });
+
+
+  document.getElementById(
+    id
+  ).classList.remove(
+    "hidden"
+  );
+
+
+  document.querySelectorAll(
+    "[data-page]"
+  ).forEach(x=>{
+
+    x.classList.toggle(
+      "active",
+      x.dataset.page===id
+    );
+
+  });
+
 
   window.scrollTo({
+
     top:0,
+
     behavior:"smooth"
+
   });
+
 }
+
 
 function scrollPacks(){
-  document.getElementById("packsAnchor").scrollIntoView({
+
+  document.getElementById(
+    "packsAnchor"
+  ).scrollIntoView({
+
     behavior:"smooth"
+
   });
+
 }
 
-function filterPacks(category,button){
-  currentFilter=category;
 
-  document.querySelectorAll(".filterBtn")
-  .forEach(x=>x.classList.remove("active"));
+/* FILTERS */
 
-  button.classList.add("active");
+function filterPacks(
+  category,
+  button
+){
+
+  currentFilter=
+    category;
+
+
+  document.querySelectorAll(
+    ".filterBtn"
+  ).forEach(x=>{
+
+    x.classList.remove(
+      "active"
+    );
+
+  });
+
+
+  button.classList.add(
+    "active"
+  );
+
 
   renderPacks();
+
 }
 
+
+/* BTC PRICE */
+
 function packBTC(pack){
-  return pack.price/BTC_RATE;
+
+  return (
+    pack.price
+    /
+    BTC_RATE
+  );
+
 }
+
+
+/* PACK GRID */
 
 function renderPacks(){
 
-  const grid=document.getElementById("packGrid");
+  const grid=
+    document.getElementById(
+      "packGrid"
+    );
+
 
   const visible=
+
     currentFilter==="all"
+
       ? PACKS
-      : PACKS.filter(p=>p.category===currentFilter);
+
+      : PACKS.filter(
+          p=>
+            p.category===
+            currentFilter
+        );
+
 
   grid.innerHTML=
+
     visible.map(p=>`
 
       <article class="pack">
@@ -2266,13 +3850,15 @@ function renderPacks(){
             loading="lazy"
             onerror="imgFallback(this)">
 
-          <div class="packShade"></div>
+          <div class="packShade">
+          </div>
 
           <div class="packBadge">
             ${p.badge}
           </div>
 
         </div>
+
 
         <div class="packBody">
 
@@ -2283,6 +3869,7 @@ function renderPacks(){
           <div class="packDesc">
             ${p.desc}
           </div>
+
 
           <div class="packBottom">
 
@@ -2298,10 +3885,13 @@ function renderPacks(){
 
             </div>
 
+
             <button
               class="openBtn"
               onclick="openPack('${p.id}')">
+
               OPEN
+
             </button>
 
           </div>
@@ -2311,51 +3901,98 @@ function renderPacks(){
       </article>
 
     `).join("");
+
 }
+
+
+/* BATTLE SELECT */
 
 function renderBattlePacks(){
 
-  document.getElementById("battlePack").innerHTML=
+  document.getElementById(
+    "battlePack"
+  ).innerHTML=
 
     PACKS.map(p=>`
 
       <option value="${p.id}">
-        ${p.name} — $${money(p.price)}
+
+        ${p.name}
+        —
+        $${money(p.price)}
+
       </option>
 
     `).join("");
+
 }
+
+
+/* OPEN PACK */
 
 function openPack(id){
 
   activePack=
-    PACKS.find(p=>p.id===id);
+    PACKS.find(
+      p=>p.id===id
+    );
 
-  activePrize=null;
 
-  document.getElementById("modalPackName").textContent=
+  activePrize=
+    null;
+
+
+  document.getElementById(
+    "modalPackName"
+  ).textContent=
     activePack.name;
 
-  document.getElementById("modalPackPrice").textContent=
+
+  document.getElementById(
+    "modalPackPrice"
+  ).textContent=
     `$${money(activePack.price)} · ₿${btc(packBTC(activePack))}`;
 
+
   const reel=
-    document.getElementById("reel");
+    document.getElementById(
+      "reel"
+    );
+
 
   reel.innerHTML="";
-  reel.style.transition="none";
-  reel.style.transform="translate3d(0,0,0)";
 
-  document.getElementById("overlay").classList.remove("hidden");
+  reel.style.transition=
+    "none";
+
+  reel.style.transform=
+    "translate3d(0,0,0)";
+
+
+  document.getElementById(
+    "overlay"
+  ).classList.remove(
+    "hidden"
+  );
+
 
   showPaymentChoice();
+
 }
+
+
+/* PAYMENT OPTIONS */
 
 function showPaymentChoice(){
 
-  if(!activePack)return;
+  if(!activePack){
+    return;
+  }
 
-  document.getElementById("modalAction").innerHTML=`
+
+  document.getElementById(
+    "modalAction"
+  ).innerHTML=`
 
     <div style="
       font-size:18px;
@@ -2366,97 +4003,103 @@ function showPaymentChoice(){
 
     </div>
 
+
     <div style="
       color:var(--muted);
       font-size:11px">
 
       ${activePack.name}
+      ·
+      $${money(activePack.price)}
 
     </div>
 
+
     <div class="paymentChoices">
 
-      <button
-        class="btn gold payChoice"
-        onclick="spinPack('cash')">
 
-        PAY $${money(activePack.price)}
+      <button
+        class="btn appleBtn payChoice"
+        onclick="beginCheckout('applepay')">
+
+         Pay
 
         <div class="paymentBalance">
-          Balance $${money(state.balance)}
+          Apple Pay
         </div>
 
       </button>
 
+
       <button
-        class="btn orange payChoice"
+        class="btn visaBtn payChoice"
+        onclick="beginCheckout('visa')">
+
+        VISA •••• 4821
+
+        <div class="paymentBalance">
+          Isaiah F
+        </div>
+
+      </button>
+
+
+      <button
+        class="btn amexBtn payChoice"
+        onclick="beginCheckout('amex')">
+
+        AMEX •••• 1005
+
+        <div class="paymentBalance">
+          Isaiah F
+        </div>
+
+      </button>
+
+
+      <button
+        class="btn btcBtn payChoice"
         onclick="spinPack('btc')">
 
         PAY ₿${btc(packBTC(activePack))}
 
         <div class="paymentBalance">
-          Balance ₿${btc(state.btc)}
+
+          Balance
+          ₿${btc(state.btc)}
+
         </div>
 
       </button>
 
-      <button
-        class="btn blue payChoice"
-        onclick="beginCardPayment()">
-
-        AMEX •••• 1005
-
-        <div class="paymentBalance">
-          Pay $${money(activePack.price)}
-        </div>
-
-      </button>
 
     </div>
   `;
+
 }
 
-function closeModal(){
-  if(spinning)return;
 
-  document.getElementById("overlay").classList.add("hidden");
-}
+/* CHECKOUT */
 
-function choosePrize(pack){
+function beginCheckout(type){
 
-  let total=
-    pack.items.reduce((a,b)=>a+b.weight,0);
-
-  let r=
-    Math.random()*total;
-
-  for(const x of pack.items){
-
-    r-=x.weight;
-
-    if(r<=0){
-      return {...x};
-    }
-
+  if(!activePack){
+    return;
   }
 
-  return {...pack.items[0]};
-}
 
-function randomItem(pack){
-  return pack.items[
-    Math.floor(Math.random()*pack.items.length)
-  ];
-}
+  selectedPaymentType=
+    type;
 
-function beginCardPayment(){
 
-  if(!activePack)return;
+  document.getElementById(
+    "checkoutAmount"
+  ).textContent=
 
-  document.getElementById("checkoutAmount").textContent=
     "$"+
-    Number(activePack.price)
-    .toLocaleString(
+    Number(
+      activePack.price
+    ).toLocaleString(
       undefined,
       {
         minimumFractionDigits:2,
@@ -2464,32 +4107,135 @@ function beginCardPayment(){
       }
     );
 
-  document.getElementById("checkoutPackName").textContent=
+
+  document.getElementById(
+    "checkoutPackName"
+  ).textContent=
     activePack.name;
 
-  document.getElementById("cardPaymentOverlay").classList.remove("hidden");
+
+  applyPaymentVisuals(
+    type
+  );
+
+
+  document.getElementById(
+    "cardPaymentOverlay"
+  ).classList.remove(
+    "hidden"
+  );
+
 
   demoCardCallback=()=>{
-    spinPack("card");
+
+    spinPack(
+      "card"
+    );
+
   };
+
 }
 
-function closeDemoCardPayment(){
-  document.getElementById("cardPaymentOverlay").classList.add("hidden");
-  demoCardCallback=null;
+
+function applyPaymentVisuals(type){
+
+  const meta=
+    PAYMENT_META[type]
+    ||
+    PAYMENT_META.amex;
+
+
+  const card=
+    document.getElementById(
+      "demoPaymentCard"
+    );
+
+
+  card.className=
+    `demoPayCard ${meta.theme}`;
+
+
+  document.getElementById(
+    "checkoutTitle"
+  ).textContent=
+    meta.title;
+
+
+  document.getElementById(
+    "demoBrandLabel"
+  ).textContent=
+    meta.brand;
+
+
+  document.getElementById(
+    "demoSubBrand"
+  ).textContent=
+    meta.sub;
+
+
+  document.getElementById(
+    "demoCardNumber"
+  ).textContent=
+    meta.number;
+
+
+  document.getElementById(
+    "demoCardName"
+  ).textContent=
+    meta.name;
+
+
+  document.getElementById(
+    "demoCardExp"
+  ).textContent=
+    meta.exp;
+
+
+  document.getElementById(
+    "checkoutMethodLabel"
+  ).textContent=
+    meta.label;
+
 }
+
+
+function closeDemoCardPayment(){
+
+  document.getElementById(
+    "cardPaymentOverlay"
+  ).classList.add(
+    "hidden"
+  );
+
+
+  demoCardCallback=
+    null;
+
+}
+
 
 function finishDemoCardPayment(){
 
   const box=
-    document.getElementById("cardPaymentBox");
+    document.getElementById(
+      "cardPaymentBox"
+    );
+
+
+  const paymentName=
+    PAYMENT_META[
+      selectedPaymentType
+    ]?.title
+    ||
+    "Payment";
+
 
   box.innerHTML=`
 
     <div class="payHeader">
 
       <div class="payHeaderTitle">
-        Secure Checkout
+        ${paymentName}
       </div>
 
       <div class="demoBadge">
@@ -2497,6 +4243,7 @@ function finishDemoCardPayment(){
       </div>
 
     </div>
+
 
     <div class="paySuccess">
 
@@ -2515,18 +4262,30 @@ function finishDemoCardPayment(){
     </div>
   `;
 
+
   setTimeout(()=>{
 
-    document.getElementById("cardPaymentOverlay").classList.add("hidden");
+    document.getElementById(
+      "cardPaymentOverlay"
+    ).classList.add(
+      "hidden"
+    );
 
-    if(demoCardCallback){
+
+    if(
+      demoCardCallback
+    ){
 
       const callback=
         demoCardCallback;
 
-      demoCardCallback=null;
+
+      demoCardCallback=
+        null;
+
 
       restoreCardBox();
+
 
       callback();
 
@@ -2537,18 +4296,32 @@ function finishDemoCardPayment(){
     }
 
   },1250);
+
 }
+
 
 function restoreCardBox(){
 
-  document.getElementById("cardPaymentBox").innerHTML=`
+  document.getElementById(
+    "cardPaymentBox"
+  ).innerHTML=`
 
     <div class="payHeader">
-      <div class="payHeaderTitle">
+
+      <div
+        class="payHeaderTitle"
+        id="checkoutTitle">
+
         Secure Checkout
+
       </div>
-      <div class="demoBadge">DEMO</div>
+
+      <div class="demoBadge">
+        DEMO
+      </div>
+
     </div>
+
 
     <div class="payBody">
 
@@ -2558,48 +4331,89 @@ function restoreCardBox(){
           Order Total
         </div>
 
-        <div class="checkoutAmount"
-             id="checkoutAmount">
+        <div
+          class="checkoutAmount"
+          id="checkoutAmount">
+
           $0.00
+
         </div>
 
       </div>
 
-      <div class="amexCard">
+
+      <div
+        class="demoPayCard cardTheme-amex"
+        id="demoPaymentCard">
 
         <div class="cardTop">
 
-          <div class="amexLogo">
-            AMERICAN EXPRESS
+          <div>
+
+            <div
+              class="cardBrand"
+              id="demoBrandLabel">
+
+              AMERICAN EXPRESS
+
+            </div>
+
+            <div
+              class="cardSubBrand"
+              id="demoSubBrand">
+
+              Demo payment method
+
+            </div>
+
           </div>
 
-          <div class="cardChip"></div>
+          <div class="cardChip">
+          </div>
 
         </div>
 
-        <div class="cardNumber">
+
+        <div
+          class="cardNumber"
+          id="demoCardNumber">
+
           •••• •••••• •1005
+
         </div>
+
 
         <div class="cardBottom">
 
           <div>
+
             <div class="cardLabel">
               CARD MEMBER
             </div>
-            PACKR PLAYER
+
+            <span id="demoCardName">
+              ISAIAH F
+            </span>
+
           </div>
 
+
           <div>
+
             <div class="cardLabel">
               EXPIRES
             </div>
-            09/29
+
+            <span id="demoCardExp">
+              09/29
+            </span>
+
           </div>
 
         </div>
 
       </div>
+
 
       <div class="payLine">
 
@@ -2607,11 +4421,12 @@ function restoreCardBox(){
           Payment method
         </span>
 
-        <strong>
+        <strong id="checkoutMethodLabel">
           AMEX •••• 1005
         </strong>
 
       </div>
+
 
       <div class="payLine">
 
@@ -2626,6 +4441,7 @@ function restoreCardBox(){
       </div>
 
     </div>
+
 
     <div class="payActions">
 
@@ -2647,114 +4463,307 @@ function restoreCardBox(){
 
     </div>
   `;
+
+
+  if(activePack){
+
+    document.getElementById(
+      "checkoutAmount"
+    ).textContent=
+
+      "$"+
+      Number(
+        activePack.price
+      ).toLocaleString(
+        undefined,
+        {
+          minimumFractionDigits:2,
+          maximumFractionDigits:2
+        }
+      );
+
+
+    document.getElementById(
+      "checkoutPackName"
+    ).textContent=
+      activePack.name;
+
+  }
+
+
+  applyPaymentVisuals(
+    selectedPaymentType
+  );
+
 }
+
+
+/* CLOSE PACK */
+
+function closeModal(){
+
+  if(spinning){
+    return;
+  }
+
+
+  document.getElementById(
+    "overlay"
+  ).classList.add(
+    "hidden"
+  );
+
+}
+
+
+/* PRIZES */
+
+function choosePrize(pack){
+
+  let total=
+    pack.items.reduce(
+      (a,b)=>
+        a+b.weight,
+      0
+    );
+
+
+  let r=
+    Math.random()
+    *
+    total;
+
+
+  for(
+    const x
+    of pack.items
+  ){
+
+    r-=
+      x.weight;
+
+
+    if(
+      r<=0
+    ){
+
+      return {
+        ...x
+      };
+
+    }
+
+  }
+
+
+  return {
+    ...pack.items[0]
+  };
+
+}
+
+
+function randomItem(pack){
+
+  return pack.items[
+
+    Math.floor(
+
+      Math.random()
+      *
+      pack.items.length
+
+    )
+
+  ];
+
+}
+
+
+/* SPIN */
 
 function spinPack(payment){
 
-  if(spinning)return;
+  if(spinning){
+    return;
+  }
 
-  const cashPrice=
-    activePack.price;
 
   const bitcoinPrice=
-    packBTC(activePack);
+    packBTC(
+      activePack
+    );
 
-  if(payment==="cash"){
 
-    if(state.balance<cashPrice){
+  if(
+    payment==="btc"
+  ){
 
-      toast("Insufficient balance.");
+    if(
+      state.btc
+      <
+      bitcoinPrice
+    ){
+
+      toast(
+        "Insufficient BTC balance."
+      );
 
       return;
+
     }
 
-    state.balance-=cashPrice;
+
+    state.btc-=
+      bitcoinPrice;
+
   }
 
-  if(payment==="btc"){
-
-    if(state.btc<bitcoinPrice){
-
-      toast("Insufficient BTC balance.");
-
-      return;
-    }
-
-    state.btc-=bitcoinPrice;
-  }
 
   state.opened++;
 
-  activePrize=
-    choosePrize(activePack);
 
-  if(activePrize.value>state.best){
-    state.best=activePrize.value;
+  activePrize=
+    choosePrize(
+      activePack
+    );
+
+
+  if(
+    activePrize.value
+    >
+    state.best
+  ){
+
+    state.best=
+      activePrize.value;
+
   }
 
+
   state.level=
-    1+Math.floor(state.opened/8);
+    1+
+    Math.floor(
+      state.opened/8
+    );
+
 
   save();
 
-  spinning=true;
+
+  spinning=
+    true;
+
 
   const reel=
-    document.getElementById("reel");
+    document.getElementById(
+      "reel"
+    );
+
 
   const windowEl=
-    document.getElementById("reelWindow");
+    document.getElementById(
+      "reelWindow"
+    );
 
-  reel.innerHTML="";
-  reel.style.transition="none";
-  reel.style.transform="translate3d(0,0,0)";
 
-  const display=[];
+  reel.innerHTML=
+    "";
 
-  for(let i=0;i<54;i++){
-    display.push(randomItem(activePack));
+
+  reel.style.transition=
+    "none";
+
+
+  reel.style.transform=
+    "translate3d(0,0,0)";
+
+
+  const display=
+    [];
+
+
+  for(
+    let i=0;
+    i<54;
+    i++
+  ){
+
+    display.push(
+      randomItem(
+        activePack
+      )
+    );
+
   }
 
-  const winnerIndex=43;
 
-  display[winnerIndex]=activePrize;
+  const winnerIndex=
+    43;
 
-  display.forEach((x,index)=>{
 
-    const div=
-      document.createElement("div");
+  display[
+    winnerIndex
+  ]=
+    activePrize;
 
-    div.className=
-      `reelItem r-${x.rarity}`;
 
-    if(index===winnerIndex){
-      div.dataset.winner="true";
+  display.forEach(
+    (x,index)=>{
+
+      const div=
+        document.createElement(
+          "div"
+        );
+
+
+      div.className=
+        `reelItem r-${x.rarity}`;
+
+
+      if(
+        index===
+        winnerIndex
+      ){
+
+        div.dataset.winner=
+          "true";
+
+      }
+
+
+      div.innerHTML=`
+
+        <img
+          src="${x.image}"
+          alt="${x.name}"
+          onerror="imgFallback(this)">
+
+        <div class="reelText">
+
+          <div class="reelName">
+            ${x.name}
+          </div>
+
+          <div class="reelPrice">
+            $${money(x.value)}
+          </div>
+
+        </div>
+      `;
+
+
+      reel.appendChild(
+        div
+      );
+
     }
+  );
 
-    div.innerHTML=`
 
-      <img
-        src="${x.image}"
-        alt="${x.name}"
-        onerror="imgFallback(this)">
-
-      <div class="reelText">
-
-        <div class="reelName">
-          ${x.name}
-        </div>
-
-        <div class="reelPrice">
-          $${money(x.value)}
-        </div>
-
-      </div>
-    `;
-
-    reel.appendChild(div);
-  });
-
-  document.getElementById("modalAction").innerHTML=`
+  document.getElementById(
+    "modalAction"
+  ).innerHTML=`
 
     <div style="
       color:var(--muted);
@@ -2765,34 +4774,59 @@ function spinPack(payment){
     </div>
   `;
 
+
   requestAnimationFrame(()=>{
 
     requestAnimationFrame(()=>{
 
+
       const winningCard=
-        reel.querySelector('[data-winner="true"]');
+        reel.querySelector(
+          '[data-winner="true"]'
+        );
+
 
       const reelRect=
         reel.getBoundingClientRect();
 
+
       const cardRect=
         winningCard.getBoundingClientRect();
+
 
       const windowRect=
         windowEl.getBoundingClientRect();
 
+
       const cardCenter=
-        (cardRect.left-reelRect.left)
-        +(cardRect.width/2);
+        (
+          cardRect.left
+          -
+          reelRect.left
+        )
+        +
+        (
+          cardRect.width
+          /
+          2
+        );
+
 
       const markerCenter=
-        windowRect.width/2;
+        windowRect.width
+        /
+        2;
+
 
       const target=
-        markerCenter-cardCenter;
+        markerCenter
+        -
+        cardCenter;
+
 
       reel.style.transition=
         "transform 5s cubic-bezier(.08,.72,.05,1)";
+
 
       reel.style.transform=
         `translate3d(${target}px,0,0)`;
@@ -2801,20 +4835,31 @@ function spinPack(payment){
 
   });
 
+
   setTimeout(()=>{
 
-    spinning=false;
+    spinning=
+      false;
+
+
     showWinner();
 
   },5150);
+
 }
+
+
+/* WIN */
 
 function showWinner(){
 
   const p=
     activePrize;
 
-  document.getElementById("modalAction").innerHTML=`
+
+  document.getElementById(
+    "modalAction"
+  ).innerHTML=`
 
     <img
       class="wonPhoto"
@@ -2822,21 +4867,26 @@ function showWinner(){
       alt="${p.name}"
       onerror="imgFallback(this)">
 
+
     <div class="rarity ${p.rarity}">
       ${p.rarity.toUpperCase()} DROP
     </div>
+
 
     <div class="wonName">
       ${p.name}
     </div>
 
+
     <div class="wonValue">
       $${money(p.value)}
     </div>
 
+
     <div class="wonBTC">
       ₿${btc(p.value/BTC_RATE)}
     </div>
+
 
     <div class="actionRow">
 
@@ -2848,13 +4898,6 @@ function showWinner(){
 
       </button>
 
-      <button
-        class="btn dark"
-        onclick="sellPrizeCash()">
-
-        SELL FOR $${money(p.value)}
-
-      </button>
 
       <button
         class="btn orange"
@@ -2863,6 +4906,7 @@ function showWinner(){
         SELL FOR ₿${btc(p.value/BTC_RATE)}
 
       </button>
+
 
       <button
         class="btn dark"
@@ -2874,11 +4918,20 @@ function showWinner(){
 
     </div>
   `;
+
 }
+
+
+/* KEEP */
 
 function keepPrize(){
 
-  if(!activePrize)return;
+  if(
+    !activePrize
+  ){
+    return;
+  }
+
 
   state.inventory.unshift({
 
@@ -2886,22 +4939,34 @@ function keepPrize(){
 
     uid:
       Date.now()
-      +Math.random()
+      +
+      Math.random()
 
   });
 
-  activePrize=null;
+
+  activePrize=
+    null;
+
 
   save();
 
-  toast("Added to collection.");
 
-  document.getElementById("modalAction").innerHTML=`
+  toast(
+    "Added to collection."
+  );
+
+
+  document.getElementById(
+    "modalAction"
+  ).innerHTML=`
 
     <div style="
       font-size:38px;
       color:var(--green)">
+
       ✓
+
     </div>
 
     <h2>
@@ -2928,43 +4993,43 @@ function keepPrize(){
 
     </div>
   `;
+
 }
 
-function sellPrizeCash(){
 
-  if(!activePrize)return;
-
-  state.balance+=activePrize.value;
-
-  activePrize=null;
-
-  save();
-
-  soldScreen("$");
-}
+/* SELL BTC */
 
 function sellPrizeBTC(){
 
-  if(!activePrize)return;
+  if(
+    !activePrize
+  ){
+    return;
+  }
 
-  state.btc+=activePrize.value/BTC_RATE;
 
-  activePrize=null;
+  state.btc+=
+    activePrize.value
+    /
+    BTC_RATE;
+
+
+  activePrize=
+    null;
+
 
   save();
 
-  soldScreen("₿");
-}
 
-function soldScreen(type){
-
-  document.getElementById("modalAction").innerHTML=`
+  document.getElementById(
+    "modalAction"
+  ).innerHTML=`
 
     <div style="
       font-size:38px;
-      color:${type==="₿"?"#f7931a":"var(--gold)"}">
+      color:#f7931a">
 
-      ${type}
+      ₿
 
     </div>
 
@@ -2992,17 +5057,29 @@ function soldScreen(type){
 
     </div>
   `;
+
 }
+
+
+/* INVENTORY */
 
 function renderInventory(){
 
   const grid=
-    document.getElementById("inventoryGrid");
+    document.getElementById(
+      "inventoryGrid"
+    );
 
-  document.getElementById("inventoryCount").textContent=
+
+  document.getElementById(
+    "inventoryCount"
+  ).textContent=
     `${state.inventory.length} ITEMS`;
 
-  if(!state.inventory.length){
+
+  if(
+    !state.inventory.length
+  ){
 
     grid.innerHTML=`
 
@@ -3029,8 +5106,11 @@ function renderInventory(){
       </div>
     `;
 
+
     return;
+
   }
+
 
   grid.innerHTML=
 
@@ -3044,6 +5124,7 @@ function renderInventory(){
           alt="${x.name}"
           loading="lazy"
           onerror="imgFallback(this)">
+
 
         <div class="inventoryBody">
 
@@ -3059,77 +5140,77 @@ function renderInventory(){
             $${money(x.value)}
           </div>
 
-          <div class="inventoryButtons">
+          <button
+            class="btn orange"
+            style="width:100%"
+            onclick="sellInventoryBTC('${x.uid}')">
 
-            <button
-              class="btn dark"
-              onclick="sellInventoryCash('${x.uid}')">
+            SELL FOR ₿${btc(x.value/BTC_RATE)}
 
-              SELL $
-
-            </button>
-
-            <button
-              class="btn orange"
-              onclick="sellInventoryBTC('${x.uid}')">
-
-              SELL ₿
-
-            </button>
-
-          </div>
+          </button>
 
         </div>
 
       </article>
 
     `).join("");
+
 }
 
-function sellInventoryCash(uid){
 
-  const index=
-    state.inventory.findIndex(
-      x=>String(x.uid)===String(uid)
-    );
-
-  if(index<0)return;
-
-  const x=
-    state.inventory[index];
-
-  state.balance+=x.value;
-
-  state.inventory.splice(index,1);
-
-  save();
-
-  toast(`+$${money(x.value)}`);
-}
+/* INVENTORY SELL */
 
 function sellInventoryBTC(uid){
 
   const index=
     state.inventory.findIndex(
-      x=>String(x.uid)===String(uid)
+      x=>
+        String(x.uid)
+        ===
+        String(uid)
     );
 
-  if(index<0)return;
+
+  if(
+    index<0
+  ){
+    return;
+  }
+
 
   const x=
-    state.inventory[index];
+    state.inventory[
+      index
+    ];
+
 
   const amount=
-    x.value/BTC_RATE;
+    x.value
+    /
+    BTC_RATE;
 
-  state.btc+=amount;
 
-  state.inventory.splice(index,1);
+  state.btc+=
+    amount;
+
+
+  state.inventory.splice(
+    index,
+    1
+  );
+
 
   save();
 
-  toast(`+₿${btc(amount)}`);
+
+  toast(
+    `+₿${btc(amount)}`
+  );
+
 }
+
+
+/* BATTLE */
 
 function startBattle(){
 
@@ -3137,54 +5218,131 @@ function startBattle(){
     PACKS.find(
       x=>
         x.id===
-        document.getElementById("battlePack").value
+        document.getElementById(
+          "battlePack"
+        ).value
     );
+
 
   const rounds=
     Number(
-      document.getElementById("battleRounds").value
+      document.getElementById(
+        "battleRounds"
+      ).value
     );
 
+
   const mode=
-    document.getElementById("battleMode").value;
+    document.getElementById(
+      "battleMode"
+    ).value;
+
 
   const cost=
-    pack.price*rounds;
+    (
+      pack.price
+      *
+      rounds
+    )
+    /
+    BTC_RATE;
 
-  if(state.balance<cost){
 
-    toast("Insufficient balance.");
+  if(
+    state.btc
+    <
+    cost
+  ){
+
+    toast(
+      "Insufficient BTC balance."
+    );
 
     return;
+
   }
 
-  state.balance-=cost;
 
-  let you=[];
-  let bot=[];
+  state.btc-=
+    cost;
 
-  let youTotal=0;
-  let botTotal=0;
 
-  for(let i=0;i<rounds;i++){
+  let you=
+    [];
 
-    const a=choosePrize(pack);
-    const b=choosePrize(pack);
 
-    you.push(a);
-    bot.push(b);
+  let bot=
+    [];
 
-    youTotal+=a.value;
-    botTotal+=b.value;
+
+  let youTotal=
+    0;
+
+
+  let botTotal=
+    0;
+
+
+  for(
+    let i=0;
+    i<rounds;
+    i++
+  ){
+
+    const a=
+      choosePrize(
+        pack
+      );
+
+
+    const b=
+      choosePrize(
+        pack
+      );
+
+
+    you.push(
+      a
+    );
+
+
+    bot.push(
+      b
+    );
+
+
+    youTotal+=
+      a.value;
+
+
+    botTotal+=
+      b.value;
+
   }
+
 
   let youWin;
 
-  if(mode==="Upside Down"){
-    youWin=youTotal<botTotal;
+
+  if(
+    mode===
+    "Upside Down"
+  ){
+
+    youWin=
+      youTotal
+      <
+      botTotal;
+
   }else{
-    youWin=youTotal>botTotal;
+
+    youWin=
+      youTotal
+      >
+      botTotal;
+
   }
+
 
   let html=`
 
@@ -3205,20 +5363,33 @@ function startBattle(){
     </div>
   `;
 
-  if(youTotal===botTotal){
 
-    state.balance+=cost;
+  if(
+    youTotal===
+    botTotal
+  ){
+
+    state.btc+=
+      cost;
+
 
     html+=`
 
       <div class="result">
+
         🤝 DRAW — ENTRY RETURNED
+
       </div>
     `;
 
-  }else if(youWin){
+  }else if(
+    youWin
+  ){
 
-    [...you,...bot].forEach(x=>{
+    [
+      ...you,
+      ...bot
+    ].forEach(x=>{
 
       state.inventory.unshift({
 
@@ -3226,15 +5397,18 @@ function startBattle(){
 
         uid:
           Date.now()
-          +Math.random()
+          +
+          Math.random()
 
       });
 
     });
 
+
     html+=`
 
-      <div class="result"
+      <div
+        class="result"
         style="border-color:#5e4b1d">
 
         🏆 YOU WON THE BATTLE
@@ -3244,8 +5418,10 @@ function startBattle(){
           color:var(--muted);
           margin-top:5px">
 
-          All ${you.length+bot.length}
-          items were added to your collection.
+          All
+          ${you.length+bot.length}
+          items were added
+          to your collection.
 
         </div>
 
@@ -3271,14 +5447,26 @@ function startBattle(){
 
       </div>
     `;
+
   }
 
-  document.getElementById("battleOutput").innerHTML=html;
+
+  document.getElementById(
+    "battleOutput"
+  ).innerHTML=
+    html;
+
 
   save();
+
 }
 
-function fighterHTML(name,items,total){
+
+function fighterHTML(
+  name,
+  items,
+  total
+){
 
   return `
 
@@ -3295,6 +5483,7 @@ function fighterHTML(name,items,total){
         </span>
 
       </div>
+
 
       ${items.map(x=>`
 
@@ -3327,62 +5516,108 @@ function fighterHTML(name,items,total){
 
     </div>
   `;
+
 }
 
+
+/* LIVE DROPS */
+
 const liveUsers=[
+
   "NightWolf",
+
   "MontanaX",
+
   "Nova",
+
   "DropKing",
+
   "Racer",
+
   "Vortex",
+
   "Ace",
+
   "Ghost",
+
   "Turbo"
+
 ];
+
 
 function renderLive(){
 
-  const all=[];
+  const all=
+    [];
+
 
   PACKS.forEach(p=>{
 
     p.items.forEach(x=>{
 
-      all.push(x);
+      all.push(
+        x
+      );
 
     });
 
   });
 
-  const chosen=[];
 
-  for(let i=0;i<5;i++){
+  const chosen=
+    [];
+
+
+  for(
+    let i=0;
+    i<5;
+    i++
+  ){
 
     const x=
+
       all[
+
         Math.floor(
-          Math.random()*all.length
+
+          Math.random()
+          *
+          all.length
+
         )
+
       ];
+
 
     chosen.push({
 
       ...x,
 
       user:
+
         liveUsers[
+
           Math.floor(
-            Math.random()*liveUsers.length
+
+            Math.random()
+            *
+            liveUsers.length
+
           )
+
         ]
 
     });
+
   }
 
-  document.getElementById("liveDrops").innerHTML=
 
-    chosen.map((x,i)=>`
+  document.getElementById(
+    "liveDrops"
+  ).innerHTML=
+
+    chosen.map(
+      (x,i)=>`
 
       <div class="liveCard">
 
@@ -3421,44 +5656,100 @@ function renderLive(){
       </div>
 
     `).join("");
+
 }
+
+
+/* LEADERBOARD */
 
 function renderLeaderboard(){
 
   const people=[
 
-    {name:"Nova",money:185400,wins:328},
-    {name:"DropKing",money:121800,wins:242},
-    {name:"NightWolf",money:89500,wins:193},
-    {name:"Vortex",money:62200,wins:141},
-
     {
-      name:"YOU",
-      money:state.balance,
-      wins:state.opened
+      name:"Nova",
+      money:185400,
+      wins:328
     },
 
-    {name:"Ace",money:31500,wins:83},
-    {name:"Racer",money:19200,wins:51}
+    {
+      name:"DropKing",
+      money:121800,
+      wins:242
+    },
+
+    {
+      name:"NightWolf",
+      money:89500,
+      wins:193
+    },
+
+    {
+      name:"Vortex",
+      money:62200,
+      wins:141
+    },
+
+    {
+      name:"ISAIAH F",
+      money:
+        state.btc
+        *
+        BTC_RATE,
+      wins:
+        state.opened
+    },
+
+    {
+      name:"Ace",
+      money:31500,
+      wins:83
+    },
+
+    {
+      name:"Racer",
+      money:19200,
+      wins:51
+    }
 
   ];
 
+
   people.sort(
-    (a,b)=>b.money-a.money
+    (a,b)=>
+      b.money
+      -
+      a.money
   );
 
-  document.getElementById("leaderboardList").innerHTML=`
+
+  document.getElementById(
+    "leaderboardList"
+  ).innerHTML=`
 
     <div class="leader head">
 
-      <div>RANK</div>
-      <div>PLAYER</div>
-      <div>BALANCE</div>
-      <div class="leaderWins">PACKS</div>
+      <div>
+        RANK
+      </div>
+
+      <div>
+        PLAYER
+      </div>
+
+      <div>
+        VALUE
+      </div>
+
+      <div class="leaderWins">
+        PACKS
+      </div>
 
     </div>
 
-    ${people.map((x,i)=>`
+
+    ${people.map(
+      (x,i)=>`
 
       <div class="leader">
 
@@ -3466,15 +5757,16 @@ function renderLeaderboard(){
 
           ${
             i===0
-            ?"🥇"
-            :i===1
-            ?"🥈"
-            :i===2
-            ?"🥉"
-            :"#"+(i+1)
+              ?"🥇"
+              :i===1
+              ?"🥈"
+              :i===2
+              ?"🥉"
+              :"#"+(i+1)
           }
 
         </div>
+
 
         <div style="
           font-weight:900">
@@ -3482,6 +5774,7 @@ function renderLeaderboard(){
           ${x.name}
 
         </div>
+
 
         <div style="
           color:var(--gold);
@@ -3491,9 +5784,11 @@ function renderLeaderboard(){
 
         </div>
 
+
         <div
           class="leaderWins"
-          style="color:var(--muted)">
+          style="
+            color:var(--muted)">
 
           ${x.wins}
 
@@ -3503,108 +5798,195 @@ function renderLeaderboard(){
 
     `).join("")}
   `;
+
 }
+
+
+/* DAILY BONUS */
 
 function dailyMoney(){
 
   const today=
-    new Date().toDateString();
+    new Date()
+    .toDateString();
 
-  if(state.daily===today){
 
-    toast("Daily bonus already claimed.");
+  if(
+    state.daily===
+    today
+  ){
+
+    toast(
+      "Daily bonus already claimed."
+    );
 
     return;
+
   }
 
-  state.daily=today;
 
-  state.balance+=2500;
-  state.btc+=0.025000;
+  state.daily=
+    today;
+
+
+  state.btc+=
+    0.025000;
+
 
   save();
 
-  toast("+$2,500 · +₿0.025000");
+
+  toast(
+    "+₿0.025000"
+  );
+
 }
+
+
+/* UI */
 
 function updateAll(){
 
-  document.getElementById("balance").textContent=
-    money2(state.balance);
+  document.getElementById(
+    "btcBalance"
+  ).textContent=
+    btc(
+      state.btc
+    );
 
-  document.getElementById("btcBalance").textContent=
-    btc(state.btc);
 
-  document.getElementById("statOpened").textContent=
-    money(state.opened);
+  document.getElementById(
+    "statOpened"
+  ).textContent=
+    money(
+      state.opened
+    );
 
-  document.getElementById("statInventory").textContent=
-    money(state.inventory.length);
 
-  document.getElementById("statBest").textContent=
-    "$"+money(state.best);
+  document.getElementById(
+    "statInventory"
+  ).textContent=
+    money(
+      state.inventory.length
+    );
 
-  document.getElementById("statLevel").textContent=
+
+  document.getElementById(
+    "statBest"
+  ).textContent=
+    "$"+
+    money(
+      state.best
+    );
+
+
+  document.getElementById(
+    "statLevel"
+  ).textContent=
     state.level;
 
+
   renderInventory();
+
   renderLeaderboard();
+
 }
+
+
+/* FORMATTING */
 
 function money(n){
-  return Math.round(n).toLocaleString();
+
+  return Math.round(
+    n
+  ).toLocaleString();
+
 }
 
-function money2(n){
-
-  return Number(n).toLocaleString(
-    undefined,
-    {
-      minimumFractionDigits:2,
-      maximumFractionDigits:2
-    }
-  );
-}
 
 function btc(n){
-  return Number(n).toFixed(6);
+
+  return Number(
+    n
+  ).toFixed(
+    6
+  );
+
 }
+
+
+/* TOAST */
 
 function toast(message){
 
   const t=
-    document.getElementById("toast");
+    document.getElementById(
+      "toast"
+    );
 
-  t.textContent=message;
 
-  t.classList.add("show");
+  t.textContent=
+    message;
 
-  clearTimeout(window.toastTimer);
 
-  window.toastTimer=setTimeout(()=>{
+  t.classList.add(
+    "show"
+  );
 
-    t.classList.remove("show");
 
-  },2200);
+  clearTimeout(
+    window.toastTimer
+  );
+
+
+  window.toastTimer=
+    setTimeout(()=>{
+
+      t.classList.remove(
+        "show"
+      );
+
+    },2200);
+
 }
 
-document.getElementById("overlay").addEventListener(
+
+/* CLOSE MODAL */
+
+document.getElementById(
+  "overlay"
+).addEventListener(
   "click",
   function(e){
 
-    if(e.target===this){
+    if(
+      e.target===
+      this
+    ){
+
       closeModal();
+
     }
 
   }
 );
 
+
+/* START */
+
 renderPacks();
+
 renderBattlePacks();
+
 renderLive();
+
 updateAll();
 
-setInterval(renderLive,30000);
+
+setInterval(
+  renderLive,
+  30000
+);
 
 </script>
 
